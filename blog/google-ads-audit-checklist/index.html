@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The 10-Point Google Ads Audit Checklist I Run on Every New Account | Jedd Sarte</title>
+<meta name="description" content="The exact framework used on every new Google Ads account audit - find wasted spend and quick wins in under 60 minutes, applicable to any industry or campaign type."/>
+<link rel="canonical" href="https://jeddsarte.com/blog/google-ads-audit-checklist/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010829;--navy-mid:#030d40;--navy-light:#07154f;--gold:#f49f1c;--gold-light:#f7b84a;--gold-dim:rgba(244,159,28,0.12);--gold-border:rgba(244,159,28,0.25);--white:#fff;--offwhite:#f8f9ff;--cream:#f0f3ff;--g100:#f0f0f5;--g200:#e0e0ec;--g400:#aaaabc;--g600:#666680;--g800:#333350}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.08;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2vw,1.6rem);font-weight:700;line-height:1.25;color:var(--navy)}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--navy)}
+p{font-size:0.96rem;line-height:1.78;color:var(--g600)}
+a{color:var(--gold);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.75}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+#hero{background:var(--navy);padding:130px 0 64px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:28px 28px}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(244,159,28,0.09) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.4);font-size:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none;margin-bottom:24px;transition:color 0.2s}
+.back-link:hover{color:var(--gold)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.hero-tag{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:5px 12px;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase}
+.hero-date{color:rgba(255,255,255,0.3);font-size:0.78rem;font-family:'Space Grotesk',sans-serif}
+h1.hero-title{color:var(--white);margin-bottom:14px}
+h1.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:0.98rem;line-height:1.75;max-width:680px}
+.article{padding:64px 0;background:var(--white)}
+.article-body{display:grid;grid-template-columns:1fr 240px;gap:52px;align-items:start}
+.article-content h2{margin:36px 0 12px}
+.article-content h2:first-child{margin-top:0}
+.article-content h3{margin:24px 0 8px}
+.article-content p{margin-bottom:16px}
+.article-content ul,.article-content ol{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.article-content ul li,.article-content ol li{display:flex;align-items:flex-start;gap:9px;font-size:0.9rem;color:var(--g600);line-height:1.65}
+.article-content ul li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:2px}
+.article-content ol{counter-reset:ol-counter}
+.article-content ol li{counter-increment:ol-counter}
+.article-content ol li::before{content:counter(ol-counter)".";color:var(--gold);font-weight:700;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;margin-top:2px;min-width:18px}
+.article-content a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.article-content a:hover{opacity:0.75}
+.callout{background:var(--navy);border-radius:12px;padding:22px 26px;margin:24px 0}
+.callout p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin:0;line-height:1.72}
+.callout strong{color:var(--gold)}
+.callout a{color:var(--gold-light)}
+.tip-box{background:var(--cream);border:1px solid var(--g200);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0}
+.tip-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:7px;font-family:'Space Grotesk',sans-serif}
+.tip-box p{font-size:0.88rem;color:var(--g800);margin:0;line-height:1.65}
+.divider{height:1px;background:var(--g200);margin:32px 0}
+.cta-inline{background:var(--navy);border-radius:14px;padding:28px 32px;margin:36px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-inline-text h3{color:var(--white);margin-bottom:6px;font-size:1rem}
+.cta-inline-text p{color:rgba(255,255,255,0.45);font-size:0.85rem;margin:0}
+.cta-inline a{background:var(--gold);color:var(--navy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;padding:11px 20px;border-radius:7px;text-decoration:none;white-space:nowrap;flex-shrink:0;display:inline-block}
+.cta-inline a:hover{background:var(--gold-light);opacity:1}
+.sidebar{position:sticky;top:96px}
+.sidebar-card{background:var(--navy);border-radius:14px;padding:22px;margin-bottom:18px}
+.sidebar-card h4{color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.sidebar-cta{background:var(--cream);border:1px solid var(--g200);border-radius:14px;padding:20px;text-align:center;margin-bottom:18px}
+.sidebar-cta p{font-size:0.8rem;margin-bottom:12px;color:var(--g600);line-height:1.55}
+.sidebar-cta a.sc-btn{background:var(--navy);color:var(--white);font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:10px 16px;border-radius:7px;text-decoration:none;display:block;transition:background 0.2s}
+.sidebar-cta a.sc-btn:hover{background:var(--navy-mid);opacity:1}
+.related-list{display:flex;flex-direction:column;gap:10px}
+.related-link{display:flex;flex-direction:column;gap:3px;text-decoration:none;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);transition:background 0.2s}
+.related-link:hover{background:rgba(255,255,255,0.05);opacity:1}
+.related-tag{font-size:0.65rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.07em}
+.related-title{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:600}
+.toc{background:var(--cream);border:1px solid var(--g200);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.toc h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:7px}
+.toc ol li{counter-increment:toc;display:flex;gap:8px;align-items:flex-start}
+.toc ol li::before{content:counter(toc);font-size:0.68rem;font-weight:700;color:var(--gold);font-family:'Space Grotesk',sans-serif;flex-shrink:0;margin-top:3px}
+.toc ol li a{font-size:0.8rem;color:var(--g600);text-decoration:none;line-height:1.4;transition:color 0.2s}
+.toc ol li a:hover{color:var(--gold)}
+#more-posts{background:var(--offwhite);padding:56px 0}
+#more-posts h2{color:var(--navy);margin-bottom:28px;font-size:1.4rem}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px;text-decoration:none;display:block;color:inherit;transition:all 0.2s}
+.post-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(1,8,41,0.07);opacity:1}
+.post-tag{font-size:0.66rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 8px;border-radius:4px;margin-bottom:8px;display:inline-block;text-transform:uppercase;letter-spacing:0.06em}
+.post-card h4{color:var(--navy);font-size:0.9rem;margin-bottom:5px;line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.post-card p{font-size:0.78rem;color:var(--g400);line-height:1.55}
+.post-arrow{color:var(--gold);font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;margin-top:9px;display:inline-block}
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+@media(max-width:860px){.article-body,.posts-grid{grid-template-columns:1fr}.cta-inline{flex-direction:column}.sidebar{position:static}nav .nav-links{display:none}.footer-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../case-studies/">Work</a></li>
+      <li><a href="../" class="active">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<section id="hero">
+  <div class="hero-dots"></div><div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <a href="../" class="back-link">← Back to all posts</a>
+      <div class="hero-meta"><span class="hero-tag">Google Ads</span><span class="hero-tag">Account Audit</span><span class="hero-tag">Checklist</span><span class="hero-date">February 2026 · 9 min read</span></div>
+      <h1 class="hero-title">The <em>10-Point</em> Google Ads Audit Checklist</h1>
+      <p class="hero-sub">The exact framework used on every new Google Ads account audit - find wasted spend and quick wins in under 60 minutes, applicable to any industry or campaign type.</p>
+    </div>
+  </div>
+</section>
+<section class="article">
+  <div class="container">
+    <div class="article-body">
+      <div class="article-content">
+        <p>When I take on a new Google Ads account, I run the same 10-point audit before touching a single setting. The goal is to find what's actively wasting budget, what's missing that should exist, and where the fastest wins are - in under 60 minutes.</p>
+        <p>This framework applies across industries, but the examples below skew toward law firms and service businesses since that's where I spend most of my time. Most findings apply universally.</p>
+
+        <h2 id="tracking">1. Conversion Tracking Quality</h2>
+        <p>Before anything else - are you measuring the right things, and are you measuring them correctly? An account optimizing on bad data will compound its mistakes over time regardless of every other setting.</p>
+        <ul>
+          <li>Are conversion actions defined and firing? Check the Conversions column in campaign view - any "Conversions: 0" campaigns with active spend are a red flag</li>
+          <li>Is the primary conversion action the right one? Form submissions are fine; website sessions are not a conversion action</li>
+          <li>Are phone calls being tracked? Check for call extensions with call reporting enabled and a minimum call duration set</li>
+          <li>Are you using browser-only tracking without <a href="../server-side-gtm-vs-browser-tracking/">server-side or Enhanced Conversions</a>? If so, you're likely missing 20-40% of actual conversions</li>
+          <li>Are there duplicate conversion actions inflating reported conversion numbers?</li>
+        </ul>
+
+        <h2 id="structure">2. Campaign and Ad Group Structure</h2>
+        <p>Poor structure is the root cause of most performance problems. Campaigns with too many themes lumped together prevent the algorithm from learning what works for specific intents.</p>
+        <ul>
+          <li>Are campaigns organized by intent or theme, or are they a catch-all mix of keywords?</li>
+          <li>Do ad groups contain closely related keyword variants, or are they overloaded with 50+ unrelated terms?</li>
+          <li>Is there a clear separation between branded and non-branded campaigns?</li>
+          <li>Are high-value segments (for legal: catastrophic injury; for contractors: commercial jobs) in their own isolated campaigns with dedicated budgets?</li>
+        </ul>
+
+        <h2 id="keywords">3. Keyword Strategy</h2>
+        <ul>
+          <li>What match types are in use? Broad match without Smart Bidding maturity and without a strong negative keyword list is a budget drain</li>
+          <li>Are there keywords with Quality Score below 5? These need ad copy or landing page fixes</li>
+          <li>Are any keywords cannibalizing each other (same query triggering multiple ads from different ad groups)?</li>
+          <li>Is the keyword list focused on buyer-intent queries, or polluted with research and informational terms that rarely convert?</li>
+        </ul>
+
+        <h2 id="negatives">4. Negative Keyword Coverage</h2>
+        <p>In most accounts I audit, this is where I find the most obvious wasted spend. Check the Search Terms report filtered to "Added / Excluded: None" and sort by cost. Every high-spend, zero-conversion query that doesn't match your ideal client should be a negative keyword.</p>
+        <div class="tip-box">
+          <div class="tip-label">Quick Win</div>
+          <p>For law firms: add "free," "pro bono," "how to file," "without a lawyer," "law school," "salary," "jobs" as negatives before the first week is out. For contractors: add "DIY," "how to," "jobs," "training," "license requirements" immediately. These categories reliably generate click spend with zero conversion value.</p>
+        </div>
+
+        <h2 id="bids">5. Bid Strategy Alignment</h2>
+        <ul>
+          <li>Is the bid strategy appropriate for the campaign's conversion volume? Smart Bidding needs 30+ conversions per month to function well - below that, manual or enhanced CPC may outperform tCPA</li>
+          <li>Is tCPA set at a level that reflects actual economics, or was it set arbitrarily and never revisited?</li>
+          <li>For high-ticket services: is <a href="../value-based-bidding-law-firms/">value-based bidding</a> in use? If leads vary significantly in value, tCPA is the wrong model</li>
+        </ul>
+
+        <h2 id="ads">6. Ad Copy and Extensions</h2>
+        <ul>
+          <li>Do all ad groups have at least one Responsive Search Ad with 8+ headlines and 4+ descriptions?</li>
+          <li>Are pinned headlines being used appropriately, or is everything pinned and preventing Google from testing combinations?</li>
+          <li>Are all relevant extensions enabled: sitelinks, callouts, structured snippets, call extensions, location extensions?</li>
+          <li>Does the ad copy include the target keyword, a specific benefit, and a clear call to action?</li>
+        </ul>
+
+        <h2 id="landing">7. Landing Page Alignment</h2>
+        <p>Check where each ad group's traffic is going. If multiple ad groups with distinct intents are sending to the same homepage, this is an immediate priority fix. See <a href="../landing-page-lead-quality/">The Landing Page Mistake Killing Your Lead Quality</a> for the full breakdown.</p>
+        <ul>
+          <li>Does the landing page headline match the primary keyword intent of the ad group?</li>
+          <li>Is there a clear, single CTA above the fold on mobile?</li>
+          <li>Is the page load speed acceptable? Check Core Web Vitals in Google Search Console</li>
+        </ul>
+
+        <h2 id="budget">8. Budget Allocation</h2>
+        <ul>
+          <li>Are high-performing campaigns hitting daily budget limits regularly? These need more budget or competitor campaigns need to be paused</li>
+          <li>Are low-performing campaigns consuming budget that should be redistributed?</li>
+          <li>Is budget split aligned with conversion volume contribution? If Campaign A generates 80% of conversions on 30% of budget, the split needs rebalancing</li>
+        </ul>
+
+        <h2 id="audiences">9. Audience Setup</h2>
+        <ul>
+          <li>Are remarketing audiences created and populated? At minimum: all website visitors, landing page visitors, form starters who didn't complete, thank-you page visitors</li>
+          <li>Are existing customers excluded from prospecting campaigns?</li>
+          <li>Are audience bid adjustments in place based on historical conversion rate by audience segment?</li>
+        </ul>
+
+        <h2 id="search-terms">10. Search Terms Report Review</h2>
+        <p>The Search Terms report is the most honest look at what your budget is actually buying. Filter by the last 90 days, sort by cost, and read every query that has spend. Ask for each one: would I pay $X for this visitor? If the answer is no, add it as a negative. If the answer is yes and it's not already a keyword, add it. This 20-minute exercise regularly uncovers hundreds or thousands of dollars in monthly waste in accounts that have never been audited.</p>
+
+        <div class="cta-inline">
+          <div class="cta-inline-text">
+            <h3>Want me to run this audit on your account?</h3>
+            <p>30-minute free audit covering all 10 points - written report included, no pitch.</p>
+          </div>
+          <a href="../../index.html#audit">Get a Free Audit</a>
+        </div>
+
+        <div class="divider"></div>
+        <p style="font-size:0.82rem;color:var(--g400)">Written by Andreus Jedd Sarte. Additional reference: <a href="https://support.google.com/google-ads/" target="_blank" rel="noopener noreferrer">Google Ads Help Center</a> for platform-specific documentation on each area covered.</p>
+    </div>
+      <div class="sidebar">
+        <div class="toc"><h4>In this post</h4><ol><li><a href="#tracking">1. Conversion tracking quality</a></li><li><a href="#structure">2. Campaign and ad group structure</a></li><li><a href="#keywords">3. Keyword strategy</a></li><li><a href="#negatives">4. Negative keyword coverage</a></li><li><a href="#bids">5. Bid strategy alignment</a></li><li><a href="#ads">6. Ad copy and extensions</a></li><li><a href="#landing">7. Landing page alignment</a></li><li><a href="#budget">8. Budget allocation</a></li><li><a href="#audiences">9. Audience setup</a></li><li><a href="#search-terms">10. Search terms report</a></li></ol></div>
+        <div class="sidebar-cta"><p>Want a free review of your paid media setup?</p><a href="../../index.html#audit" class="sc-btn">Get a Free Audit →</a></div>
+        <div class="sidebar-card"><h4>Related posts</h4><div class="related-list"><a href="../law-firm-google-ads-mistakes/" class="related-link"><span class="related-tag">Google Ads</span><span class="related-title">Why Law Firm Google Ads Fail</span></a><a href="../offline-conversion-tracking/" class="related-link"><span class="related-tag">Tracking</span><span class="related-title">Offline Conversion Tracking</span></a><a href="../landing-page-lead-quality/" class="related-link"><span class="related-tag">Landing Pages</span><span class="related-title">Landing Page Lead Quality Fix</span></a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="more-posts">
+  <div class="container-wide"><h2>More from the blog</h2><div class="posts-grid"><a href="../law-firm-google-ads-mistakes/" class="post-card"><span class="post-tag">Google Ads</span><h4>Why Law Firm Google Ads Fail Before They Launch</h4><p>The 5 structural mistakes found before the audit even starts.</p><span class="post-arrow">Read →</span></a><a href="../offline-conversion-tracking/" class="post-card"><span class="post-tag">Tracking</span><h4>How to Use Offline Conversion Tracking</h4><p>Fix the conversion data quality problem the audit usually uncovers.</p><span class="post-arrow">Read →</span></a><a href="../value-based-bidding-law-firms/" class="post-card"><span class="post-tag">Bidding</span><h4>Value-Based Bidding for Law Firms</h4><p>The bid strategy upgrade after structural fixes are in place.</p><span class="post-arrow">Read →</span></a></div></div>
+</section>
+<footer>
+  <div class="container-wide">
+    <div class="footer-inner">
+      <a href="../../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../../index.html">Home</a><a href="../../services/">Services</a>
+        <a href="../../case-studies/">Work</a><a href="../">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("nav").style.padding=window.scrollY>60?"10px 32px":"16px 32px"});</script>
+</body>
+</html>

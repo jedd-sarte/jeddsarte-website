@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services  -  Jedd Sarte | Senior Paid Media Specialist</title>
+<meta name="description" content="Paid media management, account audits, server-side tracking infrastructure, landing pages, and funnel strategy for U.S. law firms, contractors, and e-commerce brands."/>
+<link rel="canonical" href="https://jeddsarte.com/services/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#010829;
+  --navy-mid:#030d40;
+  --navy-light:#07154f;
+  --gold:#f49f1c;
+  --gold-light:#f7b84a;
+  --gold-dim:rgba(244,159,28,0.12);
+  --gold-border:rgba(244,159,28,0.25);
+  --white:#ffffff;
+  --offwhite:#f8f9ff;
+  --cream:#f0f3ff;
+  --g100:#f0f0f5;
+  --g200:#e0e0ec;
+  --g400:#aaaabc;
+  --g600:#666680;
+  --g800:#333350;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.06;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;line-height:1.2}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;line-height:1.3}
+h4{font-family:'Space Grotesk',sans-serif;font-size:0.88rem;font-weight:700}
+p{font-size:1rem;line-height:1.72;color:var(--g600)}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+
+/* HERO */
+#hero{background:var(--navy);padding:140px 0 100px;position:relative;overflow:hidden;min-height:72vh;display:flex;align-items:center}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.07) 1px,transparent 1px);background-size:30px 30px}
+.hero-glow{position:absolute;top:-150px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(244,159,28,0.09) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.72rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:20px}
+.hero-title{color:var(--white);margin-bottom:18px}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:1.05rem;line-height:1.75;margin-bottom:32px;max-width:500px}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 26px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.92rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(244,159,28,0.25)}
+.btn-outline-white{background:transparent;color:rgba(255,255,255,0.8);padding:14px 26px;border-radius:8px;border:1px solid rgba(255,255,255,0.18);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.92rem;text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-outline-white:hover{border-color:var(--gold);color:var(--gold)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* HERO VISUAL  -  data pipeline SVG illustration */
+.hero-visual{position:relative}
+.hero-img-wrap{border-radius:16px;overflow:hidden;position:relative;background:var(--navy-mid);border:1px solid rgba(255,255,255,0.07)}
+.hero-img-wrap img{width:100%;height:320px;object-fit:cover;opacity:0.55;display:block;filter:saturate(0.6) brightness(0.8)}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(3,14,79,0.9) 100%)}
+.hero-img-stat{position:absolute;bottom:20px;left:20px;right:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.his{background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;text-align:center}
+.his-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--white);line-height:1}
+.his-num span{color:var(--gold);font-size:1rem;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.his-lbl{font-size:0.68rem;color:rgba(255,255,255,0.4);font-family:'Space Grotesk',sans-serif;margin-top:3px}
+
+/* PROCESS STRIP */
+#process{background:var(--navy-mid);padding:48px 0;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.process-steps{display:flex;align-items:center;gap:0;justify-content:center;flex-wrap:wrap}
+.ps{display:flex;align-items:center;gap:16px;padding:0 24px}
+.ps-num{width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:0.8rem;color:var(--gold);flex-shrink:0}
+.ps-text{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;color:rgba(255,255,255,0.65)}
+.ps-arrow{color:rgba(244,159,28,0.3);font-size:1.2rem;padding:0 4px}
+
+/* SERVICES SECTION */
+#services{padding:96px 0;background:var(--white)}
+.services-intro{text-align:center;max-width:600px;margin:0 auto 64px}
+.services-intro h2{color:var(--navy);margin-bottom:12px}
+.services-intro p{font-size:1.05rem}
+
+/* Individual service cards  -  full detail */
+.svc-block{margin-bottom:80px}
+.svc-block:last-child{margin-bottom:0}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;border:1px solid var(--g200)}
+.svc-grid.reverse .svc-content{order:2}
+.svc-grid.reverse .svc-visual{order:1}
+.svc-content{padding:48px;background:var(--white)}
+.svc-visual{position:relative;overflow:hidden;min-height:380px;background:var(--navy)}
+.svc-visual img{width:100%;height:100%;object-fit:cover;opacity:0.4;display:block;filter:saturate(0.5) brightness(0.7)}
+.svc-visual-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
+.svc-visual-icon{font-size:3rem;margin-bottom:16px}
+.svc-visual-label{font-family:'DM Serif Display',serif;font-size:2.8rem;color:rgba(255,255,255,0.07);line-height:1;position:absolute;bottom:-8px;right:16px}
+
+/* SVG illustration fills */
+.svc-svg-fill{width:100%;height:100%;position:absolute;inset:0}
+
+.svc-tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.svc-tag{background:var(--gold-dim);color:var(--gold);font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:5px 10px;border-radius:4px;letter-spacing:0.05em}
+.svc-content h3{color:var(--navy);font-size:1.4rem;margin-bottom:10px}
+.svc-content>p,.svc-content .svc-desc{color:var(--g600);margin-bottom:28px;font-size:0.95rem;line-height:1.72}
+.includes-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--g400);margin-bottom:12px}
+.includes-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.includes-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--g600);line-height:1.5}
+.check{color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+.svc-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:24px;border-top:1px solid var(--g200)}
+.svc-meta-item{}
+.svc-meta-label{font-size:0.72rem;font-family:'Space Grotesk',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--g400);margin-bottom:4px}
+.svc-meta-val{font-size:0.88rem;font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--navy)}
+.svc-cta{margin-top:24px}
+.btn-navy{background:var(--navy);color:var(--white);padding:12px 22px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.88rem;text-decoration:none;display:inline-block;transition:all 0.2s;border:none;cursor:pointer}
+.btn-navy:hover{background:var(--navy-mid);transform:translateY(-1px)}
+
+/* ADDONS */
+#addons{background:var(--cream);padding:80px 0}
+#addons h2{color:var(--navy);text-align:center;margin-bottom:8px}
+#addons>.container>p{text-align:center;max-width:520px;margin:0 auto 48px}
+.addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.addon{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:28px}
+.addon-icon{font-size:1.8rem;margin-bottom:14px;display:block}
+.addon h4{color:var(--navy);margin-bottom:8px;font-size:1rem}
+.addon p{font-size:0.875rem;color:var(--g600);line-height:1.65}
+
+/* WHO */
+#who{background:var(--navy);padding:80px 0}
+.who-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.who-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px}
+.who-card h3{color:var(--white);font-size:1rem;margin-bottom:10px}
+.who-card p{color:rgba(255,255,255,0.45);font-size:0.875rem;line-height:1.65}
+.who-card-icon{font-size:1.8rem;margin-bottom:14px;display:block}
+
+/* FAQ */
+#faq{background:var(--white);padding:80px 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.faq-item{background:var(--g100);border-radius:12px;padding:24px}
+.faq-item h4{color:var(--navy);font-size:0.95rem;margin-bottom:8px}
+.faq-item p{font-size:0.875rem;color:var(--g600);line-height:1.65}
+
+/* CTA */
+#cta{background:var(--navy);padding:80px 0;position:relative;overflow:hidden}
+.cta-lines{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(244,159,28,0.02) 40px,rgba(244,159,28,0.02) 41px)}
+.cta-inner{position:relative;z-index:1;text-align:center;max-width:640px;margin:0 auto}
+.cta-inner h2{color:var(--white);margin-bottom:14px;font-size:clamp(1.8rem,3vw,2.6rem)}
+.cta-inner p{color:rgba(255,255,255,0.5);margin-bottom:32px;font-size:1rem}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-inner,.svc-grid,.who-inner,.addons-grid,.faq-grid{grid-template-columns:1fr}
+  .svc-grid.reverse .svc-content,.svc-grid.reverse .svc-visual{order:unset}
+  .svc-visual{min-height:240px}
+  .process-steps{gap:8px}
+  .ps{padding:8px 12px}
+  .ps-arrow{display:none}
+  nav .nav-links{display:none}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="./index.html" class="active">Services</a></li>
+      <li><a href="../case-studies/">Work</a></li>
+      <li><a href="../blog/">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label">⚡ Full-Service Paid Media</div>
+        <h1 class="hero-title">Not just ads.<br><em>Systems that scale.</em></h1>
+        <p class="hero-sub">Every service I offer is built around one question: what does it take for this client to hit their actual business goal? Signed cases, booked jobs, closed retainers  -  not just clicks and impressions.</p>
+        <div class="hero-actions">
+          <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Let's Talk About Your Project →</a>
+          <a href="#services" class="btn-outline-white">See All Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Analytics dashboard showing campaign performance data" loading="eager"/>
+          <div class="hero-img-overlay"></div>
+          <div class="hero-img-stat">
+            <div class="his"><div class="his-num">5<span>+</span></div><div class="his-lbl">Years running ads</div></div>
+            <div class="his"><div class="his-num">4</div><div class="his-lbl">Platforms daily</div></div>
+            <div class="his"><div class="his-num">50<span>+</span></div><div class="his-lbl">Clients served</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<section id="process">
+  <div class="container">
+    <div class="process-steps">
+      <div class="ps"><div class="ps-num">1</div><div class="ps-text">Audit & Discovery</div></div>
+      <div class="ps-arrow">→</div>
+      <div class="ps"><div class="ps-num">2</div><div class="ps-text">Strategy & Roadmap</div></div>
+      <div class="ps-arrow">→</div>
+      <div class="ps"><div class="ps-num">3</div><div class="ps-text">Build & Launch</div></div>
+      <div class="ps-arrow">→</div>
+      <div class="ps"><div class="ps-num">4</div><div class="ps-text">Optimize & Scale</div></div>
+      <div class="ps-arrow">→</div>
+      <div class="ps"><div class="ps-num">5</div><div class="ps-text">Report & Refine</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES DETAIL -->
+<section id="services">
+  <div class="container">
+    <div class="services-intro fade-up">
+      <span class="eyebrow">What I offer</span>
+      <h2>Six services. One goal: revenue.</h2>
+      <p>Every engagement is scoped to your situation  -  no cookie-cutter packages, no bloated retainers for things you don't need.</p>
+    </div>
+
+    <!-- 01  -  Paid Media Management -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid">
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Ads</span><span class="svc-tag">LinkedIn Ads</span><span class="svc-tag">TikTok Ads</span></div>
+          <h3>Paid Media Management</h3>
+          <p class="svc-desc">Full-cycle campaign management across all major platforms. I handle everything from strategy and campaign architecture to creative direction, bid management, and monthly performance reporting  -  so you can focus on running your business.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Campaign strategy, structure, and architecture build</li>
+            <li><span class="check">✓</span>Keyword research, audience targeting, and competitor analysis</li>
+            <li><span class="check">✓</span>Ad copy and creative direction (static, video, responsive)</li>
+            <li><span class="check">✓</span>Bid strategy setup and ongoing optimization (tCPA, VBB, tROAS)</li>
+            <li><span class="check">✓</span>A/B testing of ad variants, landing pages, and CTAs</li>
+            <li><span class="check">✓</span>Negative keyword management and search term mining</li>
+            <li><span class="check">✓</span>Monthly performance reports with actionable insights</li>
+            <li><span class="check">✓</span>Bi-weekly check-ins and async Slack/email communication</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Law firms, contractors, e-commerce brands</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">Ongoing monthly retainer</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">Monthly retainer</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Minimum commitment</div><div class="svc-meta-val">3 months recommended</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop" alt="Marketing performance data on multiple screens" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">📊</div>
+          </div>
+          <div class="svc-visual-label">01</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02  -  Account Audit -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid reverse">
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80&auto=format&fit=crop" alt="Data charts and audit documents on a desk" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">🔍</div>
+          </div>
+          <div class="svc-visual-label">02</div>
+        </div>
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">Any Platform</span><span class="svc-tag">Quick Win Focus</span><span class="svc-tag">Actionable Report</span></div>
+          <h3>Account Audit & Sprint Plan</h3>
+          <p class="svc-desc">A systematic, no-fluff deep-dive into your existing Google Ads or Meta Ads account. You'll leave with a clear picture of what's draining your budget, what's working, and a prioritized list of exactly what to fix first  -  whether you hire me to fix it or not.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Full campaign structure and account architecture review</li>
+            <li><span class="check">✓</span>Budget allocation and wasted spend analysis</li>
+            <li><span class="check">✓</span>Keyword targeting, match types, and search term report</li>
+            <li><span class="check">✓</span>Negative keyword gap identification</li>
+            <li><span class="check">✓</span>Tracking and conversion setup audit (GTM, pixels, goals)</li>
+            <li><span class="check">✓</span>Landing page and funnel alignment assessment</li>
+            <li><span class="check">✓</span>Competitor positioning snapshot</li>
+            <li><span class="check">✓</span>Prioritized action plan (14-point sprint framework)</li>
+            <li><span class="check">✓</span>60-min walkthrough call to review findings</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Accounts spending $1K–$30K/mo</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">5–7 business days</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">One-time project</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Deliverable</div><div class="svc-meta-val">Written report + walkthrough call</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03  -  Tracking Infrastructure -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid">
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">GTM Server-Side</span><span class="svc-tag">Meta CAPI</span><span class="svc-tag">GA4</span><span class="svc-tag">Offline Conversions</span></div>
+          <h3>Tracking & Data Infrastructure</h3>
+          <p class="svc-desc">Most agencies skip this entirely  -  and it's why their campaigns plateau. I build the data pipeline that tells your ad platforms which leads actually turned into money, so the algorithm can optimize for business outcomes instead of cheap clicks.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Google Tag Manager (GTM) full audit and rebuild</li>
+            <li><span class="check">✓</span>Server-side GTM container setup (AWS/GCP hosted)</li>
+            <li><span class="check">✓</span>Google Ads Offline Conversion Tracking (webhook postback)</li>
+            <li><span class="check">✓</span>Meta Conversions API (CAPI) server-to-server setup</li>
+            <li><span class="check">✓</span>GA4 property configuration and event tracking</li>
+            <li><span class="check">✓</span>CRM integration and lead-to-conversion sync</li>
+            <li><span class="check">✓</span>Enhanced Conversions for Leads (SHA-256 hashing)</li>
+            <li><span class="check">✓</span>Click-to-call, form submission, and micro-conversion tracking</li>
+            <li><span class="check">✓</span>HIPAA/privacy-compliant data layer configuration</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Law firms, high-ticket service businesses</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">1–2 weeks setup</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">One-time setup + optional monthly maintenance</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Deliverable</div><div class="svc-meta-val">Full data pipeline + QA documentation</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80&auto=format&fit=crop" alt="Server infrastructure and data networking equipment" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">⚙️</div>
+          </div>
+          <div class="svc-visual-label">03</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04  -  Landing Pages -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid reverse">
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80&auto=format&fit=crop" alt="Clean modern web design on a laptop screen" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">🏗️</div>
+          </div>
+          <div class="svc-visual-label">04</div>
+        </div>
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">WordPress</span><span class="svc-tag">Elementor</span><span class="svc-tag">Custom HTML/CSS</span><span class="svc-tag">Conversion-Focused</span></div>
+          <h3>Landing Pages & Conversion Funnels</h3>
+          <p class="svc-desc">Sending paid traffic to your homepage is one of the most expensive mistakes in digital marketing. I design and build campaign-specific landing pages engineered around one goal: turning ad clicks into leads, calls, or booked appointments.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Custom landing page design and build (WordPress/Elementor or HTML)</li>
+            <li><span class="check">✓</span>Message-match optimization (ad → landing page continuity)</li>
+            <li><span class="check">✓</span>Mobile-first responsive design</li>
+            <li><span class="check">✓</span>Lead form design with custom confirmation flows</li>
+            <li><span class="check">✓</span>Scroll-depth, click, and form interaction tracking via GTM</li>
+            <li><span class="check">✓</span>A/B test-ready structure (headline, CTA, form variants)</li>
+            <li><span class="check">✓</span>Page speed optimization (Core Web Vitals)</li>
+            <li><span class="check">✓</span>Spanish-language versions available</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Any business running paid traffic</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">5–10 business days per page</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">One-time project</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Deliverable</div><div class="svc-meta-val">Live page + GTM tracking + QA</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05  -  Legal Industry -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid">
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">Personal Injury</span><span class="svc-tag">Corporate Litigation</span><span class="svc-tag">Family Law</span><span class="svc-tag">Mediation</span></div>
+          <h3>Legal Industry Paid Media</h3>
+          <p class="svc-desc">Legal advertising is a completely different game. CPCs run $120–$250+ per click, competitors have million-dollar budgets, and not all leads are equal  -  a minor fender-bender and a catastrophic truck accident case are not the same lead. I know how to engineer systems that filter for case value, not just volume.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Practice-area-specific campaign architecture</li>
+            <li><span class="check">✓</span>Value-based bidding model built around case value tiers</li>
+            <li><span class="check">✓</span>Offline conversion postbacks (signed case → ad platform)</li>
+            <li><span class="check">✓</span>Geo-targeted and competitor-conquest campaigns</li>
+            <li><span class="check">✓</span>Spanish-language campaign variants</li>
+            <li><span class="check">✓</span>HIPAA-compliant tracking and data handling</li>
+            <li><span class="check">✓</span>CRM-to-ad-platform integration (intake → postback loop)</li>
+            <li><span class="check">✓</span>Intake quality feedback loop with the ad algorithm</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">PI, corporate, family law, mediation firms</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">2–3 weeks setup, ongoing management</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">Monthly retainer</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Minimum ad spend</div><div class="svc-meta-val">$3,000/mo recommended</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80&auto=format&fit=crop" alt="Legal documents and gavel on a desk, no people" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">⚖️</div>
+          </div>
+          <div class="svc-visual-label">05</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06  -  Home Services -->
+    <div class="svc-block fade-up">
+      <div class="svc-grid reverse">
+        <div class="svc-visual">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80&auto=format&fit=crop" alt="Home renovation tools and blueprints on a work surface" loading="lazy"/>
+          <div class="svc-visual-overlay">
+            <div class="svc-visual-icon">🏠</div>
+          </div>
+          <div class="svc-visual-label">06</div>
+        </div>
+        <div class="svc-content">
+          <div class="svc-tag-row"><span class="svc-tag">Local Search</span><span class="svc-tag">Google LSA</span><span class="svc-tag">Geo Targeting</span><span class="svc-tag">Lead Gen</span></div>
+          <h3>Home Services & Contractors</h3>
+          <p class="svc-desc">For HVAC companies, contractors, solar installers, and home service businesses that need booked jobs  -  not just form fills. I build local and regional campaigns around your service area, your margins, and your actual capacity to take on new work.</p>
+          <div class="includes-label">What's included</div>
+          <ul class="includes-list">
+            <li><span class="check">✓</span>Google Local Services Ads (LSA) setup and management</li>
+            <li><span class="check">✓</span>Google Maps optimization and local pack targeting</li>
+            <li><span class="check">✓</span>Service-area-based geo-targeting and radius campaigns</li>
+            <li><span class="check">✓</span>Click-to-call campaign optimization</li>
+            <li><span class="check">✓</span>Seasonal budget planning and promo campaigns</li>
+            <li><span class="check">✓</span>Lead qualification pre-filtering (job type, location, budget)</li>
+            <li><span class="check">✓</span>GMB profile management and ad integration</li>
+            <li><span class="check">✓</span>Monthly performance reporting by service line</li>
+          </ul>
+          <div class="svc-meta">
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">HVAC, solar, roofing, plumbing, general contracting</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">1–2 weeks setup, ongoing management</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">Monthly retainer</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Minimum ad spend</div><div class="svc-meta-val">$1,500/mo recommended</div></div>
+          </div>
+          <div class="svc-cta"><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-navy">Discuss this service →</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section id="addons">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block">Add-ons</span>
+    <h2>Scope extras available on any engagement</h2>
+    <p>These can be added to any retainer or project  -  useful if you need a specific piece handled without a full engagement.</p>
+    <div class="addons-grid">
+      <div class="addon fade-up">
+        <span class="addon-icon">📧</span>
+        <h4>Email Sequence Copywriting</h4>
+        <p>Lead nurture sequences for new inquiries that don't convert immediately. Written to match your brand voice and move prospects toward booking.</p>
+      </div>
+      <div class="addon fade-up">
+        <span class="addon-icon">📱</span>
+        <h4>Social Creative Direction</h4>
+        <p>Ad copy and creative briefs for your design team or UGC creators. Structured around platform-specific formats and tested direct-response formulas.</p>
+      </div>
+      <div class="addon fade-up">
+        <span class="addon-icon">📈</span>
+        <h4>Monthly Strategy Report</h4>
+        <p>A plain-English monthly report covering what worked, what didn't, what's changing next month, and what the numbers actually mean for your business.</p>
+      </div>
+      <div class="addon fade-up">
+        <span class="addon-icon">🌐</span>
+        <h4>Spanish-Language Campaigns</h4>
+        <p>Full Spanish-language ad copy, keyword research, and landing page variants for markets with significant Hispanic populations.</p>
+      </div>
+      <div class="addon fade-up">
+        <span class="addon-icon">🔗</span>
+        <h4>CRM Integration Setup</h4>
+        <p>Connect your CRM (HubSpot, Salesforce, Clio, etc.) to your ad platforms so lead quality data flows back and improves your targeting automatically.</p>
+      </div>
+      <div class="addon fade-up">
+        <span class="addon-icon">🎯</span>
+        <h4>Competitor Conquest Campaigns</h4>
+        <p>Targeted campaigns designed to intercept users actively searching for your competitors by name  -  capturing high-intent switchers before they convert elsewhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="eyebrow" style="color:var(--gold)">Who I work with</span>
+      <h2 style="color:var(--white);margin-bottom:10px">Built for businesses where<br>every lead matters.</h2>
+      <p style="color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto">I don't work with everyone. Here's who I'm the best fit for.</p>
+    </div>
+    <div class="who-inner">
+      <div class="who-card fade-up">
+        <span class="who-card-icon">⚖️</span>
+        <h3>Law Firms & Legal Practices</h3>
+        <p>Personal injury, corporate litigation, family law, mediation, and immigration firms. You need signed cases, not just leads  -  and I know how to build the system that delivers that.</p>
+      </div>
+      <div class="who-card fade-up">
+        <span class="who-card-icon">🏠</span>
+        <h3>Home Service Contractors</h3>
+        <p>HVAC, roofing, solar, plumbing, and general contractors running local or regional operations. You need booked jobs with a predictable cost per acquisition.</p>
+      </div>
+      <div class="who-card fade-up">
+        <span class="who-card-icon">🛒</span>
+        <h3>E-commerce & B2B Brands</h3>
+        <p>Product-based businesses and B2B services that need Performance Max, Shopping, or LinkedIn campaigns built around actual margin targets  -  not vanity metrics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="eyebrow">Common questions</span>
+      <h2 style="color:var(--navy)">Things people ask before we work together.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item fade-up">
+        <h4>Do you work with businesses outside the U.S.?</h4>
+        <p>My current focus is exclusively on U.S.-based clients. My vertical experience, platform knowledge, and competitive benchmarks are all built around the U.S. market.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h4>Why no prices on the services page?</h4>
+        <p>Every engagement is scoped to your actual situation  -  the number of platforms, campaigns, your ad spend, and what you need built. A flat price would either overcharge simple projects or undercut complex ones. Let's talk scope first.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h4>How long before I see results?</h4>
+        <p>Honest answer: it depends on your baseline. New accounts with strong tracking typically see meaningful data within 30–60 days. Optimized accounts running clean infrastructure see improvements in weeks. I'll give you a realistic timeline during our discovery call.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h4>Do I need a minimum ad spend?</h4>
+        <p>I include minimums on the individual service descriptions above. Generally, below $1,500/mo in ad spend, the management overhead isn't worth it for either of us. At that level, I'd point you toward self-serve resources instead.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h4>Can you work with our existing agency or in-house team?</h4>
+        <p>Yes. I've collaborated with in-house marketing teams and other agencies on specific pieces  -  audit, tracking setup, landing pages  -  without taking over the full account. Scope it during the call.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h4>What does the onboarding process look like?</h4>
+        <p>Discovery call → proposal with scope and timeline → kickoff → audit phase → strategy → build → launch → optimize. Most clients are live within 2–3 weeks of signing, depending on complexity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="cta">
+  <div class="cta-lines"></div>
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <span class="eyebrow" style="text-align:center;display:block">Ready to start?</span>
+      <h2>Let's scope your project.</h2>
+      <p>30-minute call. No deck. No pitch. Just a straight conversation about what you need and whether I'm the right fit to build it.</p>
+      <div class="cta-actions">
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Discovery Call →</a>
+        <a href="../index.html#audit" class="btn-outline-white">Get a Free Audit First</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="./index.html">Services</a>
+        <a href="../case-studies/">Work</a>
+        <a href="../blog/">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px';
+});
+</script>
+</body>
+</html>

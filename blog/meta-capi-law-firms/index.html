@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Meta Conversions API Setup Guide for Law Firms: Capture Leads Your Pixel Is Missing | Jedd Sarte</title>
+<meta name="description" content="How server-to-server event tracking with Meta Conversions API recovers the leads that browser cookie-dropping kills - and why law firms running Meta Ads need it in 2026."/>
+<link rel="canonical" href="https://jeddsarte.com/blog/meta-capi-law-firms/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010829;--navy-mid:#030d40;--navy-light:#07154f;--gold:#f49f1c;--gold-light:#f7b84a;--gold-dim:rgba(244,159,28,0.12);--gold-border:rgba(244,159,28,0.25);--white:#fff;--offwhite:#f8f9ff;--cream:#f0f3ff;--g100:#f0f0f5;--g200:#e0e0ec;--g400:#aaaabc;--g600:#666680;--g800:#333350}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.08;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2vw,1.6rem);font-weight:700;line-height:1.25;color:var(--navy)}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--navy)}
+p{font-size:0.96rem;line-height:1.78;color:var(--g600)}
+a{color:var(--gold);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.75}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+#hero{background:var(--navy);padding:130px 0 64px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:28px 28px}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(244,159,28,0.09) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.4);font-size:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none;margin-bottom:24px;transition:color 0.2s}
+.back-link:hover{color:var(--gold)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.hero-tag{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:5px 12px;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase}
+.hero-date{color:rgba(255,255,255,0.3);font-size:0.78rem;font-family:'Space Grotesk',sans-serif}
+h1.hero-title{color:var(--white);margin-bottom:14px}
+h1.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:0.98rem;line-height:1.75;max-width:680px}
+.article{padding:64px 0;background:var(--white)}
+.article-body{display:grid;grid-template-columns:1fr 240px;gap:52px;align-items:start}
+.article-content h2{margin:36px 0 12px}
+.article-content h2:first-child{margin-top:0}
+.article-content h3{margin:24px 0 8px}
+.article-content p{margin-bottom:16px}
+.article-content ul,.article-content ol{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.article-content ul li,.article-content ol li{display:flex;align-items:flex-start;gap:9px;font-size:0.9rem;color:var(--g600);line-height:1.65}
+.article-content ul li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:2px}
+.article-content ol{counter-reset:ol-counter}
+.article-content ol li{counter-increment:ol-counter}
+.article-content ol li::before{content:counter(ol-counter)".";color:var(--gold);font-weight:700;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;margin-top:2px;min-width:18px}
+.article-content a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.article-content a:hover{opacity:0.75}
+.callout{background:var(--navy);border-radius:12px;padding:22px 26px;margin:24px 0}
+.callout p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin:0;line-height:1.72}
+.callout strong{color:var(--gold)}
+.callout a{color:var(--gold-light)}
+.tip-box{background:var(--cream);border:1px solid var(--g200);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0}
+.tip-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:7px;font-family:'Space Grotesk',sans-serif}
+.tip-box p{font-size:0.88rem;color:var(--g800);margin:0;line-height:1.65}
+.divider{height:1px;background:var(--g200);margin:32px 0}
+.cta-inline{background:var(--navy);border-radius:14px;padding:28px 32px;margin:36px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-inline-text h3{color:var(--white);margin-bottom:6px;font-size:1rem}
+.cta-inline-text p{color:rgba(255,255,255,0.45);font-size:0.85rem;margin:0}
+.cta-inline a{background:var(--gold);color:var(--navy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;padding:11px 20px;border-radius:7px;text-decoration:none;white-space:nowrap;flex-shrink:0;display:inline-block}
+.cta-inline a:hover{background:var(--gold-light);opacity:1}
+.sidebar{position:sticky;top:96px}
+.sidebar-card{background:var(--navy);border-radius:14px;padding:22px;margin-bottom:18px}
+.sidebar-card h4{color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.sidebar-cta{background:var(--cream);border:1px solid var(--g200);border-radius:14px;padding:20px;text-align:center;margin-bottom:18px}
+.sidebar-cta p{font-size:0.8rem;margin-bottom:12px;color:var(--g600);line-height:1.55}
+.sidebar-cta a.sc-btn{background:var(--navy);color:var(--white);font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:10px 16px;border-radius:7px;text-decoration:none;display:block;transition:background 0.2s}
+.sidebar-cta a.sc-btn:hover{background:var(--navy-mid);opacity:1}
+.related-list{display:flex;flex-direction:column;gap:10px}
+.related-link{display:flex;flex-direction:column;gap:3px;text-decoration:none;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);transition:background 0.2s}
+.related-link:hover{background:rgba(255,255,255,0.05);opacity:1}
+.related-tag{font-size:0.65rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.07em}
+.related-title{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:600}
+.toc{background:var(--cream);border:1px solid var(--g200);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.toc h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:7px}
+.toc ol li{counter-increment:toc;display:flex;gap:8px;align-items:flex-start}
+.toc ol li::before{content:counter(toc);font-size:0.68rem;font-weight:700;color:var(--gold);font-family:'Space Grotesk',sans-serif;flex-shrink:0;margin-top:3px}
+.toc ol li a{font-size:0.8rem;color:var(--g600);text-decoration:none;line-height:1.4;transition:color 0.2s}
+.toc ol li a:hover{color:var(--gold)}
+#more-posts{background:var(--offwhite);padding:56px 0}
+#more-posts h2{color:var(--navy);margin-bottom:28px;font-size:1.4rem}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px;text-decoration:none;display:block;color:inherit;transition:all 0.2s}
+.post-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(1,8,41,0.07);opacity:1}
+.post-tag{font-size:0.66rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 8px;border-radius:4px;margin-bottom:8px;display:inline-block;text-transform:uppercase;letter-spacing:0.06em}
+.post-card h4{color:var(--navy);font-size:0.9rem;margin-bottom:5px;line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.post-card p{font-size:0.78rem;color:var(--g400);line-height:1.55}
+.post-arrow{color:var(--gold);font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;margin-top:9px;display:inline-block}
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+@media(max-width:860px){.article-body,.posts-grid{grid-template-columns:1fr}.cta-inline{flex-direction:column}.sidebar{position:static}nav .nav-links{display:none}.footer-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../case-studies/">Work</a></li>
+      <li><a href="../" class="active">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<section id="hero">
+  <div class="hero-dots"></div><div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <a href="../" class="back-link">← Back to all posts</a>
+      <div class="hero-meta"><span class="hero-tag">Meta Ads</span><span class="hero-tag">CAPI</span><span class="hero-tag">Tracking</span><span class="hero-date">April 2026 · 8 min read</span></div>
+      <h1 class="hero-title">Meta CAPI Setup Guide for <em>Law Firms</em></h1>
+      <p class="hero-sub">How server-to-server event tracking with Meta Conversions API recovers the leads that browser cookie-dropping kills - and why law firms running Meta Ads need it in 2026.</p>
+    </div>
+  </div>
+</section>
+<section class="article">
+  <div class="container">
+    <div class="article-body">
+      <div class="article-content">
+        <p>If your law firm runs Meta Ads and you're relying solely on the Meta Pixel for conversion tracking, you are missing leads. Not a small number - potentially 20-40% of actual conversions, depending on your audience's device usage and browser preferences.</p>
+        <p>The Meta Pixel is a browser-based JavaScript tag. It fires when a user's browser loads your thank-you page or triggers a form completion event. But browser-based tracking has been losing reliability for years as Apple's iOS privacy updates, Safari's ITP, and ad blockers reduce its reach. Meta's own data shows significant signal loss in browser-only setups post-iOS 14.</p>
+
+        <h2 id="pixel-problem">The Pixel Problem, Explained</h2>
+        <p>Here is what happens when a prospect clicks your Meta ad on an iPhone, lands on your landing page, fills out the intake form, and submits:</p>
+        <ul>
+          <li>If they are on Safari with ITP active, the fbclid parameter in the URL may be stripped or expire before the pixel fires</li>
+          <li>If they have an ad blocker installed, the pixel script never executes</li>
+          <li>If iOS has restricted app tracking, Meta cannot match the browser event to the user who clicked the ad</li>
+          <li>If the page loads slowly and the user submits before the pixel fires, the event is lost entirely</li>
+        </ul>
+        <p>According to <a href="https://www.facebook.com/business/help/2937705129782845" target="_blank" rel="noopener noreferrer">Meta's own guidance on signal quality</a>, low event match quality scores directly reduce your ad delivery efficiency and targeting accuracy. You are not just losing attribution data - you are weakening the algorithm's ability to find more people like your existing converters.</p>
+
+        <h2 id="what-capi">What Meta Conversions API Actually Does</h2>
+        <p>Meta Conversions API (CAPI) is a server-to-server integration. Instead of relying on the user's browser to report conversion events, your server sends them directly to Meta via an authenticated API call. Browser restrictions, ad blockers, and cookie limitations become irrelevant because the data never passes through the user's device.</p>
+        <div class="callout">
+          <p><strong>CAPI + Pixel together:</strong> The recommended implementation is redundant - run both the pixel and CAPI simultaneously. Meta's deduplication logic prevents double-counting. The pixel handles events it can see; CAPI fills in everything the pixel missed. Together they produce a significantly more complete conversion signal. This was part of the tracking stack built for the <a href="../../case-studies/b2b-corporate-law/" style="color:var(--gold-light)">B2B Corporate Defense case study</a>, where CAPI contributed to the 45% QoQ growth in qualified consultations.</p>
+        </div>
+
+        <h2 id="setup">Setup Steps</h2>
+        <ol>
+          <li>In Meta Events Manager, go to your dataset (pixel) and select the Conversions API tab</li>
+          <li>Generate a system user access token with ads_management and ads_read permissions</li>
+          <li>On your server or via GTM server-side container, implement the CAPI endpoint: POST to graph.facebook.com/v18.0/YOUR_PIXEL_ID/events</li>
+          <li>Send the following parameters with each event: event_name, event_time, user_data (hashed email, phone, name), custom_data (value, currency, content_type)</li>
+          <li>Hash all PII (email, phone, first name, last name) using SHA-256 before sending - Meta requires this and it protects your clients' privacy</li>
+          <li>Include event_id in both your pixel event and CAPI event so Meta can deduplicate correctly</li>
+          <li>Test using Meta's Test Events tool in Events Manager before going live</li>
+        </ol>
+        <p>If you are already running <a href="../server-side-gtm-vs-browser-tracking/">server-side GTM</a>, CAPI can be configured as an additional tag in your server container without requiring separate server infrastructure.</p>
+
+        <h2 id="legal-specifics">Law Firm Specifics: What Events to Send</h2>
+        <p>For a law firm, the most valuable CAPI events to implement are:</p>
+        <ul>
+          <li>Lead - fire when an intake form is submitted, include estimated case value as the event value parameter</li>
+          <li>Contact - fire on click-to-call interactions, phone number clicks, and live chat initiations</li>
+          <li>ViewContent - fire on practice area page views with sufficient scroll depth (use GTM trigger for 70%+ scroll)</li>
+          <li>Custom event: QualifiedIntake - fire via offline import when a lead becomes a confirmed qualified intake call</li>
+        </ul>
+        <p>This event hierarchy gives Meta's algorithm a training signal that goes beyond raw form submissions - rewarding the targeting that produces serious prospects, not just anyone who fills out a form. Pair this with <a href="../offline-conversion-tracking/">offline conversion tracking</a> for the most complete signal pipeline.</p>
+
+        <h2 id="verify">Verifying It's Working</h2>
+        <p>After implementation, check these three things in Meta Events Manager:</p>
+        <ul>
+          <li>Event Match Quality score should increase - aim for 7.0+ out of 10.0</li>
+          <li>In the Aggregated Event Measurement dashboard, CAPI events should appear alongside pixel events with deduplication confirmed</li>
+          <li>In your ad account, compare the "Website actions (Pixel)" metric against "Website actions (Pixel + CAPI)" - the difference is the events you were missing before</li>
+        </ul>
+
+        <div class="cta-inline">
+          <div class="cta-inline-text">
+            <h3>Running Meta Ads for your law firm?</h3>
+            <p>A free tracking audit will show your current Event Match Quality score and exactly what you're missing.</p>
+          </div>
+          <a href="../../index.html#audit">Get a Free Audit</a>
+        </div>
+
+        <div class="divider"></div>
+        <p style="font-size:0.82rem;color:var(--g400)">Written by Andreus Jedd Sarte. Official reference: <a href="https://developers.facebook.com/docs/marketing-api/conversions-api" target="_blank" rel="noopener noreferrer">Meta Conversions API developer documentation</a>.</p>
+    </div>
+      <div class="sidebar">
+        <div class="toc"><h4>In this post</h4><ol><li><a href="#pixel-problem">The pixel problem</a></li><li><a href="#what-capi">What CAPI does</a></li><li><a href="#setup">Setup steps</a></li><li><a href="#legal-specifics">Law firm specifics</a></li><li><a href="#verify">How to verify it's working</a></li></ol></div>
+        <div class="sidebar-cta"><p>Want a free review of your paid media setup?</p><a href="../../index.html#audit" class="sc-btn">Get a Free Audit →</a></div>
+        <div class="sidebar-card"><h4>Related posts</h4><div class="related-list"><a href="../server-side-gtm-vs-browser-tracking/" class="related-link"><span class="related-tag">Tracking</span><span class="related-title">Server-Side GTM vs. Browser Tracking</span></a><a href="../offline-conversion-tracking/" class="related-link"><span class="related-tag">Tracking</span><span class="related-title">Offline Conversion Tracking Guide</span></a><a href="../law-firm-google-ads-mistakes/" class="related-link"><span class="related-tag">Google Ads</span><span class="related-title">Why Law Firm Google Ads Fail</span></a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="more-posts">
+  <div class="container-wide"><h2>More from the blog</h2><div class="posts-grid"><a href="../server-side-gtm-vs-browser-tracking/" class="post-card"><span class="post-tag">Tracking</span><h4>Server-Side GTM vs. Browser-Side Tracking</h4><p>The full server-side pipeline that powers CAPI and offline conversion tracking.</p><span class="post-arrow">Read →</span></a><a href="../offline-conversion-tracking/" class="post-card"><span class="post-tag">Tracking</span><h4>How to Use Offline Conversion Tracking</h4><p>Feed real business outcomes back to your ad platforms to stop optimizing for junk.</p><span class="post-arrow">Read →</span></a><a href="../law-firm-google-ads-mistakes/" class="post-card"><span class="post-tag">Google Ads</span><h4>Why Law Firm Google Ads Fail Before They Launch</h4><p>Five structural mistakes that break legal campaigns before they even start.</p><span class="post-arrow">Read →</span></a></div></div>
+</section>
+<footer>
+  <div class="container-wide">
+    <div class="footer-inner">
+      <a href="../../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../../index.html">Home</a><a href="../../services/">Services</a>
+        <a href="../../case-studies/">Work</a><a href="../">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("nav").style.padding=window.scrollY>60?"10px 32px":"16px 32px"});</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paid Media Insights - Jedd Sarte | Google Ads, Meta Ads, Tracking Strategy</title>
+<meta name="description" content="Practical breakdowns on Google Ads, Meta Ads, conversion tracking, and paid media strategy for U.S. law firms, contractors, and B2B service businesses. Written by Senior Paid Media Specialist Jedd Sarte."/>
+<link rel="canonical" href="https://jeddsarte.com/blog/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010829;--navy-mid:#030d40;--navy-light:#07154f;--gold:#f49f1c;--gold-light:#f7b84a;--gold-dim:rgba(244,159,28,0.12);--gold-border:rgba(244,159,28,0.25);--white:#fff;--offwhite:#f8f9ff;--cream:#f0f3ff;--g100:#f0f0f5;--g200:#e0e0ec;--g400:#aaaabc;--g600:#666680;--g800:#333350}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.06;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;line-height:1.2}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700}
+p{font-size:1rem;line-height:1.72;color:var(--g600)}
+a{color:var(--gold);text-decoration:none;transition:opacity 0.2s}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+
+#hero{background:var(--navy);padding:130px 0 80px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:30px 30px}
+.hero-glow{position:absolute;top:-150px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(244,159,28,0.08) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:680px}
+.hero-title{color:var(--white);margin-bottom:16px}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:1.05rem;line-height:1.75;margin-bottom:32px}
+.hero-topics{display:flex;gap:10px;flex-wrap:wrap}
+.topic-tag{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.72rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:6px 14px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.topic-tag:hover,.topic-tag.active{background:var(--gold);color:var(--navy)}
+
+#posts{padding:80px 0;background:var(--white)}
+.posts-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.posts-count{font-size:0.82rem;color:var(--g400);font-family:'Space Grotesk',sans-serif;font-weight:600}
+
+.featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:18px;overflow:hidden;border:1px solid var(--g200);margin-bottom:40px;text-decoration:none;color:inherit;transition:all 0.25s}
+.featured-post:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(1,8,41,0.1)}
+.fp-visual{background:var(--navy);min-height:320px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
+.fp-visual-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%)}
+.fp-visual-glow{position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(244,159,28,0.15) 0%,transparent 70%)}
+.fp-num{font-family:'DM Serif Display',serif;font-size:7rem;color:rgba(255,255,255,0.04);position:absolute;bottom:-20px;right:16px;line-height:1}
+.fp-icon{font-size:2.8rem;position:relative;z-index:1;margin-bottom:12px}
+.fp-label{background:var(--gold);color:var(--navy);font-size:0.68rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:5px 12px;border-radius:4px;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;margin-bottom:0;position:relative;z-index:1}
+.fp-body{padding:36px;background:var(--white);display:flex;flex-direction:column;justify-content:center}
+.fp-meta{font-size:0.75rem;color:var(--g400);font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
+.fp-body h2{color:var(--navy);font-size:1.5rem;margin-bottom:12px;line-height:1.25}
+.fp-body p{font-size:0.9rem;color:var(--g600);line-height:1.7;margin-bottom:20px}
+.fp-read{font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold)}
+
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;overflow:hidden;text-decoration:none;display:block;color:inherit;transition:all 0.25s}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(1,8,41,0.09)}
+.pc-thumb{height:160px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-thumb-num{font-family:'DM Serif Display',serif;font-size:6rem;color:rgba(255,255,255,0.04);position:absolute;line-height:1}
+.pc-thumb-icon{font-size:2.2rem;position:relative;z-index:1}
+.pc-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase}
+.pc-body{padding:22px}
+.pc-meta{font-size:0.72rem;color:var(--g400);font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.07em}
+.pc-body h3{color:var(--navy);font-size:0.96rem;margin-bottom:8px;line-height:1.4}
+.pc-body p{font-size:0.83rem;color:var(--g600);line-height:1.6}
+.pc-read{font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);margin-top:12px;display:inline-block}
+
+#newsletter{background:var(--navy);padding:72px 0;position:relative;overflow:hidden}
+.nl-lines{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(244,159,28,0.02) 40px,rgba(244,159,28,0.02) 41px)}
+.nl-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center}
+.nl-left h2{color:var(--white);margin-bottom:10px}
+.nl-left p{color:rgba(255,255,255,0.45);font-size:0.95rem;line-height:1.7}
+.nl-form{background:var(--white);border-radius:14px;padding:28px}
+.nl-form-title{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:4px}
+.nl-form-sub{font-size:0.8rem;color:var(--g400);margin-bottom:18px}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:0.76rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--g800);margin-bottom:4px}
+.fg input{width:100%;padding:10px 12px;border:1.5px solid var(--g200);border-radius:7px;font-family:'Inter',sans-serif;font-size:0.875rem;color:var(--g800);outline:none;transition:border-color 0.2s}
+.fg input:focus{border-color:var(--gold)}
+.nl-btn{width:100%;background:var(--navy);color:var(--white);border:none;padding:12px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;margin-top:4px;transition:background 0.2s}
+.nl-btn:hover{background:var(--navy-mid)}
+.nl-note{font-size:0.72rem;color:var(--g400);text-align:center;margin-top:8px}
+
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .featured-post{grid-template-columns:1fr}
+  .fp-visual{min-height:200px}
+  .posts-grid{grid-template-columns:1fr 1fr}
+  .nl-inner{grid-template-columns:1fr}
+  nav .nav-links{display:none}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../case-studies/">Work</a></li>
+      <li><a href="./index.html" class="active">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow">Paid media insights</span>
+      <h1 class="hero-title">Straight talk on ads, tracking, and <em>what actually works.</em></h1>
+      <p class="hero-sub">Practical breakdowns on Google Ads, Meta Ads, conversion tracking infrastructure, and campaign strategy - written from the trenches of managing U.S. law firm and contractor campaigns every day.</p>
+      <div class="hero-topics">
+        <span class="topic-tag active">All</span>
+        <span class="topic-tag">Google Ads</span>
+        <span class="topic-tag">Meta Ads</span>
+        <span class="topic-tag">Tracking</span>
+        <span class="topic-tag">Legal</span>
+        <span class="topic-tag">Home Services</span>
+        <span class="topic-tag">B2B</span>
+        <span class="topic-tag">Attribution</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="container">
+    <div class="posts-header">
+      <h2 style="color:var(--navy);font-size:1.3rem">10 posts</h2>
+      <span class="posts-count">Most recent first</span>
+    </div>
+
+    <!-- FEATURED POST -->
+    <a href="./law-firm-google-ads-mistakes/" class="featured-post fade-up">
+      <div class="fp-visual">
+        <div class="fp-visual-bg"></div>
+        <div class="fp-visual-glow"></div>
+        <div class="fp-num">01</div>
+        <div class="fp-icon">⚖️</div>
+        <span class="fp-label">Most popular</span>
+      </div>
+      <div class="fp-body">
+        <div class="fp-meta">Google Ads · Legal · June 2026 · 8 min read</div>
+        <h2>Why Law Firm Google Ads Fail Before They Even Launch</h2>
+        <p>The 5 structural mistakes I find in 90% of legal ad account audits - and the exact fixes for each one. If your campaigns are bleeding budget without producing signed cases, start here.</p>
+        <span class="fp-read">Read full post →</span>
+      </div>
+    </a>
+
+    <!-- POSTS GRID -->
+    <div class="posts-grid">
+
+      <a href="./server-side-gtm-vs-browser-tracking/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">02</div>
+          <div class="pc-thumb-icon">⚙️</div>
+          <span class="pc-tag">Tracking</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">May 2026 · 9 min read</div>
+          <h3>Server-Side GTM vs. Browser-Side Tracking in 2026</h3>
+          <p>Why browser tracking is dying and how server-side first-party pipelines protect your conversion signal.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./value-based-bidding-law-firms/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">03</div>
+          <div class="pc-thumb-icon">📈</div>
+          <span class="pc-tag">Bidding Strategy</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">May 2026 · 10 min read</div>
+          <h3>Value-Based Bidding for Law Firms</h3>
+          <p>How to teach Google the difference between a $500 and $25,000 case - with the actual math and implementation steps.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./meta-capi-law-firms/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">04</div>
+          <div class="pc-thumb-icon">🎯</div>
+          <span class="pc-tag">Meta Ads</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">April 2026 · 8 min read</div>
+          <h3>Meta CAPI Setup Guide for Law Firms</h3>
+          <p>How server-to-server event tracking recovers the leads that browser cookie-dropping kills.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./landing-page-lead-quality/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">05</div>
+          <div class="pc-thumb-icon">🏗️</div>
+          <span class="pc-tag">Landing Pages</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">April 2026 · 7 min read</div>
+          <h3>The Landing Page Mistake Killing Your Lead Quality</h3>
+          <p>Sending paid traffic to your homepage is one of the most expensive mistakes in digital marketing.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./lsa-vs-search-ads-contractors/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">06</div>
+          <div class="pc-thumb-icon">🏠</div>
+          <span class="pc-tag">Home Services</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">March 2026 · 7 min read</div>
+          <h3>Google LSA vs. Search Ads for Contractors</h3>
+          <p>A practical breakdown of how LSA and Search Ads work together - and when to prioritize one over the other.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./offline-conversion-tracking/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">07</div>
+          <div class="pc-thumb-icon">🔗</div>
+          <span class="pc-tag">Tracking</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">March 2026 · 8 min read</div>
+          <h3>How to Use Offline Conversion Tracking</h3>
+          <p>The webhook postback setup that tells Google which leads actually turned into money.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./google-ads-audit-checklist/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">08</div>
+          <div class="pc-thumb-icon">📋</div>
+          <span class="pc-tag">Audit</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">February 2026 · 9 min read</div>
+          <h3>The 10-Point Google Ads Audit Checklist</h3>
+          <p>The exact framework I run on every new account - find wasted spend in under 60 minutes.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./google-ads-high-ticket-b2b/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">09</div>
+          <div class="pc-thumb-icon">🏢</div>
+          <span class="pc-tag">B2B</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">February 2026 · 8 min read</div>
+          <h3>Google Ads for High-Ticket B2B Services</h3>
+          <p>Keyword strategy, bid thresholds, and audience exclusions for enterprise-focused campaigns.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+      <a href="./multi-touch-attribution-model/" class="post-card fade-up">
+        <div class="pc-thumb">
+          <div class="pc-thumb-num">10</div>
+          <div class="pc-thumb-icon">🔄</div>
+          <span class="pc-tag">Attribution</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-meta">January 2026 · 9 min read</div>
+          <h3>Last-Click Attribution Is Lying to You</h3>
+          <p>The 40/20/40 position-based model that recovered 28% more profitable keyword data.</p>
+          <span class="pc-read">Read →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER / LEAD MAGNET -->
+<section id="newsletter">
+  <div class="nl-lines"></div>
+  <div class="container">
+    <div class="nl-inner">
+      <div class="nl-left fade-up">
+        <span class="eyebrow" style="color:var(--gold)">Free audit</span>
+        <h2 style="color:var(--white);margin-bottom:10px">Running Google or Meta Ads? Get a free account audit.</h2>
+        <p>30 minutes. I'll review your account and give you a prioritized list of what's costing you money and what to fix first. No pitch - just findings.</p>
+      </div>
+      <div class="nl-form fade-up">
+        <div class="nl-form-title">Claim Your Free Audit</div>
+        <div class="nl-form-sub">Takes 2 minutes. I'll reach back within 24 hours.</div>
+        <div class="fg"><label>Your name</label><input type="text" placeholder="John Smith"/></div>
+        <div class="fg"><label>Business email</label><input type="email" placeholder="john@yourfirm.com"/></div>
+        <button class="nl-btn">Book My Free Audit →</button>
+        <p class="nl-note">🔒 No spam. Your info stays private.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../services/">Services</a>
+        <a href="../case-studies/">Work</a>
+        <a href="./index.html">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px'});
+document.querySelectorAll('.topic-tag').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.topic-tag').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

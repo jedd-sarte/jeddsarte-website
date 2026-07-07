@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Study: Complex Litigation Firm - 28% Attribution Recovery via Multi-Touch Model | Jedd Sarte</title>
+<meta name="description" content="How replacing last-click attribution with a 40/20/40 position-based model and SHA-256 Enhanced Conversions recovered 28% more profitable keyword data for a high-tier trial litigation practice."/>
+<link rel="canonical" href="https://jeddsarte.com/case-studies/complex-litigation/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010829;--navy-mid:#030d40;--navy-light:#07154f;--gold:#f49f1c;--gold-light:#f7b84a;--gold-dim:rgba(244,159,28,0.12);--gold-border:rgba(244,159,28,0.25);--white:#fff;--offwhite:#f8f9ff;--cream:#f0f3ff;--g100:#f0f0f5;--g200:#e0e0ec;--g400:#aaaabc;--g600:#666680;--g800:#333350}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;line-height:1.25}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700}
+p{font-size:0.95rem;line-height:1.75;color:var(--g600)}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+#hero{background:var(--navy);padding:130px 0 64px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:28px 28px}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(244,159,28,0.09) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.4);font-size:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none;margin-bottom:24px;transition:color 0.2s}
+.back-link:hover{color:var(--gold)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.hero-tag{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:5px 12px;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase}
+h1.hero-title{color:var(--white);margin-bottom:14px}
+h1.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:0.98rem;line-height:1.75;max-width:680px;margin-bottom:0}
+.result-strip{display:flex;gap:0;flex-wrap:wrap;margin-top:36px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden}
+.rs{flex:1;min-width:130px;padding:18px 22px;border-right:1px solid rgba(255,255,255,0.08)}
+.rs:last-child{border-right:none}
+.rs-num{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--white);line-height:1}
+.rs-num span{color:var(--gold);font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700}
+.rs-lbl{font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:'Space Grotesk',sans-serif;margin-top:3px}
+.article{padding:64px 0;background:var(--white)}
+.article-body{display:grid;grid-template-columns:1fr 240px;gap:52px;align-items:start}
+.article-content h2{color:var(--navy);margin:36px 0 12px}
+.article-content h2:first-child{margin-top:0}
+.article-content p{margin-bottom:16px}
+.article-content ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.article-content ul li{display:flex;align-items:flex-start;gap:9px;font-size:0.9rem;color:var(--g600);line-height:1.65}
+.article-content ul li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:2px}
+.callout{background:var(--navy);border-radius:12px;padding:22px 26px;margin:24px 0}
+.callout p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin:0;line-height:1.7}
+.callout strong{color:var(--gold)}
+.math-block{background:var(--cream);border:1px solid var(--g200);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0}
+.math-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--g400);margin-bottom:7px;font-family:'Space Grotesk',sans-serif}
+.math-formula{font-size:0.88rem;font-weight:600;color:var(--navy);line-height:1.6;font-family:'Space Grotesk',sans-serif}
+.divider{height:1px;background:var(--g200);margin:32px 0}
+.sidebar{position:sticky;top:96px}
+.sidebar-card{background:var(--navy);border-radius:14px;padding:22px;margin-bottom:18px}
+.sidebar-card h4{color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.88rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.sb-metric{margin-bottom:13px;padding-bottom:13px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.sb-metric:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.sb-num{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--white);line-height:1}
+.sb-num span{color:var(--gold);font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.sb-lbl{font-size:0.7rem;color:rgba(255,255,255,0.4);font-family:'Space Grotesk',sans-serif;margin-top:2px}
+.sidebar-cta{background:var(--cream);border:1px solid var(--g200);border-radius:14px;padding:20px;text-align:center}
+.sidebar-cta p{font-size:0.8rem;margin-bottom:12px;color:var(--g600);line-height:1.55}
+.sidebar-cta a{background:var(--navy);color:var(--white);font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:10px 16px;border-radius:7px;text-decoration:none;display:block;transition:background 0.2s}
+.sidebar-cta a:hover{background:var(--navy-mid)}
+.tag-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.st{font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 8px;border-radius:4px}
+#next-cases{background:var(--offwhite);padding:56px 0}
+#next-cases h2{color:var(--navy);margin-bottom:28px;font-size:1.4rem}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.next-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px;text-decoration:none;display:block;color:inherit;transition:all 0.2s}
+.next-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(1,8,41,0.07)}
+.next-tag{font-size:0.66rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 8px;border-radius:4px;margin-bottom:8px;display:inline-block;text-transform:uppercase;letter-spacing:0.06em}
+.next-card h4{color:var(--navy);font-size:0.9rem;margin-bottom:5px;line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.next-card p{font-size:0.78rem;color:var(--g400);line-height:1.55}
+.next-arrow{color:var(--gold);font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;margin-top:9px;display:inline-block}
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+@media(max-width:860px){.article-body,.next-grid{grid-template-columns:1fr}.result-strip{flex-direction:column}.rs{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}.sidebar{position:static}nav .nav-links{display:none}.footer-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../" class="active">Work</a></li>
+      <li><a href="../../blog/">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <a href="../" class="back-link">← Back to all case studies</a>
+      <div class="hero-meta">
+        <span class="hero-tag">Trial Litigation</span>
+        <span class="hero-tag">Google Ads</span>
+        <span class="hero-tag">Enhanced Conversions</span>
+        <span class="hero-tag">Multi-Touch Attribution</span>
+      </div>
+      <h1 class="hero-title">High-Tier Litigation Practice - <em>28% Attribution</em> Recovery</h1>
+      <p class="hero-sub">How replacing last-click attribution with a custom 40/20/40 position-based weighting model and SHA-256 Enhanced Conversions recovered 28% more profitable keyword signal - and increased average intake call duration by 62% - for a complex civil litigation practice with 7 to 12 touchpoint consideration cycles.</p>
+      <div class="result-strip">
+        <div class="rs"><div class="rs-num">28<span>%</span></div><div class="rs-lbl">Attribution data recovered</div></div>
+        <div class="rs"><div class="rs-num">62<span>%</span></div><div class="rs-lbl">Avg intake call duration increase</div></div>
+        <div class="rs"><div class="rs-num">40/20/40</div><div class="rs-lbl">Position-based weight model</div></div>
+        <div class="rs"><div class="rs-num">7-12</div><div class="rs-lbl">Avg touchpoints before conversion</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article">
+  <div class="container">
+    <div class="article-body">
+      <div class="article-content">
+
+        <h2>The Challenge</h2>
+        <p>Complex civil litigation is not an impulse purchase. A business owner or high-net-worth individual facing a serious civil case does not click one Google ad and call immediately. They research extensively, visit multiple attorney websites, read reviews, come back days later, and make a decision over a consideration cycle that can stretch weeks.</p>
+        <p>The measurement problem this creates is severe. Standard last-click attribution - the default in most Google Ads accounts - gives 100% of the conversion credit to the final keyword a prospect clicked before submitting a contact form. Every prior touchpoint across that 7 to 12 step journey gets zero credit. The keywords and ads that built awareness, established authority, and drove early research - invisible.</p>
+        <ul>
+          <li>Last-click attribution hiding the true value of early-funnel and mid-funnel keywords</li>
+          <li>Budget being cut from awareness and consideration keywords that were actually driving pipeline</li>
+          <li>Cross-device journeys breaking attribution entirely - desktop research, mobile form submission</li>
+          <li>Offline call conversions not being matched back to original ad clicks</li>
+          <li>Smart Bidding algorithm optimizing on incomplete and misleading conversion data</li>
+        </ul>
+
+        <h2>Rebuilding the Attribution Model</h2>
+        <p>The first move was eliminating last-click attribution entirely and replacing it with a custom position-based weighting model. Position-based attribution distributes credit across the full touchpoint journey rather than awarding it all to the final click.</p>
+
+        <div class="math-block">
+          <div class="math-label">40/20/40 Position-Based Attribution Model</div>
+          <div class="math-formula">
+            First touchpoint: 40% of conversion credit (awareness entry point)<br/>
+            Middle touchpoints: 20% distributed evenly across consideration journey<br/>
+            Final touchpoint: 40% of conversion credit (decision trigger)<br/>
+            <br/>
+            Rationale: For high-consideration legal services, both the entry keyword that initiated research AND the decision keyword that closed the inquiry deserve significant weight. The mid-funnel consideration keywords share the remaining 20%.
+          </div>
+        </div>
+
+        <p>This model immediately changed which keywords the account was optimizing for. Broad informational queries like "what to do if sued by a business" and "commercial litigation process" - previously showing zero conversion value under last-click - began receiving partial attribution credit as first-touch entry points. Budget that had been cut from these terms was restored, and the algorithm began bidding for the full funnel rather than just the bottom of it.</p>
+
+        <h2>Enhanced Conversions and Cross-Device Recovery</h2>
+        <p>Attribution model changes alone do not solve the cross-device problem. A prospect who starts researching on a work desktop and submits a contact form from a personal phone is treated as two completely separate users under standard cookie-based tracking. The desktop research session - potentially containing the highest-value keyword clicks - is orphaned.</p>
+
+        <div class="callout">
+          <p><strong>SHA-256 Enhanced Conversions setup:</strong> When a prospect submits the contact form, their email address is captured, hashed using SHA-256 encryption on the server side, and passed directly to Google Ads via the Enhanced Conversions API. Google matches the hashed email against logged-in Google account data to stitch cross-device journeys together - connecting the desktop research session to the mobile form submission within the same conversion path. No PII is ever transmitted in plain text.</p>
+        </div>
+
+        <p>The cross-device recovery rate from Enhanced Conversions was material. A significant portion of conversions that had been appearing as direct or unattributed traffic were revealed to be Google Ads touchpoints from earlier in the same prospect journey - just on a different device.</p>
+
+        <h2>Offline Call Matching</h2>
+        <p>For a complex litigation firm, a meaningful portion of conversions happen over the phone rather than through online forms. These calls were previously invisible to the Google Ads attribution system - meaning every prospect who called after clicking an ad was contributing zero data back to the algorithm's optimization logic.</p>
+        <ul>
+          <li>Dynamic call tracking numbers deployed per campaign to isolate call source at the keyword level</li>
+          <li>Call recordings reviewed by intake team and qualified calls marked in the CRM</li>
+          <li>Qualified call events fired as offline conversions back to Google via webhook postback within 24 hours</li>
+          <li>Call duration threshold set at 4 minutes minimum before a call counted as a qualified conversion event</li>
+          <li>Unqualified calls explicitly logged as negative signals to inform audience exclusions</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Why call duration matters as a signal:</strong> In complex litigation, a 90-second call is almost always someone asking a basic question or calling the wrong number. A 4-minute-plus call indicates the prospect shared enough detail about their situation to warrant a real intake conversation. Setting the threshold at 4 minutes meant only genuinely qualified prospect calls fed back into the Google bidding algorithm - not misdials or irrelevant inquiries. This is why average intake call duration increasing 62% was a meaningful outcome: the algorithm learned to find more of the right callers.</p>
+        </div>
+
+        <h2>Results</h2>
+        <p>The attribution rebuild took approximately 45 days to accumulate enough new conversion data to meaningfully shift the Smart Bidding algorithm's behavior. From that point, the compounding effect was significant.</p>
+        <ul>
+          <li>28% more profitable keyword data recovered from cross-device journey stitching and position-based attribution</li>
+          <li>Average intake call duration increased 62% as the algorithm optimized toward higher-intent searchers</li>
+          <li>Early and mid-funnel awareness keywords restored to budget allocation based on their true attribution value</li>
+          <li>Google Smart Bidding performance improved as conversion signal quality compounded over subsequent months</li>
+          <li>Offline call conversions now feeding the algorithm directly for the first time since the account launched</li>
+        </ul>
+
+        <div class="divider"></div>
+        <p style="font-size:0.85rem;color:var(--g400);font-style:italic">Client name withheld per confidentiality agreement. Results measured over a 90-day period following attribution model implementation.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h4>Results at a glance</h4>
+          <div class="sb-metric"><div class="sb-num">28<span>%</span></div><div class="sb-lbl">Attribution data recovered</div></div>
+          <div class="sb-metric"><div class="sb-num">62<span>%</span></div><div class="sb-lbl">Avg intake call duration increase</div></div>
+          <div class="sb-metric"><div class="sb-num">4<span>min</span></div><div class="sb-lbl">Minimum call threshold for conversion</div></div>
+          <div class="sb-metric"><div class="sb-num">7-12</div><div class="sb-lbl">Avg touchpoints mapped per conversion</div></div>
+        </div>
+        <div class="sidebar-card">
+          <h4>Tech stack</h4>
+          <div class="tag-list">
+            <span class="st">Google Ads</span><span class="st">Enhanced Conversions</span><span class="st">SHA-256 Hashing</span><span class="st">Position-Based Attribution</span><span class="st">Dynamic Call Tracking</span><span class="st">Offline Conversion Import</span><span class="st">GTM</span><span class="st">CRM Webhook</span>
+          </div>
+        </div>
+        <div class="sidebar-cta">
+          <p>Running a high-consideration service business where prospects take weeks to decide? Your attribution model is probably lying to you.</p>
+          <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a free call →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="next-cases">
+  <div class="container-wide">
+    <h2>More case studies</h2>
+    <div class="next-grid">
+      <a href="../pi-law-firm/" class="next-card">
+        <span class="next-tag">Personal Injury Law</span>
+        <h4>PI Firm - 1:7.4 CAC/LTV via Value-Based Bidding</h4>
+        <p>Server-side data pipeline and case value model shifting campaign economics for a New Orleans PI firm.</p>
+        <span class="next-arrow">Read case study →</span>
+      </a>
+      <a href="../b2b-corporate-law/" class="next-card">
+        <span class="next-tag">Corporate Law</span>
+        <h4>B2B Corporate Defense - 45% QoQ Consultation Growth</h4>
+        <p>Behavioral telemetry and audience exclusions eliminating retail legal traffic for a boutique B2B firm.</p>
+        <span class="next-arrow">Read case study →</span>
+      </a>
+      <a href="../#gate-form" class="next-card">
+        <span class="next-tag">7 more available</span>
+        <h4>Unlock the remaining 7 case studies</h4>
+        <p>Solar, niche PI, HNWI litigation, commercial trucking, product liability, and creative agency B2B.</p>
+        <span class="next-arrow">Unlock access →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container-wide">
+    <div class="footer-inner">
+      <a href="../../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../services/">Services</a>
+        <a href="../">Work</a>
+        <a href="../../blog/">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px'});
+</script>
+</body>
+</html>

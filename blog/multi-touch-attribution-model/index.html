@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Last-Click Attribution Is Lying to You: The Multi-Touch Model That Changed How I Run Campaigns | Jedd Sarte</title>
+<meta name="description" content="Why the 40/20/40 position-based attribution model recovered 28% more profitable keyword data - and how to implement a multi-touch model that reflects how your prospects actually buy."/>
+<link rel="canonical" href="https://jeddsarte.com/blog/multi-touch-attribution-model/"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010829;--navy-mid:#030d40;--navy-light:#07154f;--gold:#f49f1c;--gold-light:#f7b84a;--gold-dim:rgba(244,159,28,0.12);--gold-border:rgba(244,159,28,0.25);--white:#fff;--offwhite:#f8f9ff;--cream:#f0f3ff;--g100:#f0f0f5;--g200:#e0e0ec;--g400:#aaaabc;--g600:#666680;--g800:#333350}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.08;font-weight:400}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2vw,1.6rem);font-weight:700;line-height:1.25;color:var(--navy)}
+h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--navy)}
+p{font-size:0.96rem;line-height:1.78;color:var(--g600)}
+a{color:var(--gold);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.75}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+#hero{background:var(--navy);padding:130px 0 64px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:28px 28px}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(244,159,28,0.09) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.4);font-size:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none;margin-bottom:24px;transition:color 0.2s}
+.back-link:hover{color:var(--gold)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.hero-tag{background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:5px 12px;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase}
+.hero-date{color:rgba(255,255,255,0.3);font-size:0.78rem;font-family:'Space Grotesk',sans-serif}
+h1.hero-title{color:var(--white);margin-bottom:14px}
+h1.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{color:rgba(255,255,255,0.5);font-size:0.98rem;line-height:1.75;max-width:680px}
+.article{padding:64px 0;background:var(--white)}
+.article-body{display:grid;grid-template-columns:1fr 240px;gap:52px;align-items:start}
+.article-content h2{margin:36px 0 12px}
+.article-content h2:first-child{margin-top:0}
+.article-content h3{margin:24px 0 8px}
+.article-content p{margin-bottom:16px}
+.article-content ul,.article-content ol{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.article-content ul li,.article-content ol li{display:flex;align-items:flex-start;gap:9px;font-size:0.9rem;color:var(--g600);line-height:1.65}
+.article-content ul li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:2px}
+.article-content ol{counter-reset:ol-counter}
+.article-content ol li{counter-increment:ol-counter}
+.article-content ol li::before{content:counter(ol-counter)".";color:var(--gold);font-weight:700;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;margin-top:2px;min-width:18px}
+.article-content a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.article-content a:hover{opacity:0.75}
+.callout{background:var(--navy);border-radius:12px;padding:22px 26px;margin:24px 0}
+.callout p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin:0;line-height:1.72}
+.callout strong{color:var(--gold)}
+.callout a{color:var(--gold-light)}
+.tip-box{background:var(--cream);border:1px solid var(--g200);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0}
+.tip-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:7px;font-family:'Space Grotesk',sans-serif}
+.tip-box p{font-size:0.88rem;color:var(--g800);margin:0;line-height:1.65}
+.divider{height:1px;background:var(--g200);margin:32px 0}
+.cta-inline{background:var(--navy);border-radius:14px;padding:28px 32px;margin:36px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-inline-text h3{color:var(--white);margin-bottom:6px;font-size:1rem}
+.cta-inline-text p{color:rgba(255,255,255,0.45);font-size:0.85rem;margin:0}
+.cta-inline a{background:var(--gold);color:var(--navy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;padding:11px 20px;border-radius:7px;text-decoration:none;white-space:nowrap;flex-shrink:0;display:inline-block}
+.cta-inline a:hover{background:var(--gold-light);opacity:1}
+.sidebar{position:sticky;top:96px}
+.sidebar-card{background:var(--navy);border-radius:14px;padding:22px;margin-bottom:18px}
+.sidebar-card h4{color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.sidebar-cta{background:var(--cream);border:1px solid var(--g200);border-radius:14px;padding:20px;text-align:center;margin-bottom:18px}
+.sidebar-cta p{font-size:0.8rem;margin-bottom:12px;color:var(--g600);line-height:1.55}
+.sidebar-cta a.sc-btn{background:var(--navy);color:var(--white);font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:10px 16px;border-radius:7px;text-decoration:none;display:block;transition:background 0.2s}
+.sidebar-cta a.sc-btn:hover{background:var(--navy-mid);opacity:1}
+.related-list{display:flex;flex-direction:column;gap:10px}
+.related-link{display:flex;flex-direction:column;gap:3px;text-decoration:none;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);transition:background 0.2s}
+.related-link:hover{background:rgba(255,255,255,0.05);opacity:1}
+.related-tag{font-size:0.65rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.07em}
+.related-title{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:600}
+.toc{background:var(--cream);border:1px solid var(--g200);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.toc h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:7px}
+.toc ol li{counter-increment:toc;display:flex;gap:8px;align-items:flex-start}
+.toc ol li::before{content:counter(toc);font-size:0.68rem;font-weight:700;color:var(--gold);font-family:'Space Grotesk',sans-serif;flex-shrink:0;margin-top:3px}
+.toc ol li a{font-size:0.8rem;color:var(--g600);text-decoration:none;line-height:1.4;transition:color 0.2s}
+.toc ol li a:hover{color:var(--gold)}
+#more-posts{background:var(--offwhite);padding:56px 0}
+#more-posts h2{color:var(--navy);margin-bottom:28px;font-size:1.4rem}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px;text-decoration:none;display:block;color:inherit;transition:all 0.2s}
+.post-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(1,8,41,0.07);opacity:1}
+.post-tag{font-size:0.66rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 8px;border-radius:4px;margin-bottom:8px;display:inline-block;text-transform:uppercase;letter-spacing:0.06em}
+.post-card h4{color:var(--navy);font-size:0.9rem;margin-bottom:5px;line-height:1.35;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.post-card p{font-size:0.78rem;color:var(--g400);line-height:1.55}
+.post-arrow{color:var(--gold);font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;margin-top:9px;display:inline-block}
+footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);text-decoration:none;font-size:0.95rem}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-nav{display:flex;gap:20px}
+.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+@media(max-width:860px){.article-body,.posts-grid{grid-template-columns:1fr}.cta-inline{flex-direction:column}.sidebar{position:static}nav .nav-links{display:none}.footer-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../services/">Services</a></li>
+      <li><a href="../../case-studies/">Work</a></li>
+      <li><a href="../" class="active">Insights</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<section id="hero">
+  <div class="hero-dots"></div><div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <a href="../" class="back-link">← Back to all posts</a>
+      <div class="hero-meta"><span class="hero-tag">Attribution</span><span class="hero-tag">Google Ads</span><span class="hero-tag">Strategy</span><span class="hero-date">January 2026 · 9 min read</span></div>
+      <h1 class="hero-title">Last-Click Attribution <em>Is Lying</em> to You</h1>
+      <p class="hero-sub">Why the 40/20/40 position-based attribution model recovered 28% more profitable keyword data - and how to implement a multi-touch model that reflects how your prospects actually buy.</p>
+    </div>
+  </div>
+</section>
+<section class="article">
+  <div class="container">
+    <div class="article-body">
+      <div class="article-content">
+        <p>Last-click attribution has been the default in Google Ads since the platform launched. It works like this: whichever keyword, ad, or campaign a user clicked immediately before converting gets 100% of the credit. Everything before that final click - every awareness keyword, every research ad, every mid-funnel touchpoint - gets zero.</p>
+        <p>For simple, single-session purchases, this is a reasonable approximation. For any service business with a multi-touch consideration cycle - law firms, B2B services, high-ticket contractors - it is actively misleading.</p>
+
+        <h2 id="last-click">What Last-Click Attribution Actually Does to Your Campaigns</h2>
+        <p>Consider a realistic legal prospect journey: they search "can I sue after a car accident," read an article (organic, no credit), search "car accident attorney near me" (click Ad A, no conversion), visit the site and leave, search "best personal injury lawyers [city]" three days later (click Ad B, no conversion), return directly to the site and convert via a branded search (click Ad C, conversion).</p>
+        <p>Under last-click, Ad C gets 100% of the conversion credit. Ad A and Ad B get zero. The algorithm learns to invest more in branded and high-intent bottom-funnel keywords and less in the awareness and consideration keywords that put that prospect in the funnel in the first place. Over months, your awareness spend atrophies. You become dependent on capturing existing demand instead of creating it.</p>
+        <p>According to <a href="https://support.google.com/google-ads/answer/6259715" target="_blank" rel="noopener noreferrer">Google's attribution model documentation</a>, data-driven attribution is now the default for accounts with sufficient conversion volume. But for accounts that haven't been audited or were set up years ago, last-click may still be active without anyone noticing.</p>
+
+        <h2 id="models">Attribution Model Options</h2>
+        <ul>
+          <li>Last-click: 100% credit to final touchpoint. Simple, wrong for multi-touch journeys</li>
+          <li>First-click: 100% credit to first touchpoint. Overvalues awareness, undervalues closers</li>
+          <li>Linear: equal credit to all touchpoints. Better than last-click but treats all touches as equivalent</li>
+          <li>Time decay: more credit to recent touchpoints. Reasonable for short consideration cycles</li>
+          <li>Position-based: weighted credit to first and last touchpoints, remainder distributed across middle. Best for high-consideration services</li>
+          <li>Data-driven: Google's ML model distributes credit based on actual conversion path patterns in your account. Requires sufficient data volume to be reliable</li>
+        </ul>
+
+        <h2 id="40-20-40">The 40/20/40 Position-Based Model</h2>
+        <p>For service businesses with multi-touch consideration cycles, position-based attribution with a 40/20/40 weighting is the model I use most frequently. The logic:</p>
+        <div class="tip-box">
+          <div class="tip-label">40/20/40 Rationale</div>
+          <p>The first touchpoint (40%) initiated the prospect's awareness of your firm - it deserves significant credit for putting you in consideration at all. The final touchpoint (40%) closed the conversion - it clearly deserves credit. The middle touchpoints (20% split evenly) maintained presence during the consideration period but did not independently drive the outcome. This weighting reflects how complex service decisions actually happen.</p>
+        </div>
+        <p>This is the model documented in the <a href="../../case-studies/complex-litigation/">Complex Litigation case study</a> - where switching from last-click to 40/20/40 attribution recovered 28% more profitable keyword signal and shifted Smart Bidding's behavior toward a broader, more accurate view of what was driving conversions.</p>
+
+        <h2 id="implementation">Implementation Steps</h2>
+        <ol>
+          <li>In Google Ads, go to Tools and Settings > Conversions and select your primary conversion action</li>
+          <li>Under Attribution Model, switch from "Last click" to "Position-based" (or "Data-driven" if your account has 300+ conversions in the last 30 days)</li>
+          <li>Review the Attribution Reports in Google Ads (Tools > Attribution) to see the before/after impact on keyword value distribution</li>
+          <li>Expect the Conversions column in campaign and keyword view to redistribute - keywords that were showing zero conversions under last-click will now show fractional conversion credit</li>
+          <li>Allow 2-3 weeks for Smart Bidding to incorporate the new attribution signal before evaluating performance changes</li>
+          <li>Check the Model Comparison report to understand the delta between what last-click was reporting and what position-based shows - this tells you where you were over- and underinvesting</li>
+        </ol>
+
+        <h2 id="impact">What Changes After the Switch</h2>
+        <p>The most common immediate observation: keywords and campaigns that seemed to have low conversion volume under last-click are now showing meaningful fractional credit. This is not the system being more generous - it's revealing the conversions those keywords were genuinely contributing to that last-click was hiding.</p>
+        <ul>
+          <li>Awareness and consideration keywords get budget allocation they were previously denied</li>
+          <li>Smart Bidding adjusts its real-time auction behavior based on the fuller picture of conversion contribution</li>
+          <li>Campaign-level ROAS and CPA metrics shift as the conversion credit redistributes - don't panic, let the algorithm stabilize</li>
+          <li>The Model Comparison report becomes a useful ongoing tool for budget allocation decisions</li>
+        </ul>
+        <p>Combined with <a href="../offline-conversion-tracking/">offline conversion tracking</a> and <a href="../server-side-gtm-vs-browser-tracking/">server-side GTM</a>, multi-touch attribution creates the most complete and accurate campaign measurement stack available in Google Ads. Each layer addresses a different dimension of the data quality problem - attribution addresses credit distribution, offline tracking addresses outcome quality, and server-side addresses signal completeness.</p>
+
+        <div class="cta-inline">
+          <div class="cta-inline-text">
+            <h3>Still running on last-click attribution?</h3>
+            <p>A free audit will show you the attribution model in use and what switching would reveal about your current keyword performance.</p>
+          </div>
+          <a href="../../index.html#audit">Get a Free Audit</a>
+        </div>
+
+        <div class="divider"></div>
+        <p style="font-size:0.82rem;color:var(--g400)">Written by Andreus Jedd Sarte. Reference: <a href="https://support.google.com/google-ads/answer/6259715" target="_blank" rel="noopener noreferrer">Google's attribution model documentation</a> and <a href="../../case-studies/complex-litigation/">Complex Litigation case study</a> with documented 28% attribution recovery results.</p>
+    </div>
+      <div class="sidebar">
+        <div class="toc"><h4>In this post</h4><ol><li><a href="#last-click">The last-click problem</a></li><li><a href="#models">Attribution model options</a></li><li><a href="#40-20-40">The 40/20/40 model</a></li><li><a href="#implementation">Implementation steps</a></li><li><a href="#impact">What changes after the switch</a></li></ol></div>
+        <div class="sidebar-cta"><p>Want a free review of your paid media setup?</p><a href="../../index.html#audit" class="sc-btn">Get a Free Audit →</a></div>
+        <div class="sidebar-card"><h4>Related posts</h4><div class="related-list"><a href="../offline-conversion-tracking/" class="related-link"><span class="related-tag">Tracking</span><span class="related-title">Offline Conversion Tracking</span></a><a href="../server-side-gtm-vs-browser-tracking/" class="related-link"><span class="related-tag">Tracking</span><span class="related-title">Server-Side GTM vs. Browser Tracking</span></a><a href="../google-ads-audit-checklist/" class="related-link"><span class="related-tag">Audit</span><span class="related-title">10-Point Google Ads Audit Checklist</span></a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="more-posts">
+  <div class="container-wide"><h2>More from the blog</h2><div class="posts-grid"><a href="../offline-conversion-tracking/" class="post-card"><span class="post-tag">Tracking</span><h4>How to Use Offline Conversion Tracking</h4><p>Complete the attribution picture with real business outcome data.</p><span class="post-arrow">Read →</span></a><a href="../value-based-bidding-law-firms/" class="post-card"><span class="post-tag">Bidding</span><h4>Value-Based Bidding for Law Firms</h4><p>Combine multi-touch attribution with value-based bidding for maximum campaign intelligence.</p><span class="post-arrow">Read →</span></a><a href="../google-ads-high-ticket-b2b/" class="post-card"><span class="post-tag">B2B</span><h4>Google Ads for High-Ticket B2B Services</h4><p>Multi-touch attribution matters most in long B2B consideration cycles.</p><span class="post-arrow">Read →</span></a></div></div>
+</section>
+<footer>
+  <div class="container-wide">
+    <div class="footer-inner">
+      <a href="../../index.html" class="footer-logo">Jedd<span>.</span></a>
+      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte</div>
+      <nav class="footer-nav">
+        <a href="../../index.html">Home</a><a href="../../services/">Services</a>
+        <a href="../../case-studies/">Work</a><a href="../">Insights</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank">Book a Call</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("nav").style.padding=window.scrollY>60?"10px 32px":"16px 32px"});</script>
+</body>
+</html>
