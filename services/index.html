@@ -177,7 +177,49 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   nav .nav-links{display:none}
   .footer-inner{flex-direction:column;text-align:center}
 }
+
+.client-logo-img{height:32px;width:auto;max-width:110px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.55;transition:opacity 0.2s}
+.client-logo-pill:hover .client-logo-img{opacity:0.9}
+
+
+.addon-icon svg,.svc-icon svg{display:block}
+.addon-icon{display:flex;align-items:center;margin-bottom:14px}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://jeddsarte.com/services/",
+      "url": "https://jeddsarte.com/services/",
+      "name": "Paid Media Services - Jedd Sarte",
+      "description": "Paid media management, account audits, tracking infrastructure, landing pages, and funnel strategy for U.S. law firms, contractors, and e-commerce brands.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jeddsarte.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://jeddsarte.com/services/"
+          }
+        ]
+      },
+      "provider": {
+        "@id": "https://jeddsarte.com/#person"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -480,32 +522,32 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     <p>These can be added to any retainer or project  -  useful if you need a specific piece handled without a full engagement.</p>
     <div class="addons-grid">
       <div class="addon fade-up">
-        <span class="addon-icon">📧</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
         <h4>Email Sequence Copywriting</h4>
         <p>Lead nurture sequences for new inquiries that don't convert immediately. Written to match your brand voice and move prospects toward booking.</p>
       </div>
       <div class="addon fade-up">
-        <span class="addon-icon">📱</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
         <h4>Social Creative Direction</h4>
         <p>Ad copy and creative briefs for your design team or UGC creators. Structured around platform-specific formats and tested direct-response formulas.</p>
       </div>
       <div class="addon fade-up">
-        <span class="addon-icon">📈</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
         <h4>Monthly Strategy Report</h4>
         <p>A plain-English monthly report covering what worked, what didn't, what's changing next month, and what the numbers actually mean for your business.</p>
       </div>
       <div class="addon fade-up">
-        <span class="addon-icon">🌐</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
         <h4>Spanish-Language Campaigns</h4>
         <p>Full Spanish-language ad copy, keyword research, and landing page variants for markets with significant Hispanic populations.</p>
       </div>
       <div class="addon fade-up">
-        <span class="addon-icon">🔗</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
         <h4>CRM Integration Setup</h4>
         <p>Connect your CRM (HubSpot, Salesforce, Clio, etc.) to your ad platforms so lead quality data flows back and improves your targeting automatically.</p>
       </div>
       <div class="addon fade-up">
-        <span class="addon-icon">🎯</span>
+        <span class="addon-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
         <h4>Competitor Conquest Campaigns</h4>
         <p>Targeted campaigns designed to intercept users actively searching for your competitors by name  -  capturing high-intent switchers before they convert elsewhere.</p>
       </div>
