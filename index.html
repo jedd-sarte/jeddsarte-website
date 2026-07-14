@@ -79,9 +79,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 /* ── LOGO MARQUEE ── */
 #trust{background:var(--navy-mid);padding:28px 0;border-top:1px solid rgba(244,159,28,0.08);border-bottom:1px solid rgba(244,159,28,0.08);overflow:hidden}
 .marquee-wrap{display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
-.marquee-track{display:flex;gap:48px;animation:marquee 24s linear infinite;white-space:nowrap;align-items:center}
+.marquee-track{display:flex;gap:48px;animation:marquee 120s linear infinite;white-space:nowrap;align-items:center}
 .marquee-track:hover{animation-play-state:paused}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.marquee-track{animation-duration:120s!important}
 .client-logo-pill{display:flex;align-items:center;gap:10px;padding:10px 22px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);flex-shrink:0}
 .logo-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:0.75rem;color:var(--navy);background:var(--gold);flex-shrink:0}
 .logo-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;color:rgba(255,255,255,0.6)}
@@ -131,7 +131,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .cs.featured .cs-vis{min-height:unset}
 .cs-vis-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 60%,var(--navy-light))}
 .cs-vis-glow{position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(244,159,28,0.15) 0%,transparent 70%)}
-.cs-badge{position:absolute;top:16px;left:16px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:5px 11px;border-radius:4px;letter-spacing:0.08em;text-transform:uppercase}
+.cs-badge{position:relative;display:inline-block;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:5px 11px;border-radius:4px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;z-index:1;align-self:flex-start}
 .cs-num{font-family:'DM Serif Display',serif;font-size:4rem;color:var(--white);line-height:1;position:relative;z-index:1}
 .cs-num span{color:var(--gold)}
 .cs-num-sub{color:rgba(255,255,255,0.5);font-size:1rem;font-family:'Space Grotesk',sans-serif}
@@ -194,8 +194,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .blog-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;overflow:hidden;transition:all 0.25s;text-decoration:none;display:block;color:inherit}
 .blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(3,14,79,0.09)}
-.blog-thumb{height:150px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.bt-num{font-family:'DM Serif Display',serif;font-size:5.5rem;color:rgba(255,255,255,0.04);position:absolute;line-height:1}
+.blog-thumb{height:150px;background:linear-gradient(135deg,rgba(1,8,41,0.08) 0%,rgba(3,13,64,0.12) 100%);border-bottom:1px solid var(--g200);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.bt-num{font-family:'DM Serif Display',serif;font-size:5.5rem;color:rgba(1,8,41,0.06);position:absolute;line-height:1}
 .bt-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase}
 .bt-icon{font-size:2rem;position:relative;z-index:1}
 .blog-body{padding:20px}
@@ -250,6 +250,14 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 .client-logo-img{height:36px;width:auto;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.55;transition:opacity 0.2s}
 .client-logo-pill:hover .client-logo-img{opacity:0.9}
 
+
+.cert-strip{display:flex;align-items:center;gap:16px;margin-top:28px;flex-wrap:wrap}
+.cert-label{font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap}
+.cert-badges{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.cert-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:6px 10px;display:flex;align-items:center;justify-content:center;height:44px;width:auto}
+.cert-badge img{height:28px;width:auto;max-width:100px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.7}
+.cert-badge:hover img{opacity:1}
+
 </style>
 </head>
 <body>
@@ -278,11 +286,21 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <div>
         <div class="hero-available"><div class="pulse"></div>Available for U.S. Clients · Remote</div>
         <h1 class="hero-title">Paid media that fills <em>pipelines,</em><br>not just reports.</h1>
-        <p class="hero-sub">Senior Paid Media Specialist with 5+ years running Google, Meta, LinkedIn & TikTok Ads for U.S. law firms, home service companies, and e-commerce brands. I build campaigns tied to real business outcomes  -  signed cases, booked jobs, and closed revenue.</p>
+        <p class="hero-sub">Senior Paid Media Specialist with 7+ years running Google, Meta, LinkedIn & TikTok Ads for U.S. law firms, home service companies, and e-commerce brands. I build campaigns tied to real business outcomes  -  signed cases, booked jobs, and closed revenue.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Free Strategy Call →</a>
           <a href="case-studies/" class="btn-outline">See My Work</a>
         </div>
+      <!-- Certifications -->
+      <div class="cert-strip">
+        <span class="cert-label">Certified</span>
+        <div class="cert-badges">
+          <div class="cert-badge"><img src="assets/images/google-ads-search-certified.png" alt="Google Ads Search Certified"/></div>
+          <div class="cert-badge"><img src="assets/images/certified-meta-media-buying-professional.png" alt="Meta Media Buying Professional"/></div>
+          <div class="cert-badge"><img src="assets/images/amazon-ads-certified.png" alt="Amazon Ads Certified"/></div>
+          <div class="cert-badge"><img src="assets/images/brightedge-seo-professional.png" alt="BrightEdge SEO Professional"/></div>
+        </div>
+      </div>
       </div>
       <div class="hero-card">
         <div class="stat-row">
@@ -306,82 +324,82 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 <section id="trust">
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <div class="client-logo-pill"><img src="assets/images/logo-all-seasons-mortgage-services-group.png" alt="All Seasons Mortgage logo" class="client-logo-img"/><span class="logo-name">All Seasons Mortgage</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-always-here-properties-llc.png" alt="Always Here Properties logo" class="client-logo-img"/><span class="logo-name">Always Here Properties</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-ama-computer-college.png" alt="AMA Computer College logo" class="client-logo-img"/><span class="logo-name">AMA Computer College</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-ama-school-of-medicine.png" alt="AMA School of Medicine logo" class="client-logo-img"/><span class="logo-name">AMA School of Medicine</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-athenian-greek-taverna.png" alt="Athenian Greek Taverna logo" class="client-logo-img"/><span class="logo-name">Athenian Greek Taverna</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-atty-jordan-glaser.png" alt="Atty. Jordan Glaser logo" class="client-logo-img"/><span class="logo-name">Atty. Jordan Glaser</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-bellport-country-club.png" alt="Bellport Country Club logo" class="client-logo-img"/><span class="logo-name">Bellport Country Club</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-boone-and-sons-jewelers.png" alt="Boone & Sons Jewelers logo" class="client-logo-img"/><span class="logo-name">Boone & Sons Jewelers</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-brothersinarms-security.png" alt="Brothers In Arms Security logo" class="client-logo-img"/><span class="logo-name">Brothers In Arms Security</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-cans-4-cancer.png" alt="Cans 4 Cancer logo" class="client-logo-img"/><span class="logo-name">Cans 4 Cancer</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-capo-ristorante.png" alt="Capo Ristorante logo" class="client-logo-img"/><span class="logo-name">Capo Ristorante</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-cappys-wine-and-spirits.png" alt="Cappy's Wine & Spirits logo" class="client-logo-img"/><span class="logo-name">Cappy's Wine & Spirits</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-exit-real-estate-professionals.png" alt="EXIT Real Estate logo" class="client-logo-img"/><span class="logo-name">EXIT Real Estate</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-franklin-guesthouse.png" alt="Franklin Guesthouse logo" class="client-logo-img"/><span class="logo-name">Franklin Guesthouse</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-front-street-inn.png" alt="Front Street Inn logo" class="client-logo-img"/><span class="logo-name">Front Street Inn</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-henry-norman-hotel.png" alt="Henry Norman Hotel logo" class="client-logo-img"/><span class="logo-name">Henry Norman Hotel</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-kixx-synthetic-lubricants.png" alt="Kixx Lubricants logo" class="client-logo-img"/><span class="logo-name">Kixx Lubricants</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-marah-mutual.png" alt="Marah Mutual logo" class="client-logo-img"/><span class="logo-name">Marah Mutual</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-motorcycle-mike.png" alt="Motorcycle Mike logo" class="client-logo-img"/><span class="logo-name">Motorcycle Mike</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-nashville-dirtworks.png" alt="Nashville Dirtworks logo" class="client-logo-img"/><span class="logo-name">Nashville Dirtworks</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-netafim-north-america.png" alt="Netafim North America logo" class="client-logo-img"/><span class="logo-name">Netafim North America</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-poop-bark-ranch.png" alt="Poop Bark Ranch logo" class="client-logo-img"/><span class="logo-name">Poop Bark Ranch</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-real-estate-ateam.png" alt="Real Estate A-Team logo" class="client-logo-img"/><span class="logo-name">Real Estate A-Team</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-remys-italian-restaurant.png" alt="Remy's Italian logo" class="client-logo-img"/><span class="logo-name">Remy's Italian</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-scapes-environmental-design-inc.png" alt="Scapes Environmental logo" class="client-logo-img"/><span class="logo-name">Scapes Environmental</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-soil-seven.png" alt="SOil Seven logo" class="client-logo-img"/><span class="logo-name">SOil Seven</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-springfield-veterinary-hospital.png" alt="Springfield Veterinary logo" class="client-logo-img"/><span class="logo-name">Springfield Veterinary</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-sterilyft.png" alt="Sterilyft logo" class="client-logo-img"/><span class="logo-name">Sterilyft</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-takumi-sushi-and-hibachi.png" alt="Takumi Sushi & Hibachi logo" class="client-logo-img"/><span class="logo-name">Takumi Sushi & Hibachi</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-tech-solution.png" alt="Tech Solution logo" class="client-logo-img"/><span class="logo-name">Tech Solution</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-box-house-hotel.png" alt="The Box House Hotel logo" class="client-logo-img"/><span class="logo-name">The Box House Hotel</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-gramercy.png" alt="The Gramercy logo" class="client-logo-img"/><span class="logo-name">The Gramercy</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-real-estate-office.png" alt="The Real Estate Office logo" class="client-logo-img"/><span class="logo-name">The Real Estate Office</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-tint-king.png" alt="Tint King logo" class="client-logo-img"/><span class="logo-name">Tint King</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-totem-properties.png" alt="Totem Properties logo" class="client-logo-img"/><span class="logo-name">Totem Properties</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-uncle-bacalas-restaurant.png" alt="Uncle Bacala's logo" class="client-logo-img"/><span class="logo-name">Uncle Bacala's</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-valvoline.png" alt="Valvoline logo" class="client-logo-img"/><span class="logo-name">Valvoline</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-viking-law.png" alt="Viking Law logo" class="client-logo-img"/><span class="logo-name">Viking Law</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-all-seasons-mortgage-services-group.png" alt="All Seasons Mortgage logo" class="client-logo-img"/><span class="logo-name">All Seasons Mortgage</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-always-here-properties-llc.png" alt="Always Here Properties logo" class="client-logo-img"/><span class="logo-name">Always Here Properties</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-ama-computer-college.png" alt="AMA Computer College logo" class="client-logo-img"/><span class="logo-name">AMA Computer College</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-ama-school-of-medicine.png" alt="AMA School of Medicine logo" class="client-logo-img"/><span class="logo-name">AMA School of Medicine</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-athenian-greek-taverna.png" alt="Athenian Greek Taverna logo" class="client-logo-img"/><span class="logo-name">Athenian Greek Taverna</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-atty-jordan-glaser.png" alt="Atty. Jordan Glaser logo" class="client-logo-img"/><span class="logo-name">Atty. Jordan Glaser</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-bellport-country-club.png" alt="Bellport Country Club logo" class="client-logo-img"/><span class="logo-name">Bellport Country Club</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-boone-and-sons-jewelers.png" alt="Boone & Sons Jewelers logo" class="client-logo-img"/><span class="logo-name">Boone & Sons Jewelers</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-brothersinarms-security.png" alt="Brothers In Arms Security logo" class="client-logo-img"/><span class="logo-name">Brothers In Arms Security</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-cans-4-cancer.png" alt="Cans 4 Cancer logo" class="client-logo-img"/><span class="logo-name">Cans 4 Cancer</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-capo-ristorante.png" alt="Capo Ristorante logo" class="client-logo-img"/><span class="logo-name">Capo Ristorante</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-cappys-wine-and-spirits.png" alt="Cappy's Wine & Spirits logo" class="client-logo-img"/><span class="logo-name">Cappy's Wine & Spirits</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-exit-real-estate-professionals.png" alt="EXIT Real Estate logo" class="client-logo-img"/><span class="logo-name">EXIT Real Estate</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-franklin-guesthouse.png" alt="Franklin Guesthouse logo" class="client-logo-img"/><span class="logo-name">Franklin Guesthouse</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-front-street-inn.png" alt="Front Street Inn logo" class="client-logo-img"/><span class="logo-name">Front Street Inn</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-henry-norman-hotel.png" alt="Henry Norman Hotel logo" class="client-logo-img"/><span class="logo-name">Henry Norman Hotel</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-kixx-synthetic-lubricants.png" alt="Kixx Lubricants logo" class="client-logo-img"/><span class="logo-name">Kixx Lubricants</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-marah-mutual.png" alt="Marah Mutual logo" class="client-logo-img"/><span class="logo-name">Marah Mutual</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-motorcycle-mike.png" alt="Motorcycle Mike logo" class="client-logo-img"/><span class="logo-name">Motorcycle Mike</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-nashville-dirtworks.png" alt="Nashville Dirtworks logo" class="client-logo-img"/><span class="logo-name">Nashville Dirtworks</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-netafim-north-america.png" alt="Netafim North America logo" class="client-logo-img"/><span class="logo-name">Netafim North America</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-poop-bark-ranch.png" alt="Poop Bark Ranch logo" class="client-logo-img"/><span class="logo-name">Poop Bark Ranch</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-real-estate-ateam.png" alt="Real Estate A-Team logo" class="client-logo-img"/><span class="logo-name">Real Estate A-Team</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-remys-italian-restaurant.png" alt="Remy's Italian logo" class="client-logo-img"/><span class="logo-name">Remy's Italian</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-scapes-environmental-design-inc.png" alt="Scapes Environmental logo" class="client-logo-img"/><span class="logo-name">Scapes Environmental</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-soil-seven.png" alt="SOil Seven logo" class="client-logo-img"/><span class="logo-name">SOil Seven</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-springfield-veterinary-hospital.png" alt="Springfield Veterinary logo" class="client-logo-img"/><span class="logo-name">Springfield Veterinary</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-sterilyft.png" alt="Sterilyft logo" class="client-logo-img"/><span class="logo-name">Sterilyft</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-takumi-sushi-and-hibachi.png" alt="Takumi Sushi & Hibachi logo" class="client-logo-img"/><span class="logo-name">Takumi Sushi & Hibachi</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-tech-solution.png" alt="Tech Solution logo" class="client-logo-img"/><span class="logo-name">Tech Solution</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-box-house-hotel.png" alt="The Box House Hotel logo" class="client-logo-img"/><span class="logo-name">The Box House Hotel</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-gramercy.png" alt="The Gramercy logo" class="client-logo-img"/><span class="logo-name">The Gramercy</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-the-real-estate-office.png" alt="The Real Estate Office logo" class="client-logo-img"/><span class="logo-name">The Real Estate Office</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-tint-king.png" alt="Tint King logo" class="client-logo-img"/><span class="logo-name">Tint King</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-totem-properties.png" alt="Totem Properties logo" class="client-logo-img"/><span class="logo-name">Totem Properties</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-uncle-bacalas-restaurant.png" alt="Uncle Bacala's logo" class="client-logo-img"/><span class="logo-name">Uncle Bacala's</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-valvoline.png" alt="Valvoline logo" class="client-logo-img"/><span class="logo-name">Valvoline</span></div>
-      <div class="client-logo-pill"><img src="assets/images/logo-viking-law.png" alt="Viking Law logo" class="client-logo-img"/><span class="logo-name">Viking Law</span></div>
+      <div class="client-logo-pill"><img src="assets/images/All Seasons Mortgage Services Group.png" alt="All Seasons Mortgage logo" class="client-logo-img"/><span class="logo-name">All Seasons Mortgage</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Always Here Properties LLC.png" alt="Always Here Properties logo" class="client-logo-img"/><span class="logo-name">Always Here Properties</span></div>
+      <div class="client-logo-pill"><img src="assets/images/AMA Computer College.png" alt="AMA Computer College logo" class="client-logo-img"/><span class="logo-name">AMA Computer College</span></div>
+      <div class="client-logo-pill"><img src="assets/images/AMA School Of Medicine.png" alt="AMA School of Medicine logo" class="client-logo-img"/><span class="logo-name">AMA School of Medicine</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Athenian Greek Taverna.png" alt="Athenian Greek Taverna logo" class="client-logo-img"/><span class="logo-name">Athenian Greek Taverna</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Atty. Jordan Glaser.png" alt="Atty. Jordan Glaser logo" class="client-logo-img"/><span class="logo-name">Atty. Jordan Glaser</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Bellport Country Club.png" alt="Bellport Country Club logo" class="client-logo-img"/><span class="logo-name">Bellport Country Club</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Boone and Sons Jewelers.png" alt="Boone & Sons Jewelers logo" class="client-logo-img"/><span class="logo-name">Boone & Sons Jewelers</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Brothers-In-Arms Security.png" alt="Brothers In Arms Security logo" class="client-logo-img"/><span class="logo-name">Brothers In Arms Security</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Cans 4 Cancer.png" alt="Cans 4 Cancer logo" class="client-logo-img"/><span class="logo-name">Cans 4 Cancer</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Capo Ristorante.png" alt="Capo Ristorante logo" class="client-logo-img"/><span class="logo-name">Capo Ristorante</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Cappy's Wine and Spirits.png" alt="Cappy's Wine & Spirits logo" class="client-logo-img"/><span class="logo-name">Cappy's Wine & Spirits</span></div>
+      <div class="client-logo-pill"><img src="assets/images/EXIT Real Estate Professionals.png" alt="EXIT Real Estate logo" class="client-logo-img"/><span class="logo-name">EXIT Real Estate</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Franklin Guesthouse.png" alt="Franklin Guesthouse logo" class="client-logo-img"/><span class="logo-name">Franklin Guesthouse</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Front Street Inn.png" alt="Front Street Inn logo" class="client-logo-img"/><span class="logo-name">Front Street Inn</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Henry Norman Hotel.png" alt="Henry Norman Hotel logo" class="client-logo-img"/><span class="logo-name">Henry Norman Hotel</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Kixx Synthetic Lubricants.png" alt="Kixx Lubricants logo" class="client-logo-img"/><span class="logo-name">Kixx Lubricants</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Marah Mutual.png" alt="Marah Mutual logo" class="client-logo-img"/><span class="logo-name">Marah Mutual</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Motorcycle Mike.png" alt="Motorcycle Mike logo" class="client-logo-img"/><span class="logo-name">Motorcycle Mike</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Nashville Dirtworks.png" alt="Nashville Dirtworks logo" class="client-logo-img"/><span class="logo-name">Nashville Dirtworks</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Netafim North America.png" alt="Netafim North America logo" class="client-logo-img"/><span class="logo-name">Netafim North America</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Poop Bark Ranch.png" alt="Poop Bark Ranch logo" class="client-logo-img"/><span class="logo-name">Poop Bark Ranch</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Real Estate A-Team.png" alt="Real Estate A-Team logo" class="client-logo-img"/><span class="logo-name">Real Estate A-Team</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Remy's Italian Restaurant.png" alt="Remy's Italian logo" class="client-logo-img"/><span class="logo-name">Remy's Italian</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Scapes Environmental Design Inc.png" alt="Scapes Environmental logo" class="client-logo-img"/><span class="logo-name">Scapes Environmental</span></div>
+      <div class="client-logo-pill"><img src="assets/images/S-Oil Seven.png" alt="SOil Seven logo" class="client-logo-img"/><span class="logo-name">SOil Seven</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Springfield Veterinary Hospital.png" alt="Springfield Veterinary logo" class="client-logo-img"/><span class="logo-name">Springfield Veterinary</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Sterilyft.png" alt="Sterilyft logo" class="client-logo-img"/><span class="logo-name">Sterilyft</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Takumi Sushi and Hibachi.png" alt="Takumi Sushi & Hibachi logo" class="client-logo-img"/><span class="logo-name">Takumi Sushi & Hibachi</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Tech Solution.png" alt="Tech Solution logo" class="client-logo-img"/><span class="logo-name">Tech Solution</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Box House Hotel.png" alt="The Box House Hotel logo" class="client-logo-img"/><span class="logo-name">The Box House Hotel</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Gramercy.png" alt="The Gramercy logo" class="client-logo-img"/><span class="logo-name">The Gramercy</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Real Estate Office.png" alt="The Real Estate Office logo" class="client-logo-img"/><span class="logo-name">The Real Estate Office</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Tint King.png" alt="Tint King logo" class="client-logo-img"/><span class="logo-name">Tint King</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Totem Properties.png" alt="Totem Properties logo" class="client-logo-img"/><span class="logo-name">Totem Properties</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Uncle Bacala's Restaurant.png" alt="Uncle Bacala's logo" class="client-logo-img"/><span class="logo-name">Uncle Bacala's</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Valvoline.png" alt="Valvoline logo" class="client-logo-img"/><span class="logo-name">Valvoline</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Viking Law.png" alt="Viking Law logo" class="client-logo-img"/><span class="logo-name">Viking Law</span></div>
+      <div class="client-logo-pill"><img src="assets/images/All Seasons Mortgage Services Group.png" alt="All Seasons Mortgage logo" class="client-logo-img"/><span class="logo-name">All Seasons Mortgage</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Always Here Properties LLC.png" alt="Always Here Properties logo" class="client-logo-img"/><span class="logo-name">Always Here Properties</span></div>
+      <div class="client-logo-pill"><img src="assets/images/AMA Computer College.png" alt="AMA Computer College logo" class="client-logo-img"/><span class="logo-name">AMA Computer College</span></div>
+      <div class="client-logo-pill"><img src="assets/images/AMA School Of Medicine.png" alt="AMA School of Medicine logo" class="client-logo-img"/><span class="logo-name">AMA School of Medicine</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Athenian Greek Taverna.png" alt="Athenian Greek Taverna logo" class="client-logo-img"/><span class="logo-name">Athenian Greek Taverna</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Atty. Jordan Glaser.png" alt="Atty. Jordan Glaser logo" class="client-logo-img"/><span class="logo-name">Atty. Jordan Glaser</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Bellport Country Club.png" alt="Bellport Country Club logo" class="client-logo-img"/><span class="logo-name">Bellport Country Club</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Boone and Sons Jewelers.png" alt="Boone & Sons Jewelers logo" class="client-logo-img"/><span class="logo-name">Boone & Sons Jewelers</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Brothers-In-Arms Security.png" alt="Brothers In Arms Security logo" class="client-logo-img"/><span class="logo-name">Brothers In Arms Security</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Cans 4 Cancer.png" alt="Cans 4 Cancer logo" class="client-logo-img"/><span class="logo-name">Cans 4 Cancer</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Capo Ristorante.png" alt="Capo Ristorante logo" class="client-logo-img"/><span class="logo-name">Capo Ristorante</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Cappy's Wine and Spirits.png" alt="Cappy's Wine & Spirits logo" class="client-logo-img"/><span class="logo-name">Cappy's Wine & Spirits</span></div>
+      <div class="client-logo-pill"><img src="assets/images/EXIT Real Estate Professionals.png" alt="EXIT Real Estate logo" class="client-logo-img"/><span class="logo-name">EXIT Real Estate</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Franklin Guesthouse.png" alt="Franklin Guesthouse logo" class="client-logo-img"/><span class="logo-name">Franklin Guesthouse</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Front Street Inn.png" alt="Front Street Inn logo" class="client-logo-img"/><span class="logo-name">Front Street Inn</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Henry Norman Hotel.png" alt="Henry Norman Hotel logo" class="client-logo-img"/><span class="logo-name">Henry Norman Hotel</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Kixx Synthetic Lubricants.png" alt="Kixx Lubricants logo" class="client-logo-img"/><span class="logo-name">Kixx Lubricants</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Marah Mutual.png" alt="Marah Mutual logo" class="client-logo-img"/><span class="logo-name">Marah Mutual</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Motorcycle Mike.png" alt="Motorcycle Mike logo" class="client-logo-img"/><span class="logo-name">Motorcycle Mike</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Nashville Dirtworks.png" alt="Nashville Dirtworks logo" class="client-logo-img"/><span class="logo-name">Nashville Dirtworks</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Netafim North America.png" alt="Netafim North America logo" class="client-logo-img"/><span class="logo-name">Netafim North America</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Poop Bark Ranch.png" alt="Poop Bark Ranch logo" class="client-logo-img"/><span class="logo-name">Poop Bark Ranch</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Real Estate A-Team.png" alt="Real Estate A-Team logo" class="client-logo-img"/><span class="logo-name">Real Estate A-Team</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Remy's Italian Restaurant.png" alt="Remy's Italian logo" class="client-logo-img"/><span class="logo-name">Remy's Italian</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Scapes Environmental Design Inc.png" alt="Scapes Environmental logo" class="client-logo-img"/><span class="logo-name">Scapes Environmental</span></div>
+      <div class="client-logo-pill"><img src="assets/images/S-Oil Seven.png" alt="SOil Seven logo" class="client-logo-img"/><span class="logo-name">SOil Seven</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Springfield Veterinary Hospital.png" alt="Springfield Veterinary logo" class="client-logo-img"/><span class="logo-name">Springfield Veterinary</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Sterilyft.png" alt="Sterilyft logo" class="client-logo-img"/><span class="logo-name">Sterilyft</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Takumi Sushi and Hibachi.png" alt="Takumi Sushi & Hibachi logo" class="client-logo-img"/><span class="logo-name">Takumi Sushi & Hibachi</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Tech Solution.png" alt="Tech Solution logo" class="client-logo-img"/><span class="logo-name">Tech Solution</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Box House Hotel.png" alt="The Box House Hotel logo" class="client-logo-img"/><span class="logo-name">The Box House Hotel</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Gramercy.png" alt="The Gramercy logo" class="client-logo-img"/><span class="logo-name">The Gramercy</span></div>
+      <div class="client-logo-pill"><img src="assets/images/The Real Estate Office.png" alt="The Real Estate Office logo" class="client-logo-img"/><span class="logo-name">The Real Estate Office</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Tint King.png" alt="Tint King logo" class="client-logo-img"/><span class="logo-name">Tint King</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Totem Properties.png" alt="Totem Properties logo" class="client-logo-img"/><span class="logo-name">Totem Properties</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Uncle Bacala's Restaurant.png" alt="Uncle Bacala's logo" class="client-logo-img"/><span class="logo-name">Uncle Bacala's</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Valvoline.png" alt="Valvoline logo" class="client-logo-img"/><span class="logo-name">Valvoline</span></div>
+      <div class="client-logo-pill"><img src="assets/images/Viking Law.png" alt="Viking Law logo" class="client-logo-img"/><span class="logo-name">Viking Law</span></div>
     </div>
   </div>
 </section>
@@ -394,12 +412,12 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <div class="about-img">
         <div class="about-img-bg"></div>
         <img src="assets/images/Headshot.png" alt="Andreus Jedd Sarte - Senior Paid Media Specialist" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:1"/>
-        <div class="about-tag">📍 Metro Manila, PH</div>
+        
         <div class="about-status">
           <div class="status-dot"></div>
           <div class="status-text">
             <strong>Andreus Jedd Sarte</strong>
-            <span>Senior Paid Media Specialist · U.S. Clients</span>
+            <span>Senior Paid Media Specialist</span>
           </div>
         </div>
       </div>
@@ -508,7 +526,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="cs-num" style="font-size:3rem">45%<br><span class="cs-num-sub">More qualified consultations</span></div>
         </div>
         <div class="cs-body">
-          <h3>Watson Kuhlman Law  -  B2B Corporate Defense</h3>
+          <h3>B2B Corporate Defense Firm  -  B2B Corporate Defense</h3>
           <p>Built advanced scroll-depth + copy-paste telemetry via GTM. Users spending 3+ minutes on corporate defense resources triggered a high-intent micro-conversion signal, warming up platform pixels before any form submission. Meta Custom Audiences excluded existing clients to concentrate spend on net-new B2B decision-makers.</p>
           <div class="cs-metrics">
             <div class="cs-m"><div class="cs-m-num"><span class="up">↑</span> 45% QoQ</div><div class="cs-m-lbl">Qualified Consultations</div></div>
@@ -525,7 +543,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="cs-num" style="font-size:3rem">28%<br><span class="cs-num-sub">Attribution recovery</span></div>
         </div>
         <div class="cs-body">
-          <h3>Virginia King / Viking Law  -  Complex Civil Litigation</h3>
+          <h3>High-Tier Trial Litigation Practice  -  Complex Civil Litigation</h3>
           <p>Implemented a multi-touch attribution model (40/20/40 position-based weighting) replacing last-click. SHA-256 hashed first-party data via Enhanced Conversions recovered cross-device journeys and matched offline calls back to original ad clicks across multi-week consideration cycles.</p>
           <div class="cs-metrics">
             <div class="cs-m"><div class="cs-m-num"><span class="up">↑</span> 28%</div><div class="cs-m-lbl">Attribution Recovery</div></div>
@@ -567,12 +585,12 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <div class="testi fade-up">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">"The tracking infrastructure he built is something we've never had before. Offline conversions, CRM sync, real attribution  -  finally know what's actually working."</p>
-        <div class="testi-author"><div class="tav">VK</div><div><div class="tname">Virginia King</div><div class="trole">Viking Law  -  Complex Civil Litigation</div></div></div>
+        <div class="testi-author"><div class="tav">VK</div><div><div class="tname">High-Tier Trial Litigation Practice</div><div class="trole">Viking Law  -  Complex Civil Litigation</div></div></div>
       </div>
       <div class="testi fade-up">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">"Most paid media guys give you clicks. Jedd gave us a system. The qualified consultation volume jumped 45% quarter over quarter and the junk leads basically disappeared."</p>
-        <div class="testi-author"><div class="tav">WK</div><div><div class="tname">Watson Kuhlman Law</div><div class="trole">B2B Corporate Defense, USA</div></div></div>
+        <div class="testi-author"><div class="tav">WK</div><div><div class="tname">B2B Corporate Defense Firm</div><div class="trole">B2B Corporate Defense, USA</div></div></div>
       </div>
     </div>
   </div>
