@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andreus Jedd Sarte &middot; Case Study &middot; Waxit Car Care Search Governance</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #11141B;
+  --dark-2: #171B24;
+  --cream: #F7F2E9;
+  --cream-2: #F1EAE0;
+  --ink: #1C1B19;
+  --ink-soft: #524C46;
+  --mute: #8B8479;
+  --mute-dark: #9199AA;
+  --accent: #C1652F;
+  --accent-soft: #E9CBB4;
+  --line: #E2DACB;
+  --line-dark: rgba(255,255,255,.14);
+  --good: #3E6B2E;
+  --good-bg: #E7EEDF;
+  --bad: #A33A2A;
+  --bad-bg: #F5E4DF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--cream); line-height: 1.7; font-size: 15.5px; }
+h1, h2, .serif { font-family: 'Source Serif 4', serif; }
+em, .ital { font-style: italic; }
+.wrap { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+a { color: inherit; }
+
+/* ---- Cover ---- */
+.cover { background: var(--dark); color: #fff; padding: 56px 0 60px; }
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 110px; }
+.brandmark { font-family:'Source Serif 4',serif; font-weight: 700; font-size: 20px; }
+.brandmark .dot { color: var(--accent); }
+.cover-top-right { text-align: right; font-size: 11px; letter-spacing: .16em; color: rgba(255,255,255,.55); line-height: 1.7; text-transform: uppercase; }
+.client-tag { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 22px; }
+.cover h1 { font-size: 42px; line-height: 1.22; font-weight: 700; max-width: 700px; margin-bottom: 26px; }
+.cover h1 em { color: var(--accent); }
+.cover-dek { font-size: 16px; color: rgba(255,255,255,.68); max-width: 620px; margin-bottom: 56px; }
+.cover-divider { height: 1px; background: var(--line-dark); margin-bottom: 40px; }
+.cover-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 70px; }
+.cstat-val { font-family:'Source Serif 4',serif; font-size: 30px; font-weight: 700; }
+.cstat-val sup { font-size: 15px; color: rgba(255,255,255,.5); }
+.cstat-lbl { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 6px; line-height: 1.5; }
+.cover-meta { display: grid; grid-template-columns: 1fr 1fr auto; gap: 24px; padding-top: 30px; border-top: 1px solid var(--line-dark); font-size: 13px; }
+.cm-label { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); font-weight: 700; margin-bottom: 6px; }
+.cm-val { color: rgba(255,255,255,.85); }
+.cover-meta .right { text-align: right; }
+
+/* ---- Section chrome ---- */
+section.page { padding: 62px 0 58px; border-bottom: 1px solid var(--line); }
+.page-kicker { display: flex; justify-content: space-between; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 26px; }
+.eyebrow { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+h2 { font-size: 27px; color: var(--ink); line-height: 1.3; margin-bottom: 18px; max-width: 640px; font-weight: 700; }
+p { color: var(--ink-soft); max-width: 680px; margin-bottom: 15px; }
+p.lede { font-size: 16px; }
+
+/* ---- reusable bits ---- */
+.list-dash { list-style: none; max-width: 680px; margin: 18px 0; }
+.list-dash li { position: relative; padding-left: 20px; margin-bottom: 12px; color: var(--ink-soft); }
+.list-dash li::before { content: '\2022'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+.pullquote {
+  font-family: 'Source Serif 4', serif; font-style: italic; font-size: 19px; color: var(--ink);
+  border-left: 3px solid var(--accent); padding: 2px 0 2px 22px; margin: 26px 0; line-height: 1.55; max-width: 620px;
+}
+.quote-src { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-top: 10px; padding-left: 25px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+
+/* campaign table */
+.camp-table { width: 100%; border-collapse: collapse; margin: 18px 0; max-width: 680px; }
+.camp-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+.camp-table .cnum { color: var(--accent); font-weight: 800; font-size: 12.5px; width: 26px; }
+.camp-table .cname { font-weight: 700; color: var(--ink); width: 190px; }
+.camp-table .cdesc { color: var(--ink-soft); }
+.owned-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent); margin-left:6px; }
+.owned-note { font-size: 12px; color: var(--mute); max-width: 680px; margin: 6px 0 26px; }
+
+.info-panel { background: var(--cream-2); border-left: 3px solid var(--accent); padding: 18px 22px; max-width: 300px; }
+.info-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13px; gap: 10px; }
+.info-row:last-child { border-bottom: none; }
+.info-k { color: var(--mute); }
+.info-v { color: var(--ink); font-weight: 700; text-align: right; }
+
+.stat-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 18px 0 24px; max-width: 400px; }
+.stat-strip.wide { grid-template-columns: repeat(4, 1fr); max-width: 680px; }
+.stat-box { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.stat-box .v { font-family:'Source Serif 4',serif; font-size: 24px; font-weight: 700; color: var(--ink); }
+.stat-box .v.accent { color: var(--accent); }
+.stat-box .l { font-size: 10.5px; color: var(--mute); text-transform: uppercase; letter-spacing: .05em; margin-top: 5px; line-height: 1.4; }
+
+.process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+.proc-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px; position: relative; }
+.proc-num { color: var(--accent); font-weight: 800; font-size: 12px; margin-bottom: 8px; }
+.proc-title { font-weight: 700; color: var(--ink); font-size: 13.5px; margin-bottom: 6px; }
+.proc-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+.proc-arrow { display:none; }
+
+.edge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.edge-card { border-radius: 10px; padding: 18px 20px; }
+.edge-card.bad { background: var(--bad-bg); border-left: 3px solid var(--bad); }
+.edge-card.good { background: var(--good-bg); border-left: 3px solid var(--good); }
+.edge-label { font-size: 10.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+.edge-card.bad .edge-label { color: var(--bad); }
+.edge-card.good .edge-label { color: var(--good); }
+.edge-term { font-family:'Source Serif 4',serif; font-weight: 700; font-size: 16px; margin-bottom: 8px; color: var(--ink); }
+.edge-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+
+.metric-compare { display: flex; gap: 20px; margin: 16px 0 20px; flex-wrap: wrap; }
+.mc-item { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; font-size: 13px; }
+.mc-item b { display: block; font-family:'Source Serif 4',serif; font-size: 17px; color: var(--accent); }
+
+.finding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin: 20px 0; }
+.finding-num { font-size: 11px; font-weight: 800; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+.finding-title { font-family:'Source Serif 4',serif; font-weight: 700; font-size: 18px; color: var(--ink); margin-bottom: 8px; line-height: 1.35; }
+.finding-body { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
+
+.dark-callout { background: var(--dark); color: rgba(255,255,255,.88); border-radius: 12px; padding: 24px 26px; margin: 24px 0; max-width: 680px; }
+.dark-callout .eyebrow { color: var(--accent); }
+.dark-callout p { color: rgba(255,255,255,.78); }
+.dark-callout b { color: #fff; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0; max-width: 680px; }
+.tag { background: var(--cream-2); border: 1px solid var(--line); color: var(--ink); font-size: 12.5px; font-weight: 600; padding: 8px 15px; border-radius: 20px; }
+
+.principles { max-width: 680px; margin: 18px 0; }
+.principles li { list-style: none; position: relative; padding-left: 22px; margin-bottom: 12px; color: var(--ink-soft); font-size: 14.5px; }
+.principles li::before { content: '\2022'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+.closing-note { font-size: 12.5px; color: var(--mute); max-width: 680px; margin: 30px 0 40px; line-height: 1.6; }
+
+.signature { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; padding-top: 26px; border-top: 1px solid var(--line); max-width: 680px; }
+.sig-name { font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 700; color: var(--ink); }
+.sig-role { font-size: 13px; color: var(--mute); margin-top: 4px; }
+.sig-contact { text-align: right; font-size: 13px; color: var(--ink-soft); line-height: 1.7; }
+
+.footer-space { height: 60px; }
+
+@media (max-width: 760px) {
+  .cover h1 { font-size: 30px; }
+  .cover-stats { grid-template-columns: 1fr 1fr; }
+  .cover-meta { grid-template-columns: 1fr; }
+  .cover-meta .right { text-align: left; }
+  .two-col, .edge-grid, .finding-grid { grid-template-columns: 1fr; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+  .stat-strip.wide { grid-template-columns: 1fr 1fr; }
+  .signature { flex-direction: column; align-items: flex-start; }
+  .sig-contact { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="wrap">
+    <div class="cover-top">
+      <div class="brandmark">Andreus Jedd<span class="dot">.</span></div>
+      <div class="cover-top-right">Case Study<br>Performance Marketing</div>
+    </div>
+    <div class="client-tag">Waxit Car Care &middot; Ecommerce, Australia</div>
+    <h1>Building a Search-Term Governance System <em>Under Live Budget Pressure</em></h1>
+    <p class="cover-dek" style="color:rgba(255,255,255,.68);">How a manual, error-prone negative-keyword process for a six-campaign Performance Max account became a documented, rule-based, self-testing classification system, and what the audit work along the way turned up.</p>
+    <div class="cover-divider"></div>
+    <div class="cover-stats">
+      <div><div class="cstat-val">26.6K<sup>+</sup></div><div class="cstat-lbl">Search Terms Classified</div></div>
+      <div><div class="cstat-val">42</div><div class="cstat-lbl">Documented QA Review Cycles</div></div>
+      <div><div class="cstat-val">32/32</div><div class="cstat-lbl">Automated Checks Passing Pre-Ship</div></div>
+      <div><div class="cstat-val">6</div><div class="cstat-lbl">Campaigns Under Active Management</div></div>
+    </div>
+    <div class="cover-meta">
+      <div>
+        <div class="cm-label">Engagement</div>
+        <div class="cm-val">30 June to 5 August 2026<br>Google Ads contractor</div>
+      </div>
+      <div>
+        <div class="cm-label">Scope</div>
+        <div class="cm-val">Performance Max account management, search-term auditing, tracking QA</div>
+      </div>
+      <div class="right">
+        <div class="cm-label">Prepared By</div>
+        <div class="cm-val">Andreus Jedd Josue Sarte</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 01 CONTEXT & ROLE ============ -->
+<section class="page">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>01 / Context &amp; Role</span></div>
+    <div class="eyebrow">The Account</div>
+    <h2>A six-campaign Performance Max account for an Australian car-care brand</h2>
+    <p class="lede">Waxit Car Care sells polishing machines, polishing pads and compounds, pressure washer accessories, and ceramic coating products direct-to-consumer through Shopify. Google Ads runs across six live campaigns, each scoped to a distinct part of the product catalog rather than one broad account, which is precisely what makes search-term hygiene hard to get right at scale.</p>
+
+    <div class="two-col">
+      <div>
+        <table class="camp-table">
+          <tr><td class="cnum">01</td><td class="cname">Polishing PMax<span class="owned-dot"></span></td><td class="cdesc">Machine polishers, polishing pads, compounds &amp; polish</td></tr>
+          <tr><td class="cnum">02</td><td class="cname">Pressure Washer Accessories PMax<span class="owned-dot"></span></td><td class="cdesc">Hoses, nozzles, guns, lances, adaptors, reels</td></tr>
+          <tr><td class="cnum">03</td><td class="cname">Core PMax</td><td class="cdesc">Prospecting, non-segmented categories</td></tr>
+          <tr><td class="cnum">04</td><td class="cname">New Customer Core PMax</td><td class="cdesc">New-customer acquisition, existing customers excluded</td></tr>
+          <tr><td class="cnum">05</td><td class="cname">Ceramic Coating PMax</td><td class="cdesc">Premium ceramic coating segment</td></tr>
+          <tr><td class="cnum">06</td><td class="cname">Search, DSA<span class="owned-dot"></span></td><td class="cdesc">Dynamic Search Ads, under evaluation for AI Max</td></tr>
+        </table>
+        <p class="owned-note"><span class="owned-dot" style="margin-left:0;margin-right:6px;"></span>Campaigns owned and independently audited within this engagement, alongside the OnaVibe (sister brand) Friday Launch PMax campaign.</p>
+      </div>
+      <div class="info-panel">
+        <div class="info-row"><span class="info-k">Role</span><span class="info-v">Google Ads Contractor</span></div>
+        <div class="info-row"><span class="info-k">Reports to</span><span class="info-v">Business Owner</span></div>
+        <div class="info-row"><span class="info-k">Duration</span><span class="info-v">~5.5 weeks</span></div>
+        <div class="info-row"><span class="info-k">Cadence</span><span class="info-v">Weekly full audits</span></div>
+        <div class="info-row"><span class="info-k">Platforms</span><span class="info-v">Google Ads, GA4/GTM</span></div>
+        <div class="info-row"><span class="info-k">Attribution</span><span class="info-v">Triple Whale + Pixel</span></div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:8px;">How The Engagement Was Structured</div>
+    <p>Every owned campaign was audited on a standing weekly cycle rather than reviewed only when a number looked wrong: changelog, performance, budget and bidding, product feed, audience signals, creative, search themes, and negative keywords, in that order, every time. Every recommendation required the business owner's sign-off before anything went live in the account.</p>
+    <div class="pullquote">"Six campaigns, one catalog, no shared negative list. The account was never going to hold together without a rule set the next person to touch it could actually follow."</div>
+    <div class="quote-src">Framing note, engagement kickoff</div>
+  </div>
+</section>
+
+<!-- ============ 02 THE PROBLEM ============ -->
+<section class="page">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>02 / The Problem</span></div>
+    <div class="eyebrow">The Problem</div>
+    <h2>Negative keywords were being decided one at a time, with no record of why</h2>
+    <p class="lede">Six campaigns sharing one broad product category is a hard boundary to hold by hand, and it was being held by hand: no documented rule set, no record of why a given term was let through or blocked, and no way to check later whether a call was still correct.</p>
+    <p>Each campaign is scoped to a narrow slice of the catalog: Polishing PMax should never spend on a pressure washer search, and Pressure Washer Accessories should never spend on a pump or machine, since those sit on their own campaign entirely. The boundary between "on-topic" and "in scope for this specific campaign" is easy to get wrong in either direction, and getting it wrong either way has a cost. Too loose, and budget leaks to searches that were never going to convert on that page. Too strict, and the campaign starts blocking its own best-performing, most obvious category terms.</p>
+    <p>Two findings made the scale of the gap concrete early on: a 180-day pull showed Pressure Washer Accessories PMax was running with zero active negative keywords, and a single unfiltered local-service term cluster, "car wash near me" and its variants, had quietly spent $1,014.62 with zero conversions to show for it. There was no system catching that; there was just whatever anyone happened to notice.</p>
+
+    <div class="stat-strip">
+      <div class="stat-box"><div class="v accent">$1,014.62</div><div class="l">Spent on one unfiltered search-term cluster, zero conversions, 180 days</div></div>
+      <div class="stat-box"><div class="v accent">0</div><div class="l">Active negative keywords on Pressure Washer Accessories PMax</div></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:10px;">What Made It Hard To Fix By Hand</div>
+    <ul class="list-dash">
+      <li>26,640+ distinct search terms across two campaigns over a 180-day window, well past the point where eyeballing a list catches everything.</li>
+      <li>The catalog changes constantly, so a term that was correctly out of scope last month can be a genuine product today.</li>
+      <li>A blocklist approach can only ever cover competitors you already know about. It has no answer for the next one.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 03 THE CLASSIFICATION SYSTEM ============ -->
+<section class="page">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>03 / The Classification System</span></div>
+    <div class="eyebrow">What Was Built</div>
+    <h2>A rules-based negative-keyword classification framework, not a one-off cleanup</h2>
+    <p class="lede">Rather than hand-triaging search terms campaign by campaign, the fix was a documented decision framework applied consistently across 26,640+ search terms spanning both major PMax campaigns over a 180-day window, built so the same call gets made the same way every time, and so every call can be checked later.</p>
+
+    <div class="eyebrow" style="margin-top:14px;">The Scope Rule</div>
+    <p>Every search term is kept by default. It only becomes a negative if it falls into one of four categories: it names an exclusive competing brand, it names a competitor Waxit doesn't stock, it shows no buying intent (research, comparison, question-format queries), or it's genuinely unrelated to that specific campaign's slice of the catalog, even if it's car-care-adjacent and would belong on a sibling campaign instead.</p>
+
+    <div class="eyebrow" style="margin-top:14px;">The Default-Flip Principle</div>
+    <p>The single biggest structural change in the framework. The original logic kept a term unless it matched a known competitor, which is unwinnable, since no competitor list is ever complete. The rebuilt logic inverts that: a term is negatived by default unless every token in it positively resolves to real Waxit-vendor vocabulary or genuinely generic category vocabulary, checked against a ground-truth product catalog rather than a keyword blocklist. Positive confirmation required, not absence of a bad signal.</p>
+
+    <div class="process-row">
+      <div class="proc-card"><div class="proc-num">01</div><div class="proc-title">Scope rule applied</div><div class="proc-desc">Every term tested against the 4-category rule and the campaign's specific product menu, not just "is this car care."</div></div>
+      <div class="proc-card"><div class="proc-num">02</div><div class="proc-title">Catalog cross-check</div><div class="proc-desc">Ambiguous brand or product tokens resolved against an actual product catalog, not assumption.</div></div>
+      <div class="proc-card"><div class="proc-num">03</div><div class="proc-title">Adversarial review</div><div class="proc-desc">Verdicts stress-tested against edge cases on purpose, looking for the next false positive or false negative.</div></div>
+      <div class="proc-card"><div class="proc-num">04</div><div class="proc-title">Regression-tested</div><div class="proc-desc">Every prior fix locked in as an automated check so it can never silently regress in a later pass.</div></div>
+    </div>
+
+    <div class="stat-strip wide">
+      <div class="stat-box"><div class="v">18,503</div><div class="l">Polishing PMax terms swept</div></div>
+      <div class="stat-box"><div class="v">8,137</div><div class="l">Pressure washer terms swept</div></div>
+      <div class="stat-box"><div class="v">42</div><div class="l">Logged incidents across 12 review rounds</div></div>
+      <div class="stat-box"><div class="v">32/32</div><div class="l">Automated checks, ~35 sec runtime</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 PRECISION IN PRACTICE ============ -->
+<section class="page">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>04 / Precision In Practice</span></div>
+    <div class="eyebrow">Precision In Practice</div>
+    <h2>Two of the same mistake, made in opposite directions</h2>
+    <p class="lede">A rule set is only as good as its edge cases. Two examples of how the framework's logic actually resolves a genuinely ambiguous term: one where the old approach was too aggressive, one where it wasn't aggressive enough.</p>
+
+    <div class="edge-grid">
+      <div class="edge-card bad">
+        <div class="edge-label">Too aggressive, allow by exception</div>
+        <div class="edge-term">"5 inch polishing pads"</div>
+        <div class="edge-desc">Generic, high-intent category vocabulary was being caught by a false brand-citation match to one specific SKU, negatived by mistake, even though it's arguably the campaign's core search term.</div>
+      </div>
+      <div class="edge-card good">
+        <div class="edge-label">Rebuilt, confirm by catalog</div>
+        <div class="edge-term">"ryobi to m22 adapter"</div>
+        <div class="edge-desc">Ryobi read as a pure competitor brand by default. Cross-checked against the catalog, it's also a real, stocked compatibility descriptor on genuine Waxit/Aquatouch adaptor listings, kept, with the distinction now encoded as a permanent rule.</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:20px;">Reading A Term Correctly, Not Just Quickly</div>
+    <p>Raw conversion count is a bad filter on its own; a low-volume term can still be a genuine winner. The term "rupes" looked like a marginal performer at a glance, at 4.86 conversions. Measured against the campaign's own benchmark instead, it was beating it on every axis that mattered. It stayed. The framework's standing rule since: judge a term against its own campaign's benchmark, never against raw volume alone.</p>
+    <div class="metric-compare">
+      <div class="mc-item">CTR<br><b>1.46%</b> vs. 1.10% avg</div>
+      <div class="mc-item">Conversion rate<br><b>1.85%</b> vs. 1.70% avg</div>
+      <div class="mc-item">ROAS<br><b>15.18x</b> vs. 12.17x avg</div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:6px;">Other Edge Cases The Framework Now Encodes Permanently</div>
+    <ul class="list-dash">
+      <li><b>Real vendor sub-lines, not just brand names.</b> Lake Country's own product-line abbreviations (HDO, SDO, CCS) and Adam's Polishes were falling through to a default negative before being recognized as genuine, in-scope vendor vocabulary.</li>
+      <li><b>Exclusive-brand exemptions stay narrow.</b> Koch Chemie and Mirch are permanently exempt from competitor treatment by name, but only within their own campaign's scope. A genuine Koch Chemie ceramic-coating product still gets excluded from Polishing PMax on scope grounds, not brand grounds.</li>
+      <li><b>One vendor, two campaigns.</b> Annovi Reverberi and Kranzle sell both PW accessories and PW machines. Being on the vendor allowlist stopped being enough once a vendor's products could belong to either campaign, so the rule now checks the specific product type, not just the brand.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 05 AUDIT DISCIPLINE ============ -->
+<section class="page">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>05 / Audit Discipline</span></div>
+    <div class="eyebrow">How The Account Was Run</div>
+    <h2>Weekly, full-account audits, the same eight questions, every time</h2>
+    <p class="lede">Every owned campaign was audited on a standing structure: changelog, performance, budget &amp; bidding, product feed, audience signals, creative, search themes, negative keywords, so nothing gets reviewed only when something looks wrong. Three findings from that cadence below.</p>
+
+    <div class="finding-grid">
+      <div>
+        <div class="finding-num">01 &middot; Tracking Gap</div>
+        <div class="finding-title">A 60% attribution gap traced to Enhanced Conversions</div>
+        <div class="finding-body">Polishing PMax was reporting 14.60x ROAS in the attribution platform against 6.10x natively in Google Ads on the same week, a divergence too large to be normal lag. Traced to Enhanced Conversions configuration rather than a real performance swing, and escalated to the top-priority fix once the two product pages behind it were confirmed to be recording zero GA4 key events despite Google Ads showing attributed sales.</div>
+      </div>
+      <div>
+        <div class="finding-num">02 &middot; Structural Gap</div>
+        <div class="finding-title">A landing page 404 that had been broken for four months</div>
+        <div class="finding-body">The Pressure Washer Short Guns &amp; Lances landing page was returning a 404 on Android, confirmed broken across 17 separate dated policy checks stretching back over four months, well before this engagement started. It had simply never been chased down to a fix. Flagged as the top immediate action once found: it was quietly capping an entire asset group's eligibility.</div>
+      </div>
+    </div>
+
+    <div class="finding-num" style="margin-top:22px;">03 &middot; Reading The Macro Number Correctly</div>
+    <p>Account-wide ROAS fell sharply in July, from a 14.25x EOFY peak in late June to 6.37x for the month that followed, the kind of drop that invites a scramble for an account-level explanation. Splitting the number apart first: new-customer acquisition held steady, new customers actually grew as a share of purchases, and the fall was concentrated almost entirely in returning-customer revenue immediately after the EOFY sale ended. Read together, that's a demand-timing event, not an account failure: the right response was to set July as the honest baseline and measure forward from there, not to make reactive changes chasing a number that was never really about execution.</p>
+
+    <div class="dark-callout">
+      <div class="eyebrow">Built-In Self-Correction</div>
+      <p>Two calls made early in the engagement were reversed once fresh data came in, on purpose. A bulk negative-keyword recommendation covering DeWalt, Ryobi and Ozito was walked back after a 180-day pull showed those terms actually converting at 40.74x, 14.51x and 18.82x ROAS respectively. A separate claim that pressure washer machines "weren't selling" was retracted once it was confirmed that demand was being correctly captured by a different, dedicated campaign at 17.69x ROAS. <b>The discipline that matters here isn't never being wrong. It's checking against source data before a recommendation ships, and reversing in writing when the data disagrees.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 METHOD & TAKEAWAYS ============ -->
+<section class="page" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="page-kicker"><span>Waxit Car Care &middot; Case Study</span><span>06 / Method &amp; Takeaways</span></div>
+    <div class="eyebrow">What This Demonstrates</div>
+    <h2>Systems thinking applied to an account most people would just triage by hand</h2>
+
+    <div class="two-col" style="margin-top:24px;">
+      <div>
+        <div class="eyebrow">Core Skills</div>
+        <div class="tag-row">
+          <span class="tag">Google Ads Performance Max</span>
+          <span class="tag">Search-term auditing at scale</span>
+          <span class="tag">Rules-based classification design</span>
+          <span class="tag">GA4 / GTM tracking QA</span>
+          <span class="tag">Multi-source attribution reconciliation</span>
+          <span class="tag">Python / pandas for QA automation</span>
+          <span class="tag">Regression testing discipline</span>
+          <span class="tag">Structured audit methodology</span>
+          <span class="tag">Stakeholder reporting</span>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Working Principles Applied</div>
+        <ul class="principles">
+          <li>Default to deny, require positive confirmation. Never rely on a blocklist that can never be complete.</li>
+          <li>Every rule gets a regression test, so a fix made once can't silently break later.</li>
+          <li>Judge a search term against its own campaign benchmark, never against raw volume alone.</li>
+          <li>Verify before shipping a recommendation, and reverse it in writing when the data disagrees.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pullquote" style="margin-top:10px;">"Old logic was keep unless it matches a known competitor, unwinnable, because that list can never be complete. Rebuilt logic is: negative by default unless every part of the term positively resolves to something real."</div>
+    <div class="quote-src">From the classification framework's working rules</div>
+
+    <p class="closing-note">Figures in this case study are drawn directly from working audit files, the search-term classification workbook, and its accompanying regression-test suite and review ledger maintained throughout the engagement. Client and account details are shared with the understanding that this work is being presented as a professional portfolio reference.</p>
+
+    <div class="signature">
+      <div>
+        <div class="sig-name">Andreus Jedd Josue Sarte</div>
+        <div class="sig-role">Performance Marketing Specialist &middot; Google Ads &amp; Performance Max</div>
+      </div>
+      <div class="sig-contact">
+        ajeddsarte@gmail.com<br>+63 927 497 2612
+      </div>
+    </div>
+    <div class="footer-space"></div>
+  </div>
+</section>
+
+</body>
+</html>
