@@ -1,0 +1,87 @@
+name: SEO Legacy Cleanup
+
+on:
+  push:
+    branches:
+      - seo-legacy-cleanup
+    paths:
+      - .github/workflows/seo-legacy-cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: seo-legacy-cleanup
+          fetch-depth: 0
+
+      - name: Apply guarded SEO replacements
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def replace_exact(path, old, new, expected=1):
+              p = Path(path)
+              text = p.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != expected:
+                  raise SystemExit(f"{path}: expected {expected} matches, found {count}: {old[:100]!r}")
+              p.write_text(text.replace(old, new), encoding="utf-8")
+              print(f"{path}: replaced {count} occurrence(s)")
+
+          home = "index.html"
+          replace_exact(home,
+            "<title>7+ Years of Proven Paid Media Results | Jedd Sarte</title>",
+            "<title>Google Ads & Paid Media Specialist for U.S. Businesses | Jedd Sarte</title>")
+          replace_exact(home,
+            '<meta name="description" content="Proven Senior Paid Media Specialist with 7+ years of results for U.S. law firms, home service contractors, and e-commerce brands. Specializing in Google Ads, Meta Ads, LinkedIn, and TikTok Ads." />',
+            '<meta name="description" content="Google Ads and paid media specialist with 6+ years of digital marketing experience helping U.S. law firms, home service companies, e-commerce brands, and other businesses improve acquisition through paid search, paid social, tracking, and funnel strategy." />')
+          replace_exact(home,
+            '<meta property="og:title" content="7+ Years of Proven Paid Media Results | Jedd Sarte" />',
+            '<meta property="og:title" content="Google Ads & Paid Media Specialist for U.S. Businesses | Jedd Sarte" />')
+          replace_exact(home,
+            '<meta property="og:description" content="Proven Senior Paid Media Specialist with 7+ years of results for U.S. law firms, home service contractors, and e-commerce brands. Specializing in Google Ads, Meta Ads, LinkedIn, and TikTok Ads." />',
+            '<meta property="og:description" content="Google Ads and paid media strategy focused on qualified leads, purchases, tracking, and measurable business outcomes for U.S. businesses." />')
+          replace_exact(home,
+            '<meta name="twitter:title" content="7+ Years of Proven Paid Media Results | Jedd Sarte" />',
+            '<meta name="twitter:title" content="Google Ads & Paid Media Specialist for U.S. Businesses | Jedd Sarte" />')
+          replace_exact(home,
+            '<meta name="twitter:description" content="Proven Senior Paid Media Specialist with 7+ years of results for U.S. law firms, home service contractors, and e-commerce brands. Specializing in Google Ads, Meta Ads, LinkedIn, and TikTok Ads." />',
+            '<meta name="twitter:description" content="Google Ads and paid media strategy focused on qualified leads, purchases, tracking, and measurable business outcomes for U.S. businesses." />')
+          replace_exact(home,
+            '"description": "Senior Paid Media Specialist with 7+ years managing Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads for U.S. law firms, home service contractors, and e-commerce brands.",',
+            '"description": "Google Ads and paid media specialist with 6+ years of digital marketing experience across paid search, paid social, tracking, SEO, and funnel strategy for U.S. businesses.",')
+          replace_exact(home,
+            '"name": "7+ Years of Proven Paid Media Results | Jedd Sarte",',
+            '"name": "Google Ads & Paid Media Specialist for U.S. Businesses | Jedd Sarte",')
+          replace_exact(home,
+            '<p class="hero-sub">Senior Paid Media Specialist with 7+ years running Google, Meta, LinkedIn & TikTok Ads for U.S. law firms, home service companies, and e-commerce brands. As a result, I build campaigns tied to real business outcomes  -  signed cases, booked jobs, and closed revenue.</p>',
+            '<p class="hero-sub"><strong style="color:rgba(255,255,255,0.82);font-weight:600">Google Ads & Paid Media Specialist</strong> with 6+ years of digital marketing experience across Google, Meta, LinkedIn & TikTok Ads for U.S. law firms, home service companies, e-commerce brands, and other businesses. I build campaigns tied to real business outcomes  -  qualified leads, signed clients, purchases, booked jobs, and revenue.</p>')
+          replace_exact(home,
+            '<div class="stat-big">7<sup>+</sup></div>\n          <div class="stat-lbl">Years in Performance Marketing</div>',
+            '<div class="stat-big">6<sup>+</sup></div>\n          <div class="stat-lbl">Years in Digital Marketing</div>')
+          replace_exact(home,
+            '<li><a href="services/">Services</a></li>',
+            '<li><a href="services/">Services</a></li>\n      <li><a href="services/google-ads-management/">Google Ads</a></li>')
+          replace_exact(home,
+            '          <a href="case-studies/" class="btn-outline">See My Work</a>\n        </div>',
+            '          <a href="case-studies/" class="btn-outline">See My Work</a>\n        </div>\n        <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, or <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">Google Ads for law firms</a>.</p>')
+
+          services = "services/index.html"
+          replace_exact(services,
+            '<div class="his-num">5<span>+</span></div>\n              <div class="his-lbl">Years running ads</div>',
+            '<div class="his-num">6<span>+</span></div>\n              <div class="his-lbl">Years in digital marketing</div>')
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "jedd-sarte-seo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html services/index.html
+          git diff --cached --check
+          git commit -m "Optimize legacy homepage and services SEO"
+          git push origin seo-legacy-cleanup
