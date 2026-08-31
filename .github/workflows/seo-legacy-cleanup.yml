@@ -74,8 +74,20 @@ jobs:
 
           services = "services/index.html"
           replace_exact(services,
-            '<div class="his-num">5<span>+</span></div>\n              <div class="his-lbl">Years running ads</div>',
-            '<div class="his-num">6<span>+</span></div>\n              <div class="his-lbl">Years in digital marketing</div>')
+            '<title>Services  -  Jedd Sarte | Senior Paid Media Specialist</title>',
+            '<title>Paid Media & Google Ads Services | Jedd Sarte</title>')
+          replace_exact(services,
+            '<div class="his"><div class="his-num">5<span>+</span></div><div class="his-lbl">Years running ads</div></div>',
+            '<div class="his"><div class="his-num">6<span>+</span></div><div class="his-lbl">Years in digital marketing</div></div>')
+          replace_exact(services,
+            '<h3>Paid Media Management</h3>',
+            '<h3><a href="google-ads-management/" style="color:inherit;text-decoration:none">Paid Media Management</a></h3>')
+          replace_exact(services,
+            '<h3>Account Audit & Sprint Plan</h3>',
+            '<h3><a href="google-ads-audit/" style="color:inherit;text-decoration:none">Account Audit & Sprint Plan</a></h3>')
+          replace_exact(services,
+            '<h3>Legal Industry Paid Media</h3>',
+            '<h3><a href="../industries/law-firm-google-ads/" style="color:inherit;text-decoration:none">Legal Industry Paid Media</a></h3>')
 
       - name: Commit cleanup
         run: |
