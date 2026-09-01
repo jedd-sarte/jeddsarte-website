@@ -1,0 +1,24 @@
+name: Homepage Booking Update
+
+on:
+  push:
+    branches: [homepage-booking-cta]
+    paths: [.github/workflows/homepage-booking-run.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: homepage-booking-cta
+      - run: python scripts/update_homepage_booking.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Replace homepage forms with booking CTAs"
+          git push
