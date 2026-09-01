@@ -27,6 +27,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://jeddsarte.com/services/conversion-tracking/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jeddsarte.com/services/meta-ads-management/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jeddsarte.com/industries/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -34,6 +46,18 @@
   </url>
   <url>
     <loc>https://jeddsarte.com/industries/law-firm-google-ads/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jeddsarte.com/industries/google-ads-contractors/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jeddsarte.com/industries/ecommerce-google-ads/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
