@@ -1,0 +1,27 @@
+name: Finalize Case Study Cleanup
+
+on:
+  push:
+    branches: [seo-case-study-ungating]
+    paths:
+      - .github/workflows/finalize-case-studies.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-case-study-ungating
+      - name: Run final cleanup and QA
+        run: python scripts/finalize_case_study_ungating.py
+      - name: Commit final hub cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add case-studies/index.html
+          git commit -m "Finalize open case study hub"
+          git push
