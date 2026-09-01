@@ -130,10 +130,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .svc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.25s;cursor:default}
 .svc:hover{background:rgba(244,159,28,0.06);border-color:rgba(244,159,28,0.25);transform:translateY(-3px)}
 .svc-icon{font-size:1.6rem;margin-bottom:16px;display:block}
-.svc h3{color:var(--white);margin-bottom:10px;font-size:1rem}
+.svc h3{color:var(--white);margin-bottom:10px;font-size:1rem}.svc h3 a{color:inherit;text-decoration:none}
 .svc p{color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.65}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.svc-tag{font-size:0.68rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:rgba(244,159,28,0.1);padding:4px 9px;border-radius:4px;letter-spacing:0.05em}
+.svc-tag{font-size:0.68rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:rgba(244,159,28,0.1);padding:4px 9px;border-radius:4px;letter-spacing:0.05em;text-decoration:none}
 
 /* ── CASE STUDIES ── */
 #cases{background:var(--offwhite)}
@@ -272,7 +272,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 .cert-badges{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .cert-badge{background:transparent;border:none;border-radius:8px;padding:4px;display:flex;align-items:center;justify-content:center;height:56px;width:auto}
 .cert-badge img{height:48px;width:auto;max-width:120px;object-fit:contain;mix-blend-mode:lighten;opacity:0.9;filter:drop-shadow(0 0 4px rgba(255,255,255,0.1))}
-.cert-badge:hover img{opacity:1;filter:drop-shadow(0 0 6px rgba(244,159,28,0.3))}
+.cert-badge:hover img{opacity:1;filter:drop-shadow(0 0 6px rgba(244,159,28,0.3))}.cert-text{height:48px;display:flex;align-items:center;padding:0 12px;border:1px solid rgba(255,255,255,0.16);border-radius:7px;color:rgba(255,255,255,0.85);font:700 0.72rem 'Space Grotesk',sans-serif;line-height:1.2;text-align:center}
 
 
 @font-face{font-display:swap}
@@ -296,8 +296,8 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       "knowsAbout": [
         "Google Ads",
         "Meta Ads",
-        "LinkedIn Ads",
-        "TikTok Ads",
+        "SEO",
+        "Google Analytics",
         "Paid Media Strategy",
         "Value-Based Bidding",
         "Server-Side GTM",
@@ -326,11 +326,11 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
         },
         {
           "@type": "EducationalOccupationalCredential",
-          "name": "Amazon Ads Certified",
+          "name": "Certified BrightEdge SEO Professional",
           "credentialCategory": "Professional Certification",
           "recognizedBy": {
             "@type": "Organization",
-            "name": "Amazon"
+            "name": "BrightEdge"
           }
         }
       ]
@@ -366,7 +366,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       "@id": "https://jeddsarte.com/#service",
       "name": "Jedd Sarte Paid Media Services",
       "url": "https://jeddsarte.com/services/",
-      "description": "Full-service paid media management including Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads, tracking infrastructure, landing pages, and conversion funnel strategy.",
+      "description": "Paid media and acquisition services centered on Google Ads, Meta Ads, conversion tracking, landing pages, SEO, and conversion funnel strategy.",
       "provider": {
         "@id": "https://jeddsarte.com/#person"
       },
@@ -378,11 +378,12 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
         "Paid Media Management",
         "Google Ads Management",
         "Meta Ads Management",
-        "LinkedIn Ads Management",
-        "Account Audit",
+        "Google Ads Audit",
         "Conversion Tracking Setup",
         "Landing Page Design",
-        "Legal Industry Advertising"
+        "Legal Industry Advertising",
+        "Contractor Advertising",
+        "E-commerce Advertising"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -393,7 +394,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
             "itemOffered": {
               "@type": "Service",
               "name": "Paid Media Management",
-              "description": "Full campaign management across Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads."
+              "description": "Full campaign management centered on Google Ads and Meta Ads, supported by conversion tracking and funnel strategy."
             }
           },
           {
@@ -457,19 +458,19 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <div>
         <div class="hero-available"><div class="pulse"></div>Available for U.S. Clients · Remote</div>
         <h1 class="hero-title">Paid media that fills <em>pipelines,</em><br>not just reports.</h1>
-        <p class="hero-sub"><strong style="color:rgba(255,255,255,0.82);font-weight:600">Google Ads & Paid Media Specialist</strong> with 6+ years of digital marketing experience across Google, Meta, LinkedIn & TikTok Ads for U.S. law firms, home service companies, e-commerce brands, and other businesses. I build campaigns tied to real business outcomes  -  qualified leads, signed clients, purchases, booked jobs, and revenue.</p>
+        <p class="hero-sub"><strong style="color:rgba(255,255,255,0.82);font-weight:600">Google Ads & Paid Media Specialist</strong> with 6+ years of digital marketing experience across Google Ads, Meta Ads, SEO, analytics, and conversion tracking for U.S. law firms, home service companies, e-commerce brands, and other businesses. I build campaigns tied to real business outcomes  -  qualified leads, signed clients, purchases, booked jobs, and revenue.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Free Strategy Call →</a>
           <a href="case-studies/" class="btn-outline">See My Work</a>
         </div>
-        <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, or <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">Google Ads for law firms</a>.</p>
+        <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, <a href="services/meta-ads-management/" style="color:#f49f1c;font-weight:600">Meta Ads management</a>, <a href="services/conversion-tracking/" style="color:#f49f1c;font-weight:600">conversion tracking</a>, or industry strategies for <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">law firms</a>, <a href="industries/google-ads-contractors/" style="color:#f49f1c;font-weight:600">contractors</a>, and <a href="industries/ecommerce-google-ads/" style="color:#f49f1c;font-weight:600">e-commerce</a>.</p>
       <!-- Certifications -->
       <div class="cert-strip">
         <span class="cert-label">Certified</span>
         <div class="cert-badges">
           <div class="cert-badge"><img src="assets/images/google-ads-search-certified.webp" alt="Google Ads Search Certified" width="100" height="48" loading="lazy"/></div>
           <div class="cert-badge"><img src="assets/images/certified-meta-media-buying-professional.webp" alt="Meta Media Buying Professional" width="100" height="48" loading="lazy"/></div>
-          <div class="cert-badge"><img src="assets/images/amazon-ads-certified.webp" alt="Amazon Ads Certified" width="100" height="48" loading="lazy"/></div>
+          <div class="cert-badge"><span class="cert-text">BrightEdge SEO<br>Professional</span></div>
         </div>
       </div>
       </div>
@@ -479,8 +480,8 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="stat-lbl">Years in Digital Marketing</div>
         </div>
         <div class="stat-row">
-          <div class="stat-big">4</div>
-          <div class="stat-lbl">Ad Platforms Managed Daily</div>
+          <div class="stat-big">2</div>
+          <div class="stat-lbl">Core Paid Media Platforms · Google + Meta</div>
         </div>
         <div class="stat-row">
           <div class="stat-big">50<sup>+</sup></div>
@@ -622,31 +623,31 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
     <div class="services-grid">
       <div class="svc fade-up">
         <span class="svc-icon">📊</span>
-        <h3>Paid Media Management</h3>
-        <p>Full campaign management across all major ad platforms. Specifically, that includes strategy, build, creative direction, bid management, and monthly reporting.</p>
-        <div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Ads</span><span class="svc-tag">LinkedIn</span><span class="svc-tag">TikTok</span></div>
+        <h3><a href="services/google-ads-management/">Paid Media Management</a></h3>
+        <p>Full campaign management centered on Google Ads and Meta Ads. Specifically, that includes strategy, build, creative direction, bid management, conversion measurement, and performance reporting.</p>
+        <div class="svc-tags"><a class="svc-tag" href="services/google-ads-management/">Google Ads</a><a class="svc-tag" href="services/meta-ads-management/">Meta Ads</a></div>
       </div>
       <div class="svc fade-up">
         <span class="svc-icon">🔍</span>
-        <h3>Account Audit & Sprint Plan</h3>
+        <h3><a href="services/google-ads-audit/">Account Audit & Sprint Plan</a></h3>
         <p>First, a deep-dive audit of your current accounts. Then, a prioritized action plan that identifies budget waste, targeting gaps, and the fastest wins available.</p>
         <div class="svc-tags"><span class="svc-tag">Any Platform</span><span class="svc-tag">Action Plan</span></div>
       </div>
       <div class="svc fade-up">
         <span class="svc-icon">⚙️</span>
-        <h3>Tracking & Data Infrastructure</h3>
+        <h3><a href="services/conversion-tracking/">Tracking & Data Infrastructure</a></h3>
         <p>Server-side GTM, Conversions API, offline postbacks, and CRM integrations. In short, this is the tracking layer most agencies ignore, built right.</p>
         <div class="svc-tags"><span class="svc-tag">GTM Server-Side</span><span class="svc-tag">CAPI</span><span class="svc-tag">GA4</span></div>
       </div>
       <div class="svc fade-up">
         <span class="svc-icon">⚖️</span>
-        <h3>Legal Industry Campaigns</h3>
+        <h3><a href="industries/law-firm-google-ads/">Legal Industry Campaigns</a></h3>
         <p>Specialized in PI, family law, corporate litigation, and mediation. As a result, I know how to generate signed cases, not just form fills.</p>
         <div class="svc-tags"><span class="svc-tag">PI Law</span><span class="svc-tag">Corp Litigation</span><span class="svc-tag">Lead Gen</span></div>
       </div>
       <div class="svc fade-up">
         <span class="svc-icon">🏠</span>
-        <h3>Home Services & Contractors</h3>
+        <h3><a href="industries/google-ads-contractors/">Home Services & Contractors</a></h3>
         <p>Local and regional campaigns focused on booked jobs. Specifically, Google LSA, Maps optimization, and geo-targeted Search campaigns that actually convert.</p>
         <div class="svc-tags"><span class="svc-tag">Local Search</span><span class="svc-tag">LSA</span><span class="svc-tag">Geo Targeting</span></div>
       </div>
@@ -679,7 +680,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="cs-num">1:7.4<br><span class="cs-num-sub">CAC-to-LTV Ratio</span></div>
         </div>
         <div class="cs-body">
-          <h3>Attorney Daryl A. Gray  -  High-Value PI Law</h3>
+          <h3><a href="case-studies/pi-law-firm/" style="color:inherit;text-decoration:none">Attorney Daryl A. Gray  -  High-Value PI Law</a></h3>
           <p>First, I engineered a hybrid first-party server-side data pipeline via GTM on AWS/GCP to feed offline conversion postbacks to Google Ads within a 24-hour window. Then, I shifted from generic tCPA to Value-Based Bidding using a proprietary case value model, assigning $500 to minor soft tissue claims and $25,000+ to catastrophic/truck injury intents. As a result, the algorithm automatically prioritized spend on the highest-value legal queries.</p>
           <div class="cs-metrics">
             <div class="cs-m"><div class="cs-m-num"><span class="up">↑</span> 1:3 → 1:7.4</div><div class="cs-m-lbl">CAC to LTV Ratio</div></div>
@@ -697,7 +698,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="cs-num" style="font-size:3rem">45%<br><span class="cs-num-sub">More qualified consultations</span></div>
         </div>
         <div class="cs-body">
-          <h3>B2B Corporate Defense Firm  -  B2B Corporate Defense</h3>
+          <h3><a href="case-studies/b2b-corporate-law/" style="color:inherit;text-decoration:none">B2B Corporate Defense Firm  -  B2B Corporate Defense</a></h3>
           <p>Built advanced scroll-depth and copy-paste telemetry via GTM. Consequently, users spending 3+ minutes on corporate defense resources triggered a high-intent micro-conversion signal, warming up platform pixels before any form submission. In addition, Meta Custom Audiences excluded existing clients to concentrate spend on net-new B2B decision-makers.</p>
           <div class="cs-metrics">
             <div class="cs-m"><div class="cs-m-num"><span class="up">↑</span> 45% QoQ</div><div class="cs-m-lbl">Qualified Consultations</div></div>
@@ -714,7 +715,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <div class="cs-num" style="font-size:3rem">28%<br><span class="cs-num-sub">Attribution recovery</span></div>
         </div>
         <div class="cs-body">
-          <h3>High-Tier Trial Litigation Practice  -  Complex Civil Litigation</h3>
+          <h3><a href="case-studies/complex-litigation/" style="color:inherit;text-decoration:none">High-Tier Trial Litigation Practice  -  Complex Civil Litigation</a></h3>
           <p>Implemented a multi-touch attribution model (40/20/40 position-based weighting), replacing last-click. As a result, SHA-256 hashed first-party data via Enhanced Conversions recovered cross-device journeys and matched offline calls back to original ad clicks across multi-week consideration cycles.</p>
           <div class="cs-metrics">
             <div class="cs-m"><div class="cs-m-num"><span class="up">↑</span> 28%</div><div class="cs-m-lbl">Attribution Recovery</div></div>
@@ -960,6 +961,8 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <nav class="footer-nav">
         <a href="#about">About</a>
         <a href="services/">Services</a>
+        <a href="services/google-ads-management/">Google Ads</a>
+        <a href="services/conversion-tracking/">Tracking</a>
         <a href="case-studies/">Work</a>
         <a href="#audit">Free Audit</a>
         <a href="#contact">Contact</a>
