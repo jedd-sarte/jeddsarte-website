@@ -1,0 +1,49 @@
+name: SEO Phase 3A CTA Copy Alignment
+
+on:
+  push:
+    branches:
+      - seo-phase-3a
+    paths:
+      - .github/workflows/seo-phase3a-copy-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-phase-3a
+      - name: Align CTA copy with destination pages
+        shell: python
+        run: |
+          from pathlib import Path
+          def replace_exact(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{path}: expected 1 match, found {count}")
+              p.write_text(text.replace(old, new), encoding="utf-8")
+
+          replace_exact(
+              "blog/google-ads-audit-checklist/index.html",
+              '<h3>Want me to run this audit on your account?</h3>\n            <p>30-minute free audit covering all 10 points - written report included, no pitch.</p>',
+              '<h3>Want a deeper review of your Google Ads account?</h3>\n            <p>See the full Google Ads Audit service, including the account areas I review and how findings are prioritized.</p>'
+          )
+          replace_exact(
+              "blog/meta-capi-law-firms/index.html",
+              '<h3>Running Meta Ads for your law firm?</h3>\n            <p>A free tracking audit will show your current Event Match Quality score and exactly what you\'re missing.</p>',
+              '<h3>Running Meta Ads for your law firm?</h3>\n            <p>See how I approach Meta campaign structure, conversion quality, creative testing, and Pixel/CAPI measurement together.</p>'
+          )
+      - name: Commit copy alignment
+        run: |
+          git config user.name "jedd-sarte-seo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add blog/google-ads-audit-checklist/index.html blog/meta-capi-law-firms/index.html
+          git diff --cached --check
+          git commit -m "Align article CTAs with commercial landing pages"
+          git push origin seo-phase-3a
