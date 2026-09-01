@@ -1,0 +1,111 @@
+name: SEO Phase 3C Technical Audit Rerun
+
+on:
+  push:
+    branches:
+      - seo-phase-3c-audit
+    paths:
+      - .github/workflows/seo-phase3c-audit-rerun.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-phase-3c-audit
+      - name: Re-run full technical SEO audit
+        shell: python
+        run: |
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, unquote
+          import json, xml.etree.ElementTree as ET
+
+          ROOT=Path('.').resolve(); SITE='https://jeddsarte.com'
+          html_files=sorted(p for p in Path('.').rglob('*.html') if '.github' not in p.parts and p.name!='404.html')
+
+          class P(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.title=[]; self.it=False; self.h1=0; self.desc=[]; self.canon=[]; self.href=[]; self.src=[]; self.ij=False; self.jbuf=[]; self.jsonlds=[]
+              def handle_starttag(self,t,attrs):
+                  a=dict(attrs)
+                  if t=='title': self.it=True
+                  if t=='h1': self.h1+=1
+                  if t=='meta' and a.get('name','').lower()=='description': self.desc.append(a.get('content',''))
+                  if t=='link' and a.get('rel','').lower()=='canonical': self.canon.append(a.get('href',''))
+                  if t=='a' and 'href' in a: self.href.append(a['href'])
+                  if t in ('img','script') and 'src' in a: self.src.append(a['src'])
+                  if t=='link' and 'href' in a and a.get('rel','').lower() in ('stylesheet','icon','preload'): self.src.append(a['href'])
+                  if t=='script' and a.get('type','').lower()=='application/ld+json': self.ij=True; self.jbuf=[]
+              def handle_endtag(self,t):
+                  if t=='title': self.it=False
+                  if t=='script' and self.ij: self.ij=False; self.jsonlds.append(''.join(self.jbuf).strip())
+              def handle_data(self,d):
+                  if self.it: self.title.append(d)
+                  if self.ij: self.jbuf.append(d)
+
+          def url_for(p):
+              rel=p.relative_to(Path('.'))
+              if str(rel)=='index.html': return SITE+'/'
+              if rel.name=='index.html': return SITE+'/'+rel.parent.as_posix().strip('/')+'/'
+              return SITE+'/'+rel.as_posix()
+
+          def target(source,raw):
+              if not raw or raw.startswith(('#','mailto:','tel:','javascript:','data:')): return None
+              u=urlsplit(raw)
+              if u.scheme or u.netloc: return None
+              path=unquote(u.path)
+              if not path: return None
+              c=(source.parent/path).resolve()
+              try: c.relative_to(ROOT)
+              except ValueError: return ('OUT',c)
+              p=Path(c)
+              if path.endswith('/') or p.is_dir(): p=p/'index.html'
+              return ('FILE',p)
+
+          crit=[]; warn=[]; pages={}; titles={}; descs={}
+          print('Auditing',len(html_files),'HTML pages')
+          for f in html_files:
+              x=P(); x.feed(f.read_text(encoding='utf-8')); u=url_for(f); pages[u]=f
+              ti=' '.join(''.join(x.title).split()); de=x.desc[0].strip() if x.desc else ''
+              if not ti: crit.append(f'{f}: missing title')
+              if len(x.desc)!=1: crit.append(f'{f}: expected 1 meta description, found {len(x.desc)}')
+              if len(x.canon)!=1: crit.append(f'{f}: expected 1 canonical, found {len(x.canon)}')
+              elif x.canon[0]!=u: crit.append(f'{f}: canonical {x.canon[0]!r} != {u!r}')
+              if x.h1!=1: crit.append(f'{f}: expected 1 H1, found {x.h1}')
+              if ti:
+                  if ti in titles: warn.append(f'Duplicate title: {f} and {titles[ti]}')
+                  titles[ti]=f
+              if de:
+                  if de in descs: warn.append(f'Duplicate meta description: {f} and {descs[de]}')
+                  descs[de]=f
+              for raw in x.href:
+                  if raw=='#': warn.append(f'{f}: placeholder href="#"')
+                  z=target(f,raw)
+                  if z and z[0]=='FILE' and not z[1].exists(): crit.append(f'{f}: broken href {raw!r}')
+                  elif z and z[0]=='OUT': crit.append(f'{f}: href escapes repo {raw!r}')
+              for raw in x.src:
+                  z=target(f,raw)
+                  if z and z[0]=='FILE' and not z[1].exists(): crit.append(f'{f}: broken local asset {raw!r}')
+              for i,b in enumerate(x.jsonlds,1):
+                  if b:
+                      try: json.loads(b)
+                      except Exception as e: crit.append(f'{f}: invalid JSON-LD {i}: {e}')
+
+          tree=ET.parse('sitemap.xml'); ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          su=[(n.text or '').strip() for n in tree.findall('.//s:loc',ns)]; ss=set(su); ps=set(pages)
+          for u in sorted(ps-ss): crit.append('Sitemap missing '+u)
+          for u in sorted(ss-ps): warn.append('Sitemap extra '+u)
+          if len(su)!=len(ss): crit.append('Duplicate sitemap URLs')
+          rt=Path('robots.txt').read_text(encoding='utf-8')
+          if 'Sitemap: https://jeddsarte.com/sitemap.xml' not in rt: crit.append('robots sitemap declaration missing')
+          if 'Disallow: /' in rt: crit.append('robots blocks site')
+
+          print('\n=== WARNINGS ==='); print('\n'.join('WARN: '+x for x in warn) if warn else 'None')
+          print('\n=== CRITICAL ==='); print('\n'.join('CRITICAL: '+x for x in crit) if crit else 'None')
+          print(f'\nSUMMARY pages={len(html_files)} warnings={len(warn)} critical={len(crit)}')
+          if crit: raise SystemExit(1)
