@@ -1,0 +1,63 @@
+from pathlib import Path
+import re
+
+path = Path('index.html')
+text = path.read_text(encoding='utf-8')
+booking = 'https://calendar.app.google/2RJj6td6D5g3GgfC7'
+
+audit_pattern = re.compile(
+    r'      <div class="form-card">\n'
+    r'        <div class="form-card-title">Claim Your Free Audit</div>.*?'
+    r'        <p class="form-note">🔒 Your info stays private\. Zero sales pressure\.</p>\n'
+    r'      </div>',
+    re.S,
+)
+audit_replacement = f'''      <div class="form-card fade-up">
+        <div class="form-card-title">Book Your Free Audit</div>
+        <div class="form-card-sub">Choose a time that works for you. The 30-minute audit is booked directly through Google Calendar.</div>
+        <div style="background:var(--cream);border:1px solid var(--gray-200);border-radius:12px;padding:18px;margin:18px 0 20px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--navy);font-size:0.92rem;margin-bottom:10px">What happens on the call</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:0.82rem;color:var(--gray-600)">
+            <span>✓ 30-minute Google or Meta Ads account review</span>
+            <span>✓ Clear priorities and the biggest areas of wasted spend</span>
+            <span>✓ Top 3 actions I would take next</span>
+          </div>
+        </div>
+        <a href="{booking}" target="_blank" rel="noopener" class="form-btn" style="text-decoration:none;text-align:center;display:block">Choose a Time →</a>
+        <p class="form-note">No form to fill out. Pick an available time and you're booked.</p>
+      </div>'''
+text, n1 = audit_pattern.subn(audit_replacement, text, count=1)
+if n1 != 1:
+    raise SystemExit(f'Expected to replace 1 audit form, replaced {n1}')
+
+contact_intro_old = "Whether you're starting fresh or fixing a broken account, I'd love to hear what you're working on. Simply reach out below, and I'll get back to you within 24 hours."
+contact_intro_new = "Whether you're starting fresh or fixing a broken account, book a time that works for you and we can talk through what you're trying to solve."
+if text.count(contact_intro_old) != 1:
+    raise SystemExit('Contact intro replacement point not found exactly once')
+text = text.replace(contact_intro_old, contact_intro_new)
+
+contact_pattern = re.compile(
+    r'      <div class="contact-form fade-up">\n'
+    r'        <h3>Send a message</h3>.*?'
+    r'        <button class="csub">Send Message →</button>\n'
+    r'      </div>',
+    re.S,
+)
+contact_replacement = f'''      <div class="contact-form fade-up">
+        <h3>Book a Discovery Call</h3>
+        <p style="color:rgba(255,255,255,0.62);font-size:0.9rem;margin-bottom:22px">Skip the back-and-forth. Choose an available time directly on my calendar and tell me what you want to improve in your campaigns.</p>
+        <div style="border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);border-radius:12px;padding:18px;margin-bottom:20px">
+          <div style="display:flex;flex-direction:column;gap:10px;color:rgba(255,255,255,0.72);font-size:0.84rem">
+            <span>✓ 30-minute discovery call</span>
+            <span>✓ Google Ads, Meta Ads, tracking, or funnel discussion</span>
+            <span>✓ No obligation</span>
+          </div>
+        </div>
+        <a href="{booking}" target="_blank" rel="noopener" class="csub" style="text-decoration:none;display:inline-block">View Available Times →</a>
+      </div>'''
+text, n2 = contact_pattern.subn(contact_replacement, text, count=1)
+if n2 != 1:
+    raise SystemExit(f'Expected to replace 1 contact form, replaced {n2}')
+
+path.write_text(text, encoding='utf-8')
+print('Homepage booking CTAs updated.')
