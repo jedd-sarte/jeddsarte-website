@@ -1,0 +1,29 @@
+name: Sync Cloudflare Production Branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloudflare-production-sync
+  cancel-in-progress: true
+
+jobs:
+  sync-production-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Sync Cloudflare production branch to main
+        run: |
+          git fetch origin seo-phase-1
+          git push origin HEAD:refs/heads/seo-phase-1 --force-with-lease
