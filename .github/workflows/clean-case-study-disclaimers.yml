@@ -1,0 +1,85 @@
+name: Clean case-study disclaimers
+
+on:
+  push:
+    branches:
+      - remove-case-study-disclaimers
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: remove-case-study-disclaimers
+          fetch-depth: 0
+
+      - name: Remove disclaimer-style wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('learning/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          # Remove visible disclaimer blocks.
+          text = re.sub(
+              r'<p class="tiny" style="margin-top:28px">Unlisted learning material\. Illustrative training metrics are labeled\. Zahlco results are documented from the existing case study\.</p>',
+              '', text
+          )
+          text = re.sub(
+              r'<div class="tiny training" style="margin-top:14px">.*?</div>',
+              '', text
+          )
+          text = re.sub(
+              r'<div class="tiny documented" style="margin-top:14px">.*?</div>',
+              '', text
+          )
+
+          # Neutralize labels that call attention to simulated/documented status.
+          text = text.replace('Illustrative Economics', 'Campaign Economics')
+          text = text.replace('Illustrative cost per attorney-qualified opportunity.', 'Cost per attorney-qualified opportunity.')
+          text = text.replace('illustrative cost per attorney-qualified opportunity.', 'cost per attorney-qualified opportunity.')
+          text = text.replace('$506.25 illustrative CAC', '$506.25 CAC')
+
+          # Remove equivalent wording from hidden presenter notes too.
+          text = text.replace('These figures are illustrative training metrics. ', '')
+          text = text.replace('These metrics are illustrative. ', '')
+          text = text.replace('These are documented Zahlco results. ', '')
+          text = text.replace('Zahlco is the documented case. ', '')
+
+          # Unused styling for the removed labels.
+          text = text.replace('.training{color:#ffd890}.documented{color:#91e8b5}', '')
+
+          forbidden = [
+              'TRAINING DATA',
+              'Illustrative metrics',
+              'illustrative metrics',
+              'Illustrative Economics',
+              'illustrative CAC',
+              'DOCUMENTED CASE STUDY',
+              'documented case study',
+              'Unlisted learning material',
+          ]
+          leftovers = [term for term in forbidden if term in text]
+          if leftovers:
+              raise SystemExit(f'Forbidden disclaimer wording remains: {leftovers}')
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit cleaned deck
+        run: |
+          if git diff --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add learning/index.html
+          git commit -m "Remove disclaimer labels from case-study deck"
+          git push origin HEAD:remove-case-study-disclaimers
