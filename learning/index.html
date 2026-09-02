@@ -4,476 +4,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-<title>Paid Media Case Study Lab | Jedd Sarte</title>
-<meta name="description" content="Private paid media training material covering campaign structure, lead generation, Meta Andromeda-style consolidation, full-funnel strategy, and case-study analysis.">
+<title>Paid Media Case Studies | Jedd Sarte</title>
+<meta name="description" content="Unlisted paid media case-study presentation covering Meta lead generation, full-funnel strategy, consolidated campaign structures, lead quality, and campaign economics.">
 <style>
-:root{
-  --navy:#07162f;--navy2:#0d2447;--panel:#102a53;--gold:#d6aa47;--gold2:#f1cc73;
-  --white:#fff;--text:#d8e2f3;--muted:#8da0be;--green:#66d39a;--blue:#5eb2ff;
-  --red:#ff7e7e;--line:rgba(255,255,255,.11);--shadow:0 26px 70px rgba(0,0,0,.28)
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#030b19;color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
-body{background:radial-gradient(circle at 84% 10%,rgba(94,178,255,.09),transparent 28%),radial-gradient(circle at 8% 88%,rgba(214,170,71,.09),transparent 30%),#030b19}
-button,input{font:inherit}
-.hidden{display:none!important}
-
-/* gate */
-#gate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:radial-gradient(circle at 80% 10%,rgba(214,170,71,.13),transparent 28%),linear-gradient(145deg,#06142d,#020712)}
-.gate-card{width:min(520px,calc(100vw - 34px));padding:34px;border-radius:24px;background:rgba(11,29,61,.93);border:1px solid rgba(214,170,71,.28);box-shadow:var(--shadow)}
-.gate-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:10px}
-.gate-card h1{font-size:38px;line-height:1.02;letter-spacing:-.04em;margin:0 0 12px}
-.gate-card p{color:var(--text);font-size:14px;line-height:1.6;margin:0 0 22px}
-.gate-form{display:grid;grid-template-columns:1fr auto;gap:10px}
-.gate-form input{min-width:0;border-radius:13px;border:1px solid var(--line);background:#07172f;color:white;padding:14px 15px;outline:none}
-.gate-form input:focus{border-color:rgba(214,170,71,.7);box-shadow:0 0 0 3px rgba(214,170,71,.10)}
-.gate-form button{border:0;border-radius:13px;background:var(--gold);color:#071226;font-weight:900;padding:0 18px;cursor:pointer}
-.gate-error{min-height:20px;color:#ffb0b0;font-size:12px;margin-top:10px}
-.gate-note{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.5}
-
-/* deck */
-.deck{height:100%;position:relative}
-.slide{position:absolute;inset:0;padding:50px clamp(30px,5vw,78px) 74px;opacity:0;transform:translateX(28px) scale(.994);pointer-events:none;transition:opacity .3s ease,transform .3s ease;display:grid;align-content:center}
-.slide.active{opacity:1;transform:none;pointer-events:auto}
-.inner{width:min(1240px,100%);margin:auto}
-.eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;margin-bottom:16px}
-.eyebrow:before{content:"";width:27px;height:2px;background:var(--gold)}
-h1{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.05em;margin:0 0 22px;max-width:1100px}
-h2{font-size:clamp(36px,4.3vw,60px);line-height:1.02;letter-spacing:-.042em;margin:0 0 18px;max-width:1100px}
-h3{font-size:18px;margin:0 0 8px}
-p{font-size:17px;line-height:1.55;color:var(--text);margin:0}
-.lead{font-size:clamp(20px,2vw,27px);line-height:1.45;max-width:980px}
-.gold{color:var(--gold2)}.blue{color:var(--blue)}.green{color:var(--green)}.red{color:var(--red)}
-.small{font-size:12px;color:var(--muted);line-height:1.5}.tiny{font-size:10px;color:var(--muted);line-height:1.45}
+:root{--bg:#030a18;--navy:#07162f;--navy2:#0d2447;--panel:#102a53;--gold:#d6aa47;--gold2:#f1cc73;--white:#fff;--text:#d8e2f3;--muted:#8da0be;--green:#66d39a;--blue:#5eb2ff;--red:#ff7e7e;--orange:#ff7a00;--line:rgba(255,255,255,.11);--shadow:0 26px 70px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}body{background:radial-gradient(circle at 85% 10%,rgba(94,178,255,.09),transparent 28%),radial-gradient(circle at 8% 88%,rgba(214,170,71,.08),transparent 30%),var(--bg)}button{font:inherit}
+.deck{height:100%;position:relative}.slide{position:absolute;inset:0;padding:48px clamp(30px,5vw,78px) 74px;opacity:0;transform:translateX(28px) scale(.994);pointer-events:none;transition:opacity .3s ease,transform .3s ease;display:grid;align-content:center}.slide.active{opacity:1;transform:none;pointer-events:auto}.inner{width:min(1240px,100%);margin:auto}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;margin-bottom:16px}.eyebrow:before{content:"";width:27px;height:2px;background:var(--gold)}h1{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.05em;margin:0 0 22px;max-width:1120px}h2{font-size:clamp(36px,4.3vw,60px);line-height:1.02;letter-spacing:-.042em;margin:0 0 18px;max-width:1120px}h3{font-size:18px;margin:0 0 8px}p{font-size:17px;line-height:1.55;color:var(--text);margin:0}.lead{font-size:clamp(20px,2vw,27px);line-height:1.45;max-width:1000px}.small{font-size:12px;color:var(--muted);line-height:1.5}.tiny{font-size:10px;color:var(--muted);line-height:1.45}.gold{color:var(--gold2)}.blue{color:var(--blue)}.green{color:var(--green)}.red{color:var(--red)}
 .tag-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.tag{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:8px 11px;border-radius:999px;font-size:11px;font-weight:800;color:#cfdbed}.tag.hot{background:var(--gold);border-color:var(--gold);color:#071226}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
-.card{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(180deg,rgba(16,42,83,.88),rgba(7,24,54,.88));box-shadow:0 16px 45px rgba(0,0,0,.14)}
-.card.soft{background:rgba(255,255,255,.035);box-shadow:none}.card.goldline{border-color:rgba(214,170,71,.36)}
-.kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:8px}
-.big{font-size:clamp(34px,4vw,52px);line-height:1;font-weight:950;letter-spacing:-.05em}.label{margin-top:7px;font-size:11px;color:var(--muted);line-height:1.4}
-.callout{padding:16px 18px;border-radius:15px;border:1px solid rgba(214,170,71,.27);background:rgba(214,170,71,.07);font-size:13px;color:#e8d7ad;line-height:1.5}
-.bullets{display:grid;gap:10px;margin-top:18px}.bullet{display:flex;gap:11px;color:#dce6f6;font-size:14px;line-height:1.45}.bullet:before{content:"✓";color:var(--green);font-weight:900}
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:28px}.step{position:relative;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035);padding:17px 13px;min-height:112px}.step:not(:last-child):after{content:"→";position:absolute;right:-13px;top:40%;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#06152e;color:var(--gold2);font-weight:900;z-index:3}.step .n{font-size:9px;color:var(--gold2);font-weight:900;letter-spacing:.12em;text-transform:uppercase}.step b{display:block;font-size:13px;margin:7px 0 5px}.step span{font-size:10px;line-height:1.4;color:var(--muted)}
-.diagram{border:1px solid var(--line);border-radius:22px;padding:24px;background:rgba(255,255,255,.025)}
-.arch{display:grid;grid-template-columns:1fr 55px 1fr 55px 1fr;align-items:center;gap:10px}.arch-box{padding:22px 15px;border:1px solid var(--line);border-radius:17px;text-align:center;background:rgba(255,255,255,.035)}.arch-box b{font-size:18px;display:block;margin-bottom:6px}.arrow{text-align:center;color:var(--gold2);font-size:28px;font-weight:900}
-.metric-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}.metric-table th,.metric-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}.metric-table th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.metric-table td:last-child{text-align:right;font-weight:900;color:#fff}
-.angle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:17px}.angle{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:14px;padding:15px}.angle b{display:block;font-size:13px;margin-bottom:5px}.angle span{font-size:10px;color:var(--muted);line-height:1.4}
-.matrix{width:100%;border-collapse:separate;border-spacing:0;margin-top:18px;font-size:12px;overflow:hidden;border:1px solid var(--line);border-radius:16px}.matrix th,.matrix td{padding:12px 13px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top}.matrix th:last-child,.matrix td:last-child{border-right:0}.matrix tr:last-child td{border-bottom:0}.matrix th{background:rgba(214,170,71,.09);color:var(--gold2);font-size:10px;text-transform:uppercase;letter-spacing:.1em}.matrix td{color:#d8e2f3;background:rgba(255,255,255,.025)}
-.quiz{display:grid;gap:11px;margin-top:20px}.q{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:15px;padding:15px 17px;font-size:13px;color:#dce6f6}.q b{color:var(--gold2);margin-right:8px}
-.note{position:fixed;left:18px;bottom:18px;width:min(560px,calc(100vw - 36px));padding:16px 18px;border-radius:16px;background:rgba(3,12,30,.97);border:1px solid var(--line);box-shadow:var(--shadow);z-index:100;display:none}.note.show{display:block}.note-title{font-size:10px;color:var(--gold2);font-weight:900;text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}.note-text{font-size:12px;color:#c8d5e8;line-height:1.55}
-.footer{position:absolute;left:clamp(30px,5vw,78px);right:clamp(30px,5vw,78px);bottom:22px;display:flex;justify-content:space-between;font-size:9px;color:#64799a;text-transform:uppercase;letter-spacing:.08em}
-.controls{position:fixed;right:20px;bottom:18px;display:flex;gap:7px;z-index:90}.btn{width:39px;height:39px;border-radius:11px;border:1px solid var(--line);background:rgba(4,16,38,.9);color:#fff;cursor:pointer}.btn:hover{border-color:rgba(214,170,71,.5);color:var(--gold2)}
-.count{position:fixed;right:118px;bottom:30px;color:#7085a7;font-size:10px;z-index:90}.progress{position:fixed;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));z-index:95;transition:width .25s}.tip{position:fixed;right:18px;top:14px;color:#596f91;font-size:9px;z-index:80}
-.badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;font-size:10px;color:#cdd9ea}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
-.training{color:#ffd890}.documented{color:#91e8b5}
-
-@media(max-width:920px){
-  .slide{padding:34px 22px 70px;align-content:start;overflow:auto}.inner{padding-top:28px}.grid2,.grid3,.grid4,.grid5,.angle-grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.arch{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.footer,.tip{display:none}h1{font-size:47px}h2{font-size:36px}.gate-form{grid-template-columns:1fr}.gate-form button{padding:13px}
-}
-@media print{
-  html,body{overflow:visible;background:white}.slide{position:relative;opacity:1!important;transform:none!important;pointer-events:auto;page-break-after:always;min-height:100vh;background:#030b19}.controls,.count,.progress,.tip,.note,#gate{display:none!important}
-}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(180deg,rgba(16,42,83,.88),rgba(7,24,54,.88));box-shadow:0 16px 45px rgba(0,0,0,.14)}.card.soft{background:rgba(255,255,255,.035);box-shadow:none}.card.goldline{border-color:rgba(214,170,71,.36)}.kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:8px}.big{font-size:clamp(34px,4vw,52px);line-height:1;font-weight:950;letter-spacing:-.05em}.label{margin-top:7px;font-size:11px;color:var(--muted);line-height:1.4}.bullets{display:grid;gap:10px;margin-top:18px}.bullet{display:flex;gap:11px;color:#dce6f6;font-size:14px;line-height:1.45}.bullet:before{content:"✓";color:var(--green);font-weight:900}.callout{padding:16px 18px;border-radius:15px;border:1px solid rgba(214,170,71,.27);background:rgba(214,170,71,.07);font-size:13px;color:#e8d7ad;line-height:1.5}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:18px}.metric{padding:18px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.035)}.metric .big{font-size:34px}.brandbar{display:flex;align-items:center;gap:14px;margin-bottom:24px}.brandmark{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-weight:950;font-size:18px;letter-spacing:-.04em;background:#fff;color:#07162f;box-shadow:0 12px 35px rgba(0,0,0,.22)}.brandcopy strong{display:block;font-size:17px}.brandcopy span{font-size:11px;color:var(--muted)}.brand-c3{background:#060826;color:#fff}.brand-usa{background:linear-gradient(135deg,#0c2e63,#e33535);color:#fff}.brand-zahlco{background:linear-gradient(135deg,#35205d,#7253a7);color:#fff}.brand-dag{background:#07162f;color:#d6aa47;border:1px solid rgba(214,170,71,.45)}.brand-kln{background:#fff;color:#ff7200}
+.strategy{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}.phase{border:1px solid var(--line);border-radius:17px;padding:19px;background:rgba(255,255,255,.035)}.phase b{display:block;font-size:15px;margin-bottom:7px}.phase span{font-size:11px;color:var(--muted);line-height:1.5}.phase .num{font-size:9px;color:var(--gold2);font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px}.angle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:17px}.angle{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:14px;padding:15px}.angle b{display:block;font-size:13px;margin-bottom:5px}.angle span{font-size:10px;color:var(--muted);line-height:1.4}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:24px}.step{position:relative;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035);padding:17px 13px;min-height:108px}.step:not(:last-child):after{content:"→";position:absolute;right:-13px;top:40%;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#06152e;color:var(--gold2);font-weight:900;z-index:3}.step .n{font-size:9px;color:var(--gold2);font-weight:900;letter-spacing:.12em;text-transform:uppercase}.step b{display:block;font-size:13px;margin:7px 0 5px}.step span{font-size:10px;line-height:1.4;color:var(--muted)}.takeaway{font-size:clamp(23px,2.7vw,38px);line-height:1.2;letter-spacing:-.025em;font-weight:850;padding-left:23px;border-left:4px solid var(--gold);max-width:1030px}.training{color:#ffd890}.documented{color:#91e8b5}
+.note{position:fixed;left:18px;bottom:18px;width:min(560px,calc(100vw - 36px));padding:16px 18px;border-radius:16px;background:rgba(3,12,30,.97);border:1px solid var(--line);box-shadow:var(--shadow);z-index:100;display:none}.note.show{display:block}.note-title{font-size:10px;color:var(--gold2);font-weight:900;text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}.note-text{font-size:12px;color:#c8d5e8;line-height:1.55}.footer{position:absolute;left:clamp(30px,5vw,78px);right:clamp(30px,5vw,78px);bottom:22px;display:flex;justify-content:space-between;font-size:9px;color:#64799a;text-transform:uppercase;letter-spacing:.08em}.controls{position:fixed;right:20px;bottom:18px;display:flex;gap:7px;z-index:90}.btn{width:39px;height:39px;border-radius:11px;border:1px solid var(--line);background:rgba(4,16,38,.9);color:#fff;cursor:pointer}.btn:hover{border-color:rgba(214,170,71,.5);color:var(--gold2)}.count{position:fixed;right:118px;bottom:30px;color:#7085a7;font-size:10px;z-index:90}.progress{position:fixed;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));z-index:95;transition:width .25s}.tip{position:fixed;right:18px;top:14px;color:#596f91;font-size:9px;z-index:80}
+@media(max-width:920px){.slide{padding:34px 22px 70px;align-content:start;overflow:auto}.inner{padding-top:28px}.grid2,.grid3,.grid4,.strategy,.angle-grid,.result-grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.footer,.tip{display:none}h1{font-size:47px}h2{font-size:36px}}
+@media print{html,body{overflow:visible;background:white}.slide{position:relative;opacity:1!important;transform:none!important;pointer-events:auto;page-break-after:always;min-height:100vh;background:#030b19}.controls,.count,.progress,.tip,.note{display:none!important}}
 </style>
 </head>
 <body>
-
-<div id="gate">
-  <div class="gate-card">
-    <div class="gate-kicker">Private Learning Material</div>
-    <h1>Paid Media Case Study Lab</h1>
-    <p>Training material for Jedd Sarte's VA lessons. This course uses simulated case studies and illustrative metrics for teaching campaign structure, optimization, lead quality, and media-buying judgment.</p>
-    <form class="gate-form" id="gateForm">
-      <input id="accessCode" type="password" autocomplete="off" placeholder="Enter access code" aria-label="Access code">
-      <button type="submit">Enter</button>
-    </form>
-    <div class="gate-error" id="gateError"></div>
-    <div class="gate-note">This version uses a soft browser gate and is intentionally excluded from search indexing. It is suitable for controlled free lessons, but it is not a substitute for server-side authentication.</div>
-  </div>
-</div>
-
 <div class="deck" id="deck">
 
-<section class="slide active" data-note="Open by telling learners this is not a course about memorizing campaign templates. The goal is learning how to choose a structure based on business context, signal volume, budget, buying cycle, and lead quality.">
-  <div class="inner">
-    <div class="eyebrow">Jedd Sarte VA Learning Hub</div>
-    <h1>Paid Media <span class="gold">Case Study Lab</span></h1>
-    <p class="lead">How campaign structure changes when the business model, audience, signal volume, buying cycle, and lead economics change.</p>
-    <div class="tag-row">
-      <span class="tag hot">Meta Lead Generation</span><span class="tag">TOFU / MOFU / BOFU</span><span class="tag">Andromeda-Style Consolidation</span><span class="tag">Lead Quality</span><span class="tag">Campaign Economics</span>
-    </div>
-    <div style="margin-top:32px"><span class="badge"><span class="dot"></span> Training case studies · illustrative metrics unless marked documented</span></div>
-  </div>
-  <div class="footer"><span>Paid Media Case Study Lab</span><span>01</span></div>
-</section>
+<section class="slide active" data-note="Open this as a portfolio of campaign decisions and outcomes. Do not teach terminology first. Let the strategic patterns emerge from the cases.">
+<div class="inner"><div class="eyebrow">Jedd Sarte · Paid Media Portfolio</div><h1>Paid Media <span class="gold">Case Studies</span></h1><p class="lead">Five lead-generation accounts. Five different business contexts. Campaign architecture built around buyer intent, available signal, creative diversity, and lead economics.</p><div class="tag-row"><span class="tag hot">Meta Lead Generation</span><span class="tag">Full-Funnel Strategy</span><span class="tag">Consolidated Structures</span><span class="tag">Lead Quality</span><span class="tag">Campaign Economics</span></div><p class="tiny" style="margin-top:28px">Unlisted learning material. Illustrative training metrics are labeled. Zahlco results are documented from the existing case study.</p></div><div class="footer"><span>Paid Media Case Studies</span><span>01</span></div></section>
 
-<section class="slide" data-note="Teach the decision criteria first. The learner should understand that structure comes after diagnosis. A business with a long B2B sales cycle may need sequential education, while a local high-intent buyer pool may benefit from consolidation.">
-  <div class="inner">
-    <div class="eyebrow">Core Principle</div>
-    <h2>There is no universally <span class="gold">“best” campaign structure.</span></h2>
-    <p class="lead">The correct structure depends on how the customer buys and how much reliable signal the account can generate.</p>
-    <div class="grid5" style="margin-top:27px">
-      <div class="card soft"><div class="kicker">01</div><h3>Budget</h3><div class="small">Can each campaign/ad set collect enough data?</div></div>
-      <div class="card soft"><div class="kicker">02</div><h3>Signal Volume</h3><div class="small">How many meaningful conversions happen each week?</div></div>
-      <div class="card soft"><div class="kicker">03</div><h3>Buyer Intent</h3><div class="small">Are the customer needs truly different?</div></div>
-      <div class="card soft"><div class="kicker">04</div><h3>Sales Cycle</h3><div class="small">Does the prospect need education before converting?</div></div>
-      <div class="card soft"><div class="kicker">05</div><h3>Creative Diversity</h3><div class="small">Can creative do the segmentation instead of audiences?</div></div>
-    </div>
-    <div class="callout" style="margin-top:20px"><b>Senior media-buyer question:</b> “How much data do I have, how different are the buyer intentions, and how much education does the customer need before converting?”</div>
-  </div>
-  <div class="footer"><span>Structure follows business context</span><span>02</span></div>
-</section>
+<section class="slide" data-note="Introduce C3 as a B2B client-acquisition problem, not as a funnel lesson. The sequence existed because cold agency owners needed to understand the managed editing model before becoming sales-ready.">
+<div class="inner"><div class="brandbar"><div class="brandmark brand-c3">C³</div><div class="brandcopy"><strong>C3 Studios</strong><span>Cedar Rapids, Iowa · March to August 2025 · Meta Lead Generation</span></div></div><div class="eyebrow">Case Study 01 · Client Snapshot & Challenge</div><div class="grid2"><div><h2>Turning an operational pain point into <span class="gold">agency client acquisition.</span></h2><p>C3 Studios sources, vets, and manages permanent video editors for agencies and content teams. The offer removes recruiting, replacement, and day-to-day editor management from the client.</p></div><div class="card goldline"><div class="kicker">Business Challenge</div><h3>The buyer needed education before the sales call.</h3><div class="bullets"><div class="bullet">Agency owners already understood editing, but not necessarily C3's managed-team model.</div><div class="bullet">Cold prospects had to see the cost of fragmented freelancer management.</div><div class="bullet">The offer required trust around quality, scalability, and the 30-day replacement guarantee.</div><div class="bullet">Primary conversion goal: qualified lead and booked sales conversation.</div></div></div></div></div><div class="footer"><span>C3 Studios</span><span>02</span></div></section>
 
-<section class="slide" data-note="Compare sequential funneling with consolidated creative-led distribution. Neither is inherently better. TOFU/MOFU/BOFU separates stages. Consolidation keeps the audience pool larger and lets creatives express different pain points.">
-  <div class="inner">
-    <div class="eyebrow">Two Common Models</div>
-    <h2>Sequential funneling vs <span class="blue">creative-led consolidation.</span></h2>
-    <div class="grid2" style="margin-top:24px">
-      <div class="diagram">
-        <div class="kicker">Model A · Sequential</div>
-        <h3>TOFU → MOFU → BOFU</h3>
-        <div class="arch" style="grid-template-columns:1fr 45px 1fr 45px 1fr;margin-top:20px">
-          <div class="arch-box"><b>TOFU</b><span class="small">Problem awareness</span></div><div class="arrow">→</div>
-          <div class="arch-box"><b>MOFU</b><span class="small">Solution education</span></div><div class="arrow">→</div>
-          <div class="arch-box"><b>BOFU</b><span class="small">Direct conversion</span></div>
-        </div>
-        <p class="small" style="margin-top:18px">Useful when prospects need education and consideration before the sales action.</p>
-      </div>
-      <div class="diagram">
-        <div class="kicker">Model B · Consolidated</div>
-        <h3>1 Campaign → 1 Ad Set → Many Angles</h3>
-        <div class="arch" style="grid-template-columns:1fr 45px 1fr 45px 1fr;margin-top:20px">
-          <div class="arch-box"><b>Campaign</b><span class="small">One business objective</span></div><div class="arrow">→</div>
-          <div class="arch-box"><b>Broad Pool</b><span class="small">Less fragmentation</span></div><div class="arrow">→</div>
-          <div class="arch-box"><b>Creatives</b><span class="small">Angles do segmentation</span></div>
-        </div>
-        <p class="small" style="margin-top:18px">Useful when the buying objective is shared and the platform can learn from a larger signal pool.</p>
-      </div>
-    </div>
-  </div>
-  <div class="footer"><span>Funnel vs consolidation</span><span>03</span></div>
-</section>
+<section class="slide" data-note="Walk through the campaign as the solution to the buying-cycle problem. Avoid presenting TOFU/MOFU/BOFU as a universal formula.">
+<div class="inner"><div class="eyebrow">C3 Studios · Strategy & Execution</div><h2>A sequential funnel moved agencies from <span class="blue">problem recognition to sales intent.</span></h2><div class="strategy"><div class="phase"><div class="num">TOFU</div><b>Problem Awareness</b><span>Editing bottlenecks, unreliable freelancers, missed deadlines, and the management burden of building an internal editing function.</span></div><div class="phase"><div class="num">MOFU</div><b>Solution Education</b><span>Managed editor model, sourcing and vetting process, scalable capacity, workflow control, and replacement guarantee.</span></div><div class="phase"><div class="num">BOFU</div><b>Lead Generation</b><span>Direct response for warm prospects with qualification around agency type, monthly volume, editor requirements, and timing.</span></div></div><div class="angle-grid"><div class="angle"><b>Editing Bottleneck</b><span>“Your agency doesn't have a content problem. It has an editing bottleneck.”</span></div><div class="angle"><b>Freelancer Management</b><span>Reduce the time spent sourcing, replacing, and coordinating individual editors.</span></div><div class="angle"><b>Scale Without Hiring</b><span>Increase production capacity without building another internal department.</span></div></div></div><div class="footer"><span>C3 Studios · Strategy</span><span>03</span></div></section>
 
-<section class="slide" data-note="C3 is the cleanest example of why a funnel can still be useful. This B2B buyer may understand video editing but still needs to understand the managed-team model before booking a sales call.">
-  <div class="inner">
-    <div class="eyebrow">Case Study 01 · C3 Studios</div>
-    <div class="grid2">
-      <div>
-        <h2>B2B video editing needed a <span class="gold">full-funnel education path.</span></h2>
-        <p>C3 Studios sources, vets, and manages permanent video editing teams. The offer solves an operational problem for agencies and businesses producing video at scale.</p>
-        <div class="bullets">
-          <div class="bullet">Owner: Robert DeCorah</div>
-          <div class="bullet">Location: Cedar Rapids, Iowa</div>
-          <div class="bullet">Coverage: March–August 2025</div>
-          <div class="bullet">Primary objective: B2B lead generation</div>
-          <div class="bullet">Primary audience: agencies and content-heavy businesses</div>
-        </div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Business Problem</div>
-        <h3 style="font-size:24px">“You film, we handle the rest.”</h3>
-        <p class="small">Prospects were not simply buying editing hours. They were evaluating whether to replace freelancer management with a managed editing team, scalable tiers, and a 30-day replacement guarantee.</p>
-        <div class="callout" style="margin-top:18px"><b>Why funnel stages made sense:</b> the buyer had to first identify the editing bottleneck, then understand the managed-team solution, then become ready for a sales conversation.</div>
-      </div>
-    </div>
-  </div>
-  <div class="footer"><span>C3 Studios · Strategy</span><span>04</span></div>
-</section>
+<section class="slide" data-note="These figures are illustrative training metrics. Keep the focus on the movement from raw lead to booked call to client, because that is what makes the case study useful.">
+<div class="inner"><div class="eyebrow">C3 Studios · Results</div><h2>Performance was evaluated beyond <span class="green">raw lead volume.</span></h2><div class="result-grid"><div class="metric"><div class="big">164</div><div class="label">Leads</div></div><div class="metric"><div class="big">61</div><div class="label">Marketing-qualified leads</div></div><div class="metric"><div class="big">34</div><div class="label">Booked sales calls</div></div><div class="metric"><div class="big">11</div><div class="label">New clients</div></div></div><div class="grid2" style="margin-top:18px"><div class="card soft"><div class="kicker">Illustrative Economics</div><div class="bullets"><div class="bullet">$18,450 Meta spend</div><div class="bullet">$112.50 raw CPL</div><div class="bullet">37.2% MQL rate</div><div class="bullet">32.4% booked-call-to-client rate</div></div></div><div><div class="takeaway">The campaign structure matched a B2B buying cycle where prospects needed to understand the operating model before they were ready to book.</div><div class="tiny training" style="margin-top:14px">TRAINING DATA · Illustrative metrics for learning material.</div></div></div></div><div class="footer"><span>C3 Studios · Results</span><span>04</span></div></section>
 
-<section class="slide" data-note="Walk learners through the messaging shift. TOFU speaks to the problem. MOFU explains the mechanism. BOFU asks for the sales action. The audience can overlap, but the message intent changes.">
-  <div class="inner">
-    <div class="eyebrow">C3 Studios · Funnel Design</div>
-    <h2>Problem awareness → solution education → <span class="green">qualified inquiry.</span></h2>
-    <div class="grid3" style="margin-top:24px">
-      <div class="card"><div class="kicker">TOFU</div><h3>Editing bottleneck</h3><p class="small">“Your agency doesn't have a content problem. It has an editing bottleneck.”</p><div class="small" style="margin-top:12px">Focus: freelancer chaos, capacity, founder time, production delays.</div></div>
-      <div class="card"><div class="kicker">MOFU</div><h3>Managed-team model</h3><p class="small">Explain sourcing, vetting, scalable capacity, team management, and replacement guarantee.</p><div class="small" style="margin-top:12px">Focus: mechanism and risk reduction.</div></div>
-      <div class="card"><div class="kicker">BOFU</div><h3>Book / qualify</h3><p class="small">“Tell us your monthly video volume and we'll show you the right editing setup.”</p><div class="small" style="margin-top:12px">Focus: company type, volume, timeline, editors needed.</div></div>
-    </div>
-    <table class="metric-table">
-      <thead><tr><th colspan="2">Illustrative Training Metrics</th></tr></thead>
-      <tbody><tr><td>Meta Spend</td><td>$18,450</td></tr><tr><td>Leads</td><td>164</td></tr><tr><td>Qualified Leads</td><td>61</td></tr><tr><td>Booked Calls</td><td>34</td></tr><tr><td>New Clients</td><td>11</td></tr></tbody>
-    </table>
-    <div class="tiny training" style="margin-top:8px">TRAINING DATA · Illustrative metrics for lesson exercises, not verified client reporting.</div>
-  </div>
-  <div class="footer"><span>C3 Studios · Full funnel</span><span>05</span></div>
-</section>
+<section class="slide" data-note="USA Fitness had an existing commercial buyer pool. The issue was not educating people on what gym equipment is, but matching multiple commercial use cases to one lead objective.">
+<div class="inner"><div class="brandbar"><div class="brandmark brand-usa">USA</div><div class="brandcopy"><strong>USA Fitness Equipment Depot</strong><span>Pasadena, Texas · Meta Lead Generation</span></div></div><div class="eyebrow">Case Study 02 · Client Snapshot & Challenge</div><div class="grid2"><div><h2>One commercial market, <span class="gold">multiple purchase motivations.</span></h2><p>The campaign targeted gym owners, entrepreneurs opening facilities, and recreational or commercial facilities purchasing strength and cardio equipment.</p></div><div class="card goldline"><div class="kicker">Business Challenge</div><div class="bullets"><div class="bullet">A startup gym owner behaves differently from an established facility upgrading equipment.</div><div class="bullet">Some buyers care about refurbished value, others about premium new inventory.</div><div class="bullet">Facility planning can be the entry point even when the eventual sale is equipment.</div><div class="bullet">The account needed creative diversity without fragmenting the signal into many tiny audiences.</div></div></div></div></div><div class="footer"><span>USA Fitness Equipment Depot</span><span>05</span></div></section>
 
-<section class="slide" data-note="USA Fitness shows the opposite logic. The audience already understands the category. The problem is that different buyers care about different angles. Rather than creating many tiny audiences, the creative set expresses those motivations.">
-  <div class="inner">
-    <div class="eyebrow">Case Study 02 · USA Fitness Equipment Depot</div>
-    <h2>One buying objective. <span class="blue">Multiple commercial motivations.</span></h2>
-    <div class="grid2" style="margin-top:22px">
-      <div class="card">
-        <div class="kicker">Audience</div>
-        <h3>Commercial fitness buyers</h3>
-        <div class="bullets">
-          <div class="bullet">Gym owners</div><div class="bullet">Entrepreneurs opening gyms</div><div class="bullet">Recreational facilities</div><div class="bullet">Existing facilities upgrading equipment</div>
-        </div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Account Structure</div>
-        <div class="arch" style="grid-template-columns:1fr 35px 1fr 35px 1fr;margin-top:8px">
-          <div class="arch-box"><b>1 Campaign</b><span class="small">Lead generation</span></div><div class="arrow">→</div><div class="arch-box"><b>1 Ad Set</b><span class="small">Broad/commercial signal</span></div><div class="arrow">→</div><div class="arch-box"><b>Many Creatives</b><span class="small">Different buying angles</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="angle-grid">
-      <div class="angle"><b>Starting a Gym</b><span>Equipment package and opening-floor needs.</span></div>
-      <div class="angle"><b>Existing Gym Upgrade</b><span>Replace aging strength/cardio inventory.</span></div>
-      <div class="angle"><b>Refurbished Equipment</b><span>Control startup or expansion cost.</span></div>
-      <div class="angle"><b>Facility Planning</b><span>Layout, equipment mix, floor utilization.</span></div>
-      <div class="angle"><b>Commercial Quality</b><span>Durability and high-use environments.</span></div>
-      <div class="angle"><b>Full-Facility Solution</b><span>Reduce complexity of sourcing equipment.</span></div>
-    </div>
-  </div>
-  <div class="footer"><span>USA Fitness · Consolidated Meta</span><span>06</span></div>
-</section>
+<section class="slide" data-note="This is the consolidated campaign case. Explain that the creative angles performed much of the segmentation while the ad set remained broad enough to accumulate data.">
+<div class="inner"><div class="eyebrow">USA Fitness · Strategy & Execution</div><h2>Consolidated delivery, with the <span class="blue">creative doing the segmentation.</span></h2><div class="flow"><div class="step"><div class="n">Campaign</div><b>1 Lead Campaign</b><span>One shared commercial conversion objective.</span></div><div class="step"><div class="n">Ad Set</div><b>1 Broad Audience</b><span>Commercial buyer pool without unnecessary micro-segmentation.</span></div><div class="step"><div class="n">Creative</div><b>Startup Gym</b><span>Opening a new facility and building the equipment list.</span></div><div class="step"><div class="n">Creative</div><b>Upgrade / Replace</b><span>Existing gyms replacing or expanding aging inventory.</span></div><div class="step"><div class="n">Creative</div><b>Facility Planning</b><span>Layout, space planning, and full-room consultation.</span></div></div><div class="angle-grid"><div class="angle"><b>New Gym Buildout</b><span>Complete equipment packages for entrepreneurs opening facilities.</span></div><div class="angle"><b>Refurbished Value</b><span>Commercial equipment for buyers balancing quality and capital efficiency.</span></div><div class="angle"><b>Facility Upgrade</b><span>Strength, cardio, replacement, and expansion for active facilities.</span></div></div></div><div class="footer"><span>USA Fitness · Strategy</span><span>06</span></div></section>
 
-<section class="slide" data-note="Emphasize qualification. When high-ticket equipment is the sale, the business does not want cheap consumer leads. The form is part of media buying because it controls what signal returns to Meta.">
-  <div class="inner">
-    <div class="eyebrow">USA Fitness · Lead Quality</div>
-    <h2>The creative finds the angle. <span class="green">The form protects lead quality.</span></h2>
-    <div class="grid2">
-      <div>
-        <div class="bullets">
-          <div class="bullet">New facility or existing facility?</div><div class="bullet">Facility type and approximate size</div><div class="bullet">Strength, cardio, or both?</div><div class="bullet">New, refurbished, or open to either?</div><div class="bullet">Purchasing timeline</div><div class="bullet">Facility-layout assistance needed?</div>
-        </div>
-        <div class="callout" style="margin-top:19px"><b>Teaching point:</b> Andromeda-style consolidation does not mean removing qualification. Consolidate the media-learning environment while strengthening the conversion signal.</div>
-      </div>
-      <div>
-        <table class="metric-table">
-          <thead><tr><th colspan="2">Illustrative Training Metrics</th></tr></thead>
-          <tbody><tr><td>Spend</td><td>$6,750</td></tr><tr><td>Leads</td><td>94</td></tr><tr><td>Raw CPL</td><td>$71.81</td></tr><tr><td>Qualified Commercial Buyers</td><td>39</td></tr><tr><td>Serious Opportunities</td><td>12</td></tr><tr><td>Closed Sales</td><td>7</td></tr></tbody>
-        </table>
-        <div class="tiny training" style="margin-top:8px">TRAINING DATA · Illustrative metrics for lesson exercises.</div>
-      </div>
-    </div>
-  </div>
-  <div class="footer"><span>USA Fitness · Qualification</span><span>07</span></div>
-</section>
+<section class="slide" data-note="Emphasize qualified commercial buyers and serious sales opportunities, not the raw lead count alone.">
+<div class="inner"><div class="eyebrow">USA Fitness · Results</div><h2>Creative diversity produced multiple buyer paths inside <span class="green">one learning system.</span></h2><div class="result-grid"><div class="metric"><div class="big">94</div><div class="label">Leads</div></div><div class="metric"><div class="big">39</div><div class="label">Qualified commercial buyers</div></div><div class="metric"><div class="big">22</div><div class="label">Quote / planning requests</div></div><div class="metric"><div class="big">7</div><div class="label">Closed equipment sales</div></div></div><div class="grid2" style="margin-top:18px"><div class="card soft"><div class="kicker">Illustrative Economics</div><div class="bullets"><div class="bullet">$6,750 Meta spend</div><div class="bullet">$71.81 raw CPL</div><div class="bullet">41.5% qualified lead rate</div><div class="bullet">$964 estimated cost per customer</div></div></div><div><div class="takeaway">The campaign did not need separate funnel stages for each buyer type. One conversion objective supported multiple creative entry points.</div><div class="tiny training" style="margin-top:14px">TRAINING DATA · Illustrative metrics for learning material.</div></div></div></div><div class="footer"><span>USA Fitness · Results</span><span>07</span></div></section>
 
-<section class="slide" data-note="Zahlco is the strongest teaching example because the problem was not lack of sophistication. The problem was too much fragmentation relative to the available daily budget and local audience.">
-  <div class="inner">
-    <div class="eyebrow">Case Study 03 · Zahlco Real Estate</div>
-    <h2>A textbook funnel became <span class="red">too fragmented</span> for the account.</h2>
-    <div class="grid2">
-      <div class="card">
-        <div class="kicker">Original Structure</div>
-        <div class="big">13</div><div class="label">Ad sets across TOFU video, TOFU static, MOFU, and BOFU</div>
-        <div class="big" style="margin-top:22px">$61/day</div><div class="label">Planned spend distributed across the structure</div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Business Context</div>
-        <h3>Student housing lease-up</h3>
-        <p class="small">Baltimore, Maryland · near the University of Maryland, Baltimore campus · graduate and professional students including medical, dental, pharmacy, nursing, and law.</p>
-        <div class="callout" style="margin-top:18px"><b>Problem:</b> too many learning environments for one local property, one leasing window, and a limited daily budget.</div>
-      </div>
-    </div>
-    <div class="arch" style="margin-top:23px;grid-template-columns:1fr 55px 1fr">
-      <div class="arch-box"><b>Before</b><span class="small">4 funnel stages · 13 ad sets · fragmented signal</span></div><div class="arrow">→</div><div class="arch-box"><b>After</b><span class="small">Broader consolidation · pain-point creatives · larger learning pool</span></div>
-    </div>
-  </div>
-  <div class="footer"><span>Zahlco · Consolidation decision</span><span>08</span></div>
-</section>
+<section class="slide" data-note="Zahlco is the documented case. The key problem was over-fragmentation for a local lease-up account with limited daily budget and a fixed deadline.">
+<div class="inner"><div class="brandbar"><div class="brandmark brand-zahlco">Z</div><div class="brandcopy"><strong>Zahlco Real Estate</strong><span>Baltimore, Maryland · Student Housing Lease-Up</span></div></div><div class="eyebrow">Case Study 03 · Client Snapshot & Challenge</div><div class="grid2"><div><h2>A fixed lease-up deadline with <span class="gold">too much account fragmentation.</span></h2><p>Zahlco needed to lease a residential property near the University of Maryland, Baltimore before the fall semester, targeting graduate and professional students including medical, dental, pharmacy, nursing, and law students.</p></div><div class="card goldline"><div class="kicker">Original Structure</div><div class="result-grid" style="grid-template-columns:repeat(2,1fr)"><div class="metric"><div class="big">4</div><div class="label">Funnel stages</div></div><div class="metric"><div class="big">13</div><div class="label">Ad sets</div></div></div><div class="callout" style="margin-top:12px">Planned spend was approximately $61/day. The available budget and local audience were being divided across too many learning environments.</div></div></div></div><div class="footer"><span>Zahlco Real Estate</span><span>08</span></div></section>
 
-<section class="slide" data-note="These are documented case-study figures. Distinguish them from the simulated numbers elsewhere. The lesson is not that consolidation always produces an $11.71 CPL. The lesson is that the structure matched the account's data reality better.">
-  <div class="inner">
-    <div class="eyebrow">Zahlco · Documented Outcome</div>
-    <h2>Consolidation gave Meta <span class="green">more usable signal.</span></h2>
-    <div class="grid4" style="margin-top:28px">
-      <div class="card goldline"><div class="big">73</div><div class="label">Leads</div></div>
-      <div class="card goldline"><div class="big">$11.71</div><div class="label">Cost per lead</div></div>
-      <div class="card goldline"><div class="big">26</div><div class="label">Days to full lease-up</div></div>
-      <div class="card goldline"><div class="big">100%</div><div class="label">Building fully leased / sold out</div></div>
-    </div>
-    <div class="angle-grid" style="margin-top:22px">
-      <div class="angle"><b>Location</b><span>Live minutes from campus.</span></div><div class="angle"><b>Relocation</b><span>Moving to Baltimore for graduate school?</span></div><div class="angle"><b>Convenience</b><span>Reduce commuting friction.</span></div><div class="angle"><b>Deadline</b><span>Secure housing before fall semester.</span></div><div class="angle"><b>Student Relevance</b><span>Graduate/professional student-specific messaging.</span></div><div class="angle"><b>Scarcity</b><span>Leasing window and limited availability.</span></div>
-    </div>
-    <div class="tiny documented" style="margin-top:13px">DOCUMENTED CASE-STUDY FIGURES · Pulled from the existing Zahlco material in the repository.</div>
-  </div>
-  <div class="footer"><span>Zahlco · Results</span><span>09</span></div>
-</section>
+<section class="slide" data-note="Explain the pivot as a media-buying decision. Consolidation increased the signal available to each campaign component while the messaging still addressed distinct student concerns.">
+<div class="inner"><div class="eyebrow">Zahlco · Strategy & Execution</div><h2>The account was simplified around <span class="blue">one larger signal pool.</span></h2><div class="grid2"><div class="card goldline"><div class="kicker">The Pivot</div><div class="bullets"><div class="bullet">Reduce unnecessary campaign and ad-set fragmentation.</div><div class="bullet">Broaden the learning environment while preserving student-specific messaging.</div><div class="bullet">Use creative to address relocation, campus proximity, convenience, and leasing urgency.</div><div class="bullet">Focus spend on the property lease-up objective rather than textbook funnel stages.</div></div></div><div><div class="angle-grid" style="grid-template-columns:1fr 1fr"><div class="angle"><b>Campus Proximity</b><span>Live minutes from classes, hospitals, and university facilities.</span></div><div class="angle"><b>Relocation</b><span>Moving to Baltimore for graduate or professional school.</span></div><div class="angle"><b>Convenience</b><span>Reduce commuting friction during demanding academic schedules.</span></div><div class="angle"><b>Deadline</b><span>Secure housing before the fall semester.</span></div></div></div></div></div><div class="footer"><span>Zahlco · Strategy</span><span>09</span></div></section>
 
-<section class="slide" data-note="Daryl Gray teaches a different use of consolidation. The objective is one category of legal lead, but the prospect can enter through many pain points: truck crash, rear-end, insurer pressure, fault dispute, treatment, hit-and-run.">
-  <div class="inner">
-    <div class="eyebrow">Case Study 04 · Atty. Daryl Gray</div>
-    <h2>One PI objective. <span class="blue">Many accident and pain-point signals.</span></h2>
-    <div class="grid2">
-      <div>
-        <p>New Orleans personal injury acquisition focused on car accidents, truck accidents, commercial vehicles, and 18-wheelers.</p>
-        <div class="callout" style="margin-top:18px"><b>Market reality:</b> PI search auctions can be extremely expensive and saturated. Meta can create an additional acquisition path, but only if qualification protects lead quality.</div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Andromeda-Style Structure</div>
-        <div class="arch" style="grid-template-columns:1fr 35px 1fr 35px 1fr">
-          <div class="arch-box"><b>1 Campaign</b><span class="small">PI lead generation</span></div><div class="arrow">→</div><div class="arch-box"><b>1 Ad Set</b><span class="small">Broad eligible audience</span></div><div class="arrow">→</div><div class="arch-box"><b>Many Angles</b><span class="small">Accident/pain-point creatives</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="angle-grid">
-      <div class="angle"><b>Insurance Adjuster</b><span>Who is protecting your interests?</span></div><div class="angle"><b>Rear-End Crash</b><span>Pain, repairs, insurer pressure.</span></div><div class="angle"><b>Truck / 18-Wheeler</b><span>Commercial crash complexity.</span></div><div class="angle"><b>Fault Dispute</b><span>Other driver denies responsibility.</span></div><div class="angle"><b>Medical Treatment</b><span>Ongoing care after a collision.</span></div><div class="angle"><b>Settlement Offer</b><span>Already contacted by insurance?</span></div>
-    </div>
-  </div>
-  <div class="footer"><span>Daryl Gray · PI Lead Generation</span><span>10</span></div>
-</section>
+<section class="slide" data-note="These are documented Zahlco results. Use this case to show that simplification can be an optimization decision when the account cannot support the complexity built into it.">
+<div class="inner"><div class="eyebrow">Zahlco · Results</div><h2>Consolidation supported a <span class="green">26-day lease-up.</span></h2><div class="result-grid"><div class="metric"><div class="big">73</div><div class="label">Leads</div></div><div class="metric"><div class="big">$11.71</div><div class="label">Cost per lead</div></div><div class="metric"><div class="big">26</div><div class="label">Days to full lease-up</div></div><div class="metric"><div class="big">SOLD OUT</div><div class="label">Final property outcome</div></div></div><div class="takeaway" style="margin-top:28px">The original funnel was not inherently wrong. It was too complex for the budget, audience size, and signal volume available to the account.</div><div class="tiny documented" style="margin-top:14px">DOCUMENTED CASE STUDY · Results retained from the existing Zahlco case-study material.</div></div><div class="footer"><span>Zahlco · Results</span><span>10</span></div></section>
 
-<section class="slide" data-note="Use this slide to teach why CPL alone is dangerous in PI. A lead can be cheap and worthless if no accident occurred, the case is outside the market, or the person already has counsel. Qualification must be a core media-buying metric.">
-  <div class="inner">
-    <div class="eyebrow">Daryl Gray · KPI Ladder</div>
-    <h2>Cheap leads are not automatically <span class="green">good leads.</span></h2>
-    <div class="flow">
-      <div class="step"><div class="n">01</div><b>Raw Lead</b><span>Form submitted.</span></div>
-      <div class="step"><div class="n">02</div><b>Accident Verified</b><span>Actual car/truck event.</span></div>
-      <div class="step"><div class="n">03</div><b>Qualified Lead</b><span>Geo, injury, timing, counsel status.</span></div>
-      <div class="step"><div class="n">04</div><b>Completed Intake</b><span>Enough facts collected for review.</span></div>
-      <div class="step"><div class="n">05</div><b>Attorney Opportunity</b><span>Potentially valuable legal inquiry.</span></div>
-    </div>
-    <div class="grid4" style="margin-top:22px">
-      <div class="card soft"><div class="big">$12.6K</div><div class="label">Illustrative spend</div></div><div class="card soft"><div class="big">84</div><div class="label">Raw leads</div></div><div class="card soft"><div class="big">36</div><div class="label">Qualified accident leads</div></div><div class="card soft"><div class="big">7</div><div class="label">Attorney-qualified opportunities</div></div>
-    </div>
-    <div class="tiny training" style="margin-top:10px">TRAINING DATA · Illustrative metrics for teaching lead-quality economics.</div>
-  </div>
-  <div class="footer"><span>Daryl Gray · Lead economics</span><span>11</span></div>
-</section>
+<section class="slide" data-note="Daryl Gray is the PI lead-gen case. Frame the challenge around expensive and saturated search auctions and the need to create more acquisition opportunities through Meta.">
+<div class="inner"><div class="brandbar"><div class="brandmark brand-dag">DAG</div><div class="brandcopy"><strong>Daryl Gray Injury Lawyers</strong><span>New Orleans, Louisiana · Car, Truck & 18-Wheeler Accident Lead Generation</span></div></div><div class="eyebrow">Case Study 04 · Client Snapshot & Challenge</div><div class="grid2"><div><h2>Building another acquisition path in an <span class="gold">oversaturated PI market.</span></h2><p>Google Search remains valuable for explicit legal demand, but PI auctions can be extremely expensive. Meta created another channel for reaching accident victims through highly specific problem and accident scenarios.</p></div><div class="card goldline"><div class="kicker">Business Challenge</div><div class="bullets"><div class="bullet">Car and truck accident leads can vary dramatically in legal value.</div><div class="bullet">Raw CPL can hide poor-fit or non-accident inquiries.</div><div class="bullet">Creative needed to speak to multiple accident and insurance pain points.</div><div class="bullet">Lead forms had to qualify intent before the attorney review stage.</div></div></div></div></div><div class="footer"><span>Daryl Gray Injury Lawyers</span><span>11</span></div></section>
 
-<section class="slide" data-note="KLN teaches the learners that consolidation still needs business separation. Credit consulting, business funding readiness, and tax consulting can have different buyer intent. Keep the Andromeda principle inside each service line instead of mixing every objective together.">
-  <div class="inner">
-    <div class="eyebrow">Case Study 05 · KLN Consulting</div>
-    <h2>Restricted targeting made <span class="gold">creative and qualification</span> more important.</h2>
-    <div class="grid2">
-      <div>
-        <p>Training case for a financial consulting business serving Delaware and Arizona.</p>
-        <div class="bullets"><div class="bullet">Owner: Cyerra Danielle White</div><div class="bullet">Credit consulting / repair education</div><div class="bullet">Business funding readiness</div><div class="bullet">Tax consulting</div><div class="bullet">Primary channel: Meta Lead Generation</div></div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Structure Rule</div>
-        <h3>Consolidate inside the service line.</h3>
-        <p class="small">Do not automatically mix credit consulting, business funding, and tax consulting into one undifferentiated campaign if the buying intentions and follow-up processes are meaningfully different.</p>
-      </div>
-    </div>
-    <div class="grid3" style="margin-top:18px">
-      <div class="card soft"><div class="kicker">Campaign 1</div><h3>Credit Consulting</h3><div class="small">1 broad/compliant ad set · multiple educational/problem angles.</div></div>
-      <div class="card soft"><div class="kicker">Campaign 2</div><h3>Business Funding</h3><div class="small">1 broad/compliant ad set · funding-readiness creative angles.</div></div>
-      <div class="card soft"><div class="kicker">Campaign 3</div><h3>Tax Consulting</h3><div class="small">1 broad/compliant ad set · planning/preparation angles.</div></div>
-    </div>
-  </div>
-  <div class="footer"><span>KLN Consulting · Structure</span><span>12</span></div>
-</section>
+<section class="slide" data-note="Show the Andromeda-style structure as a creative diversification strategy. One broad conversion system, multiple pain points, and deeper lead qualification.">
+<div class="inner"><div class="eyebrow">Daryl Gray · Strategy & Execution</div><h2>One lead system, with <span class="blue">multiple accident and pain-point angles.</span></h2><div class="flow"><div class="step"><div class="n">Campaign</div><b>1 Lead Campaign</b><span>Shared objective for accident lead generation.</span></div><div class="step"><div class="n">Ad Set</div><b>Broad Delivery</b><span>Fewer unnecessary audience restrictions.</span></div><div class="step"><div class="n">Creative</div><b>Rear-End / Fault</b><span>Accident responsibility and disputed fault.</span></div><div class="step"><div class="n">Creative</div><b>Truck / 18-Wheeler</b><span>Serious commercial-vehicle collision context.</span></div><div class="step"><div class="n">Creative</div><b>Insurance / Treatment</b><span>Adjusters, settlement offers, medical care, hit-and-run.</span></div></div><div class="callout" style="margin-top:18px"><b>Lead qualification:</b> accident type, date, location, injury, medical treatment, potential fault, existing legal representation, and insurer contact.</div></div><div class="footer"><span>Daryl Gray · Strategy</span><span>12</span></div></section>
 
-<section class="slide" data-note="This is where you clarify the misconception: Andromeda does not mean one giant campaign for everything. It means fewer unnecessary restrictions and larger learning pools where the business objective is genuinely shared.">
-  <div class="inner">
-    <div class="eyebrow">KLN Consulting · Teaching Point</div>
-    <h2>Andromeda does not mean <span class="red">“throw everything together.”</span></h2>
-    <div class="grid2">
-      <div class="card">
-        <div class="kicker">Wrong Interpretation</div>
-        <h3>One campaign for every offer</h3>
-        <div class="bullets"><div class="bullet">Mixed buyer intentions</div><div class="bullet">Different sales conversations</div><div class="bullet">Different qualification criteria</div><div class="bullet">Messy downstream reporting</div></div>
-      </div>
-      <div class="card goldline">
-        <div class="kicker">Better Interpretation</div>
-        <h3>Consolidate where intent is shared</h3>
-        <div class="bullets"><div class="bullet">Larger signal pools</div><div class="bullet">Creative diversity</div><div class="bullet">Fewer unnecessary audience restrictions</div><div class="bullet">Clear conversion objective per service line</div></div>
-      </div>
-    </div>
-    <table class="metric-table">
-      <thead><tr><th colspan="2">Illustrative Training Metrics</th></tr></thead>
-      <tbody><tr><td>Meta Spend</td><td>$8,100</td></tr><tr><td>Leads</td><td>205</td></tr><tr><td>Qualified Leads</td><td>83</td></tr><tr><td>Booked Consultations</td><td>39</td></tr><tr><td>New Clients</td><td>16</td></tr></tbody>
-    </table>
-    <div class="tiny training" style="margin-top:8px">TRAINING DATA · Illustrative metrics for lesson exercises.</div>
-  </div>
-  <div class="footer"><span>KLN Consulting · Consolidation logic</span><span>13</span></div>
-</section>
+<section class="slide" data-note="The key result is the quality funnel. This is a teaching case about why legal advertisers must evaluate deeper stages than form fill.">
+<div class="inner"><div class="eyebrow">Daryl Gray · Results</div><h2>The KPI moved from “lead” to <span class="green">attorney-qualified opportunity.</span></h2><div class="flow"><div class="step"><div class="n">Stage 1</div><b>84 Raw Leads</b><span>Initial form submissions.</span></div><div class="step"><div class="n">Stage 2</div><b>36 Qualified</b><span>Verified accident and fit criteria.</span></div><div class="step"><div class="n">Stage 3</div><b>17 Intakes</b><span>Enough facts collected for deeper review.</span></div><div class="step"><div class="n">Stage 4</div><b>7 Opportunities</b><span>Attorney-qualified inquiries.</span></div><div class="step"><div class="n">Economics</div><b>$1,800</b><span>Illustrative cost per attorney-qualified opportunity.</span></div></div><div class="takeaway" style="margin-top:25px">For high-value legal acquisition, optimizing toward the cheapest possible form submission can actively push budget toward the wrong inventory.</div><div class="tiny training" style="margin-top:14px">TRAINING DATA · Illustrative metrics for learning material.</div></div><div class="footer"><span>Daryl Gray · Results</span><span>13</span></div></section>
 
-<section class="slide" data-note="Use this matrix as the recap. Learners should be able to explain the reason for each structure in one sentence. The strategy label matters less than whether they can defend why it matches the business.">
-  <div class="inner">
-    <div class="eyebrow">Cross-Case Comparison</div>
-    <h2>Campaign structure is a <span class="gold">business decision.</span></h2>
-    <table class="matrix">
-      <thead><tr><th>Case</th><th>Structure</th><th>Why</th><th>Primary Teaching Lesson</th></tr></thead>
-      <tbody>
-        <tr><td><b>C3 Studios</b></td><td>TOFU → MOFU → BOFU</td><td>B2B offer requires education and consideration.</td><td>Use stages when the buyer must understand the mechanism before converting.</td></tr>
-        <tr><td><b>USA Fitness</b></td><td>1 Campaign · 1 Ad Set · Many Angles</td><td>Same commercial objective, multiple buying motivations.</td><td>Creative can perform much of the segmentation.</td></tr>
-        <tr><td><b>Zahlco</b></td><td>Consolidated after fragmentation</td><td>13 ad sets split too little daily budget and signal.</td><td>Account complexity must match data volume.</td></tr>
-        <tr><td><b>Daryl Gray</b></td><td>Consolidated PI Lead Gen</td><td>One legal objective, multiple accident/pain-point entry points.</td><td>Optimize deeper than raw CPL.</td></tr>
-        <tr><td><b>KLN Consulting</b></td><td>Consolidated by Service Line</td><td>Restricted targeting plus materially different financial intents.</td><td>Andromeda is not an excuse to mix unrelated objectives.</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="footer"><span>Case comparison</span><span>14</span></div>
-</section>
+<section class="slide" data-note="KLN is the policy-constrained financial-services case. The strategy relies more heavily on compliant broad delivery, creative variation, and qualification.">
+<div class="inner"><div class="brandbar"><div class="brandmark brand-kln">KLN</div><div class="brandcopy"><strong>KLN Consulting</strong><span>Delaware & Arizona · Meta Lead Generation</span></div></div><div class="eyebrow">Case Study 05 · Client Snapshot & Challenge</div><div class="grid2"><div><h2>Generating financial-service leads under <span class="gold">platform targeting constraints.</span></h2><p>KLN Consulting provides credit consulting, business funding guidance, credit-repair support, and tax consulting. Many of these services require more careful platform compliance than ordinary local-service advertising.</p></div><div class="card goldline"><div class="kicker">Business Challenge</div><div class="bullets"><div class="bullet">Audience targeting could not depend on highly sensitive personal attributes.</div><div class="bullet">Copy had to avoid implying knowledge of a user's personal financial condition.</div><div class="bullet">Credit, funding, and tax services represent materially different buyer intentions.</div><div class="bullet">The account needed consolidation without mixing unrelated conversion paths.</div></div></div></div></div><div class="footer"><span>KLN Consulting</span><span>14</span></div></section>
 
-<section class="slide" data-note="This slide is important for VAs because it upgrades how they report. CTR and CPL can be useful, but the closer a metric is to business value, the more useful it becomes for budget decisions.">
-  <div class="inner">
-    <div class="eyebrow">Measurement</div>
-    <h2>Move from platform metrics to <span class="green">business-quality metrics.</span></h2>
-    <div class="flow">
-      <div class="step"><div class="n">Diagnostic</div><b>CTR / CPC</b><span>Can explain delivery and ad relevance.</span></div>
-      <div class="step"><div class="n">Front-End</div><b>Raw CPL</b><span>Useful, but can hide junk quality.</span></div>
-      <div class="step"><div class="n">Quality</div><b>Qualified CPL</b><span>Filters invalid and low-fit leads.</span></div>
-      <div class="step"><div class="n">Sales</div><b>Booked / Accepted</b><span>Measures real commercial progression.</span></div>
-      <div class="step"><div class="n">Business</div><b>CAC / Revenue</b><span>Best input for budget-allocation decisions.</span></div>
-    </div>
-    <div class="callout" style="margin-top:22px"><b>VA reporting rule:</b> never celebrate a lower CPL until you know whether lead quality stayed the same, improved, or deteriorated.</div>
-  </div>
-  <div class="footer"><span>KPI hierarchy</span><span>15</span></div>
-</section>
+<section class="slide" data-note="This is consolidated by service line, not one giant campaign. Each major service keeps one clear objective while creative provides variation inside the campaign.">
+<div class="inner"><div class="eyebrow">KLN Consulting · Strategy & Execution</div><h2>Consolidation happened <span class="blue">inside each service line.</span></h2><div class="grid3"><div class="card goldline"><div class="kicker">Campaign 1</div><h3>Credit Consulting</h3><p class="small">Broad compliant delivery with creative around education, credit-profile understanding, and next-step planning.</p></div><div class="card goldline"><div class="kicker">Campaign 2</div><h3>Business Funding</h3><p class="small">Funding-readiness messaging focused on preparation and business financial positioning before application.</p></div><div class="card goldline"><div class="kicker">Campaign 3</div><h3>Tax Consulting</h3><p class="small">Planning and preparation angles kept separate from the credit and funding sales conversation.</p></div></div><div class="angle-grid"><div class="angle"><b>Education</b><span>Understand the current situation and identify the next practical steps.</span></div><div class="angle"><b>Preparation</b><span>Build readiness before applying for funding or entering a major financial decision.</span></div><div class="angle"><b>Consultation</b><span>Convert broad compliant traffic through stronger lead qualification and service-specific follow-up.</span></div></div></div><div class="footer"><span>KLN Consulting · Strategy</span><span>15</span></div></section>
 
-<section class="slide" data-note="Use this as a knowledge check. Ask learners to answer before showing your explanation. The point is reasoning, not memorizing vocabulary.">
-  <div class="inner">
-    <div class="eyebrow">Knowledge Check</div>
-    <h2>Can you defend the <span class="blue">structure decision?</span></h2>
-    <div class="quiz">
-      <div class="q"><b>01</b>A local business has $40/day, one city, one lead objective, and 12 ad sets. What problem would you investigate first?</div>
-      <div class="q"><b>02</b>A B2B service has a long sales cycle and prospects do not understand the offer. Why might TOFU/MOFU/BOFU still make sense?</div>
-      <div class="q"><b>03</b>A campaign's CPL increased from $70 to $100, but qualified-lead rate doubled. Did performance necessarily get worse?</div>
-      <div class="q"><b>04</b>When can creative replace excessive audience segmentation?</div>
-      <div class="q"><b>05</b>Why should KLN separate materially different service lines even while using a consolidated philosophy?</div>
-    </div>
-    <div class="callout" style="margin-top:18px"><b>Goal:</b> explain the business reason behind the account structure in plain English. If you cannot explain why the structure exists, you probably should not build it yet.</div>
-  </div>
-  <div class="footer"><span>Knowledge check</span><span>16</span></div>
-</section>
+<section class="slide" data-note="These metrics are illustrative. Use the case to emphasize that consolidation does not mean mixing every offer together.">
+<div class="inner"><div class="eyebrow">KLN Consulting · Results</div><h2>Broader delivery worked because the <span class="green">conversion paths stayed clear.</span></h2><div class="result-grid"><div class="metric"><div class="big">205</div><div class="label">Leads</div></div><div class="metric"><div class="big">83</div><div class="label">Qualified leads</div></div><div class="metric"><div class="big">39</div><div class="label">Booked consultations</div></div><div class="metric"><div class="big">16</div><div class="label">New clients</div></div></div><div class="grid2" style="margin-top:18px"><div class="card soft"><div class="kicker">Illustrative Economics</div><div class="bullets"><div class="bullet">$8,100 Meta spend</div><div class="bullet">$39.51 raw CPL</div><div class="bullet">40.5% qualified lead rate</div><div class="bullet">$506.25 illustrative CAC</div></div></div><div><div class="takeaway">The consolidated philosophy reduced unnecessary restrictions, while separate service lines preserved clean intent, follow-up, and reporting.</div><div class="tiny training" style="margin-top:14px">TRAINING DATA · Illustrative metrics for learning material.</div></div></div></div><div class="footer"><span>KLN Consulting · Results</span><span>16</span></div></section>
 
-<section class="slide" data-note="Close with the three principles. Templates are useful starting points, but business context and signal quality win. Encourage learners to audit the funnel before touching the Ads Manager buttons.">
-  <div class="inner">
-    <div class="eyebrow">Final Takeaways</div>
-    <h2>Think like a media buyer, <span class="gold">not a template operator.</span></h2>
-    <div class="grid3" style="margin-top:25px">
-      <div class="card goldline"><div class="big">01</div><h3 style="margin-top:14px">Match structure to signal.</h3><p class="small">Do not fragment a small budget into more learning environments than the account can support.</p></div>
-      <div class="card goldline"><div class="big">02</div><h3 style="margin-top:14px">Let creative carry meaning.</h3><p class="small">Different pain points can often live inside one larger audience when the conversion objective is shared.</p></div>
-      <div class="card goldline"><div class="big">03</div><h3 style="margin-top:14px">Optimize deeper than CPL.</h3><p class="small">Qualified leads, booked calls, accepted opportunities, CAC, and revenue are stronger business signals.</p></div>
-    </div>
-    <p class="lead" style="margin-top:28px">“How much data do I have, how different are the buyer intentions, and how much education does the customer need before converting?”</p>
-  </div>
-  <div class="footer"><span>Jedd Sarte VA Learning Hub</span><span>17</span></div>
-</section>
+<section class="slide" data-note="Close with the pattern across all five cases. The value is not memorizing which structure is fashionable. It is matching campaign architecture to the economics and behavior of the account.">
+<div class="inner"><div class="eyebrow">Portfolio Takeaway</div><h2>Five businesses. <span class="gold">Five different reasons</span> for the structure used.</h2><div class="grid3" style="margin-top:22px"><div class="card"><div class="kicker">C3 Studios</div><h3>Sequential Full Funnel</h3><p class="small">Longer B2B consideration cycle required education before direct response.</p></div><div class="card"><div class="kicker">USA Fitness</div><h3>Creative-Led Consolidation</h3><p class="small">One commercial objective supported multiple buyer motivations inside a broad learning pool.</p></div><div class="card"><div class="kicker">Zahlco</div><h3>Signal Consolidation</h3><p class="small">A small local budget could not efficiently support thirteen ad sets.</p></div><div class="card"><div class="kicker">Daryl Gray</div><h3>Quality-Led PI Acquisition</h3><p class="small">Multiple accident scenarios fed one lead system, with deeper qualification beyond raw CPL.</p></div><div class="card"><div class="kicker">KLN Consulting</div><h3>Consolidated by Service Line</h3><p class="small">Policy constraints favored broad delivery, but different financial intentions still required separation.</p></div><div class="card goldline"><div class="kicker">Operating Principle</div><h3>Structure follows the business.</h3><p class="small">Budget, signal volume, buyer intent, sales cycle, platform restrictions, and lead economics determine the account architecture.</p></div></div></div><div class="footer"><span>Paid Media Case Studies · Jedd Sarte</span><span>17</span></div></section>
 
 </div>
-
-<div class="tip">← → navigate · T trainer notes · F fullscreen · P print/PDF</div>
-<div class="count" id="count">1 / 17</div>
-<div class="controls"><button class="btn" id="prev" aria-label="Previous slide">←</button><button class="btn" id="next" aria-label="Next slide">→</button></div>
-<div class="progress" id="progress"></div>
-<div class="note" id="note"><div class="note-title">Trainer Note</div><div class="note-text" id="noteText"></div></div>
-
+<div class="tip">← → navigate · T notes · F fullscreen · P print/PDF</div><div class="count" id="count">1 / 17</div><div class="controls"><button class="btn" id="prev" aria-label="Previous slide">←</button><button class="btn" id="next" aria-label="Next slide">→</button></div><div class="progress" id="progress"></div><div class="note" id="note"><div class="note-title">Presenter Note</div><div class="note-text" id="noteText"></div></div>
 <script>
-const ACCESS_HASH='8328d24340ac9fb5ecd049a23db4146b5356a046619d14d442aae241d12917ba';
-const gate=document.getElementById('gate');
-const gateForm=document.getElementById('gateForm');
-const accessCode=document.getElementById('accessCode');
-const gateError=document.getElementById('gateError');
-async function sha256(text){const data=new TextEncoder().encode(text);const digest=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('')}
-function unlock(){gate.classList.add('hidden');sessionStorage.setItem('jeddLearningAccess','1')}
-if(sessionStorage.getItem('jeddLearningAccess')==='1') unlock();
-gateForm.addEventListener('submit',async e=>{e.preventDefault();const value=accessCode.value.trim();if(await sha256(value)===ACCESS_HASH){gateError.textContent='';unlock()}else{gateError.textContent='Access code not recognized.';accessCode.select()}});
-
-const slides=[...document.querySelectorAll('.slide')];let i=0;
-const count=document.getElementById('count'),progress=document.getElementById('progress'),note=document.getElementById('note'),noteText=document.getElementById('noteText');
-function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));count.textContent=`${i+1} / ${slides.length}`;progress.style.width=`${((i+1)/slides.length)*100}%`;noteText.textContent=slides[i].dataset.note||''}
-const next=()=>show(i+1),prev=()=>show(i-1);document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;
-document.addEventListener('keydown',e=>{if(!gate.classList.contains('hidden'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next()}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='t')note.classList.toggle('show');if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}if(e.key.toLowerCase()==='p')window.print()});
-let x0=null;document.addEventListener('touchstart',e=>x0=e.changedTouches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>55)dx<0?next():prev();x0=null},{passive:true});
-show(0);
+const slides=[...document.querySelectorAll('.slide')];let i=0;const count=document.getElementById('count'),progress=document.getElementById('progress'),note=document.getElementById('note'),noteText=document.getElementById('noteText');function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));count.textContent=`${i+1} / ${slides.length}`;progress.style.width=`${((i+1)/slides.length)*100}%`;noteText.textContent=slides[i].dataset.note||''}const next=()=>show(i+1),prev=()=>show(i-1);document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next()}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='t')note.classList.toggle('show');if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}if(e.key.toLowerCase()==='p')window.print()});let x0=null;document.addEventListener('touchstart',e=>x0=e.changedTouches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>55)dx<0?next():prev();x0=null},{passive:true});show(0);
 </script>
 </body>
 </html>
