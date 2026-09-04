@@ -1,0 +1,68 @@
+name: Patch MCP Privacy Homepage
+
+on:
+  push:
+    branches:
+      - publish-mcp-privacy-policy
+    paths:
+      - .github/workflows/patch-mcp-privacy-homepage.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: publish-mcp-privacy-policy
+          fetch-depth: 0
+
+      - name: Add MCP disclosure and privacy link
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          block = '''
+<!-- JEDD GOOGLE ADS MCP -->
+<section id="google-ads-mcp" style="background:#f8f9ff;padding:42px 0;border-top:1px solid #e0e0ec">
+  <div class="container">
+    <div style="max-width:860px;margin:0 auto;background:#fff;border:1px solid #e0e0ec;border-radius:16px;padding:26px 28px;display:flex;justify-content:space-between;gap:28px;align-items:center;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <span class="eyebrow">Authorized Google Ads Integration</span>
+        <h3 style="color:var(--navy);margin-bottom:8px">Jedd Google Ads MCP</h3>
+        <p style="font-size:.9rem;margin:0">A private Google Ads account-management integration used for reporting, auditing, campaign management, campaign creation, conversion configuration, and keyword planning for authorized advertising accounts.</p>
+      </div>
+      <a href="/privacy-policy/" class="btn-gold" style="white-space:nowrap">Privacy Policy →</a>
+    </div>
+  </div>
+</section>
+
+'''
+
+          if 'id="google-ads-mcp"' not in html:
+              html = html.replace('<!-- FOOTER -->', block + '<!-- FOOTER -->', 1)
+
+          footer_old = '''        <a href="#contact">Contact</a>\n      </nav>'''
+          footer_new = '''        <a href="#contact">Contact</a>\n        <a href="/privacy-policy/">Privacy Policy</a>\n      </nav>'''
+          if 'href="/privacy-policy/">Privacy Policy</a>' not in html:
+              html = html.replace(footer_old, footer_new, 1)
+
+          html = html.replace('<time datetime="2026-09-01">September 1, 2026</time>', '<time datetime="2026-09-04">September 4, 2026</time>')
+          path.write_text(html, encoding='utf-8')
+
+      - name: Commit homepage update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No homepage changes needed."
+            exit 0
+          fi
+          git commit -m "Add Jedd Google Ads MCP privacy disclosure to homepage"
+          git push origin HEAD:publish-mcp-privacy-policy
