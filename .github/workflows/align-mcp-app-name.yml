@@ -1,0 +1,77 @@
+name: Align MCP App Name
+
+on:
+  push:
+    branches:
+      - align-mcp-app-name
+    paths:
+      - .github/workflows/align-mcp-app-name.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: align-mcp-app-name
+          fetch-depth: 0
+
+      - name: Patch homepage and privacy policy
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          homepage = Path('index.html')
+          html = homepage.read_text(encoding='utf-8')
+
+          section = '''
+<!-- JEDDSARTE PAID MEDIA MCP -->
+<section id="jeddsarte-paid-media-mcp" style="background:#f8f9ff;padding:42px 0;border-top:1px solid #e0e0ec">
+  <div class="container">
+    <div style="max-width:860px;margin:0 auto;background:#fff;border:1px solid #e0e0ec;border-radius:16px;padding:26px 28px;display:flex;justify-content:space-between;gap:28px;align-items:center;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <span class="eyebrow">Authorized Paid Media Integration</span>
+        <h3 style="color:var(--navy);margin-bottom:8px">JeddSarte Paid Media MCP</h3>
+        <p style="font-size:.9rem;margin:0">A private paid media management integration developed by Jedd Sarte for authorized advertising accounts. It supports campaign reporting, auditing, campaign management and creation, conversion configuration, keyword planning, and related account-management workflows.</p>
+        <p style="font-size:.88rem;margin-top:12px"><strong style="color:var(--navy)">Privacy Policy:</strong> <a href="/privacy-policy/">https://jeddsarte.com/privacy-policy/</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+'''
+
+          if 'id="jeddsarte-paid-media-mcp"' not in html:
+              if '<!-- FOOTER -->' in html:
+                  html = html.replace('<!-- FOOTER -->', section + '<!-- FOOTER -->', 1)
+              else:
+                  html = html.replace('</body>', section + '</body>', 1)
+
+          footer_anchor = '<a href="#contact">Contact</a>'
+          privacy_link = '<a href="/privacy-policy/">Privacy Policy</a>'
+          if privacy_link not in html and footer_anchor in html:
+              html = html.replace(footer_anchor, footer_anchor + '\n        ' + privacy_link, 1)
+
+          html = html.replace('<time datetime="2026-09-01">September 1, 2026</time>', '<time datetime="2026-09-04">September 4, 2026</time>')
+          homepage.write_text(html, encoding='utf-8')
+
+          policy = Path('privacy-policy/index.html')
+          p = policy.read_text(encoding='utf-8')
+          p = p.replace('Jedd Google Ads MCP', 'JeddSarte Paid Media MCP')
+          policy.write_text(p, encoding='utf-8')
+
+          assert 'JeddSarte Paid Media MCP' in homepage.read_text(encoding='utf-8')
+          assert 'JeddSarte Paid Media MCP' in policy.read_text(encoding='utf-8')
+          assert 'Jedd Google Ads MCP' not in policy.read_text(encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html privacy-policy/index.html
+          git commit -m "Align JeddSarte Paid Media MCP naming" || exit 0
+          git push origin HEAD:align-mcp-app-name
