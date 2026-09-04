@@ -20,8 +20,8 @@ jobs:
           fetch-depth: 0
 
       - name: Add MCP disclosure and privacy link
-        shell: python
         run: |
+          python - <<'PY'
           from pathlib import Path
 
           path = Path('index.html')
@@ -47,13 +47,14 @@ jobs:
           if 'id="google-ads-mcp"' not in html:
               html = html.replace('<!-- FOOTER -->', block + '<!-- FOOTER -->', 1)
 
-          footer_old = '''        <a href="#contact">Contact</a>\n      </nav>'''
-          footer_new = '''        <a href="#contact">Contact</a>\n        <a href="/privacy-policy/">Privacy Policy</a>\n      </nav>'''
+          footer_old = '        <a href="#contact">Contact</a>\n      </nav>'
+          footer_new = '        <a href="#contact">Contact</a>\n        <a href="/privacy-policy/">Privacy Policy</a>\n      </nav>'
           if 'href="/privacy-policy/">Privacy Policy</a>' not in html:
               html = html.replace(footer_old, footer_new, 1)
 
           html = html.replace('<time datetime="2026-09-01">September 1, 2026</time>', '<time datetime="2026-09-04">September 4, 2026</time>')
           path.write_text(html, encoding='utf-8')
+          PY
 
       - name: Commit homepage update
         run: |
