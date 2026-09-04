@@ -60,11 +60,14 @@ jobs:
           policy = Path('privacy-policy/index.html')
           p = policy.read_text(encoding='utf-8')
           p = p.replace('Jedd Google Ads MCP', 'JeddSarte Paid Media MCP')
+          p = p.replace("the Google Ads MCP's", "the JeddSarte Paid Media MCP's")
           policy.write_text(p, encoding='utf-8')
 
+          current_policy = policy.read_text(encoding='utf-8')
           assert 'JeddSarte Paid Media MCP' in homepage.read_text(encoding='utf-8')
-          assert 'JeddSarte Paid Media MCP' in policy.read_text(encoding='utf-8')
-          assert 'Jedd Google Ads MCP' not in policy.read_text(encoding='utf-8')
+          assert 'JeddSarte Paid Media MCP' in current_policy
+          assert 'Jedd Google Ads MCP' not in current_policy
+          assert "the Google Ads MCP's" not in current_policy
           PY
 
       - name: Commit changes
@@ -72,5 +75,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html privacy-policy/index.html
-          git commit -m "Align JeddSarte Paid Media MCP naming" || exit 0
+          git commit -m "Normalize JeddSarte Paid Media MCP references" || exit 0
           git push origin HEAD:align-mcp-app-name
