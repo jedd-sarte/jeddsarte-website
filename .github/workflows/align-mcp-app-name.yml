@@ -27,22 +27,21 @@ jobs:
           homepage = Path('index.html')
           html = homepage.read_text(encoding='utf-8')
 
-          section = '''
-<!-- JEDDSARTE PAID MEDIA MCP -->
-<section id="jeddsarte-paid-media-mcp" style="background:#f8f9ff;padding:42px 0;border-top:1px solid #e0e0ec">
-  <div class="container">
-    <div style="max-width:860px;margin:0 auto;background:#fff;border:1px solid #e0e0ec;border-radius:16px;padding:26px 28px;display:flex;justify-content:space-between;gap:28px;align-items:center;flex-wrap:wrap">
-      <div style="flex:1;min-width:260px">
-        <span class="eyebrow">Authorized Paid Media Integration</span>
-        <h3 style="color:var(--navy);margin-bottom:8px">JeddSarte Paid Media MCP</h3>
-        <p style="font-size:.9rem;margin:0">A private paid media management integration developed by Jedd Sarte for authorized advertising accounts. It supports campaign reporting, auditing, campaign management and creation, conversion configuration, keyword planning, and related account-management workflows.</p>
-        <p style="font-size:.88rem;margin-top:12px"><strong style="color:var(--navy)">Privacy Policy:</strong> <a href="/privacy-policy/">https://jeddsarte.com/privacy-policy/</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-'''
+          section = (
+              '<!-- JEDDSARTE PAID MEDIA MCP -->\n'
+              '<section id="jeddsarte-paid-media-mcp" style="background:#f8f9ff;padding:42px 0;border-top:1px solid #e0e0ec">\n'
+              '  <div class="container">\n'
+              '    <div style="max-width:860px;margin:0 auto;background:#fff;border:1px solid #e0e0ec;border-radius:16px;padding:26px 28px;display:flex;justify-content:space-between;gap:28px;align-items:center;flex-wrap:wrap">\n'
+              '      <div style="flex:1;min-width:260px">\n'
+              '        <span class="eyebrow">Authorized Paid Media Integration</span>\n'
+              '        <h3 style="color:var(--navy);margin-bottom:8px">JeddSarte Paid Media MCP</h3>\n'
+              '        <p style="font-size:.9rem;margin:0">A private paid media management integration developed by Jedd Sarte for authorized advertising accounts. It supports campaign reporting, auditing, campaign management and creation, conversion configuration, keyword planning, and related account-management workflows.</p>\n'
+              '        <p style="font-size:.88rem;margin-top:12px"><strong style="color:var(--navy)">Privacy Policy:</strong> <a href="/privacy-policy/">https://jeddsarte.com/privacy-policy/</a></p>\n'
+              '      </div>\n'
+              '    </div>\n'
+              '  </div>\n'
+              '</section>\n\n'
+          )
 
           if 'id="jeddsarte-paid-media-mcp"' not in html:
               if '<!-- FOOTER -->' in html:
