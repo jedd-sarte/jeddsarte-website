@@ -21,14 +21,14 @@ a{color:var(--gold);text-decoration:none;transition:opacity 0.2s}
 .container{max-width:1180px;margin:0 auto;padding:0 32px}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#010829,#07154f);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,159,28,.12);padding:14px 32px;transition:padding .3s;box-shadow:0 10px 30px rgba(1,8,41,.12)}
 .nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.12rem;color:var(--white);text-decoration:none;display:inline-flex;align-items:center;min-width:62px;letter-spacing:-.02em}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:10px;align-items:center;list-style:none}
 .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.82rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:all .2s;padding:9px 11px;border-radius:8px}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}.nav-links a.active{color:var(--gold)}
 .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:10px 18px!important;border-radius:9px!important;font-weight:800!important;box-shadow:0 8px 22px rgba(244,159,28,.2)}
 
-#hero{background:transparent;padding:104px 0 22px;position:relative;overflow:hidden}
+#hero{background:transparent;padding:88px 0 20px;position:relative;overflow:hidden}
 .hero-dots{display:none}
 .hero-glow{display:none}
 .hero-inner{position:relative;z-index:1;max-width:760px}
@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(9
 .hero-sub{color:var(--g600);font-size:1rem;line-height:1.7;margin-bottom:18px}
 .hero-topics{display:flex;gap:10px;flex-wrap:wrap}
 .topic-tag{background:#fff;border:1px solid var(--g200);color:var(--navy);font-size:.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:6px 13px;border-radius:100px;cursor:pointer;transition:all .2s}
-.topic-tag:hover,.topic-tag.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.topic-tag:hover,.topic-tag.active{background:var(--navy);border-color:var(--navy);color:#fff}.topic-tag{user-select:none}.post-hidden{display:none!important}
 
 #posts{padding:22px 0 88px;background:#f7f8fc}
 .posts-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px}
@@ -103,7 +103,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   .fp-visual{min-height:250px}
   .posts-grid{grid-template-columns:1fr 1fr}
   .nl-inner{grid-template-columns:1fr}
-  nav .nav-links{display:none}
+  .nav-links{display:flex;overflow-x:auto;max-width:74vw;gap:4px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap;font-size:.74rem;padding:8px}.nav-cta{display:none}
   .footer-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:600px){.posts-grid{grid-template-columns:1fr}}
@@ -134,14 +134,14 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <h1 class="hero-title">Straight talk on ads, tracking, and <em>what actually works.</em></h1>
       <p class="hero-sub">Practical breakdowns on Google Ads, Meta Ads, conversion tracking infrastructure, and campaign strategy - written from the trenches of managing U.S. law firm and contractor campaigns every day.</p>
       <div class="hero-topics">
-        <span class="topic-tag active">All</span>
-        <span class="topic-tag">Google Ads</span>
-        <span class="topic-tag">Meta Ads</span>
-        <span class="topic-tag">Tracking</span>
-        <span class="topic-tag">Legal</span>
-        <span class="topic-tag">Home Services</span>
-        <span class="topic-tag">B2B</span>
-        <span class="topic-tag">Attribution</span>
+        <button type="button" class="topic-tag active" data-filter="all">All</button>
+        <button type="button" class="topic-tag" data-filter="google ads">Google Ads</button>
+        <button type="button" class="topic-tag" data-filter="meta ads">Meta Ads</button>
+        <button type="button" class="topic-tag" data-filter="tracking">Tracking</button>
+        <button type="button" class="topic-tag" data-filter="legal">Legal</button>
+        <button type="button" class="topic-tag" data-filter="home services">Home Services</button>
+        <button type="button" class="topic-tag" data-filter="b2b">B2B</button>
+        <button type="button" class="topic-tag" data-filter="attribution">Attribution</button>
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     </div>
 
     <!-- FEATURED POST -->
-    <a href="./hire-google-ads-specialist/" class="featured-post fade-up">
+    <a href="./hire-google-ads-specialist/" class="featured-post fade-up" data-categories="google ads hiring">
       <div class="fp-visual">
         <div class="fp-visual-bg"></div>
         <img class="fp-photo" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82" alt="Business owners discussing marketing performance" loading="eager" fetchpriority="high">
@@ -175,22 +175,22 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     <!-- POSTS GRID -->
     <div class="posts-grid">
 
-      <a href="./google-ads-management-cost/" class="post-card fade-up">
+      <a href="./google-ads-management-cost/" class="post-card fade-up" data-categories="google ads pricing">
         <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">02</div><div class="pc-thumb-icon">💵</div><span class="pc-tag">Pricing</span></div>
         <div class="pc-body"><div class="pc-meta">September 2026 · 9 min read</div><h3>Google Ads Management Cost: Pricing Guide</h3><p>Compare retainers, percentage-of-spend pricing, hourly work, audits, setup fees, and what a management fee should actually cover.</p><span class="pc-read">Read →</span></div>
       </a>
 
-      <a href="./google-ads-freelancer-vs-agency/" class="post-card fade-up">
+      <a href="./google-ads-freelancer-vs-agency/" class="post-card fade-up" data-categories="google ads hiring">
         <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">03</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Hiring</span></div>
         <div class="pc-body"><div class="pc-meta">September 2026 · 9 min read</div><h3>Google Ads Freelancer vs Agency</h3><p>Compare senior involvement, capacity, communication, adjacent services, cost structure, and which operating model fits the account.</p><span class="pc-read">Read →</span></div>
       </a>
 
-      <a href="./law-firm-google-ads-mistakes/" class="post-card fade-up">
+      <a href="./law-firm-google-ads-mistakes/" class="post-card fade-up" data-categories="google ads legal">
         <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">04</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Legal</span></div>
         <div class="pc-body"><div class="pc-meta">June 2026 · 8 min read</div><h3>Why Law Firm Google Ads Fail Before They Launch</h3><p>Five structural mistakes that waste expensive legal search demand before optimization can fix the account.</p><span class="pc-read">Read →</span></div>
       </a>
 
-      <a href="./server-side-gtm-vs-browser-tracking/" class="post-card fade-up">
+      <a href="./server-side-gtm-vs-browser-tracking/" class="post-card fade-up" data-categories="google ads tracking">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">05</div>
@@ -205,7 +205,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./value-based-bidding-law-firms/" class="post-card fade-up">
+      <a href="./value-based-bidding-law-firms/" class="post-card fade-up" data-categories="google ads legal">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">06</div>
@@ -220,7 +220,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./meta-capi-law-firms/" class="post-card fade-up">
+      <a href="./meta-capi-law-firms/" class="post-card fade-up" data-categories="meta ads legal tracking">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">07</div>
@@ -235,7 +235,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./landing-page-lead-quality/" class="post-card fade-up">
+      <a href="./landing-page-lead-quality/" class="post-card fade-up" data-categories="google ads">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">08</div>
@@ -250,7 +250,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./lsa-vs-search-ads-contractors/" class="post-card fade-up">
+      <a href="./lsa-vs-search-ads-contractors/" class="post-card fade-up" data-categories="google ads home services">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">09</div>
@@ -265,7 +265,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./offline-conversion-tracking/" class="post-card fade-up">
+      <a href="./offline-conversion-tracking/" class="post-card fade-up" data-categories="google ads tracking">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">10</div>
@@ -280,7 +280,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./google-ads-audit-checklist/" class="post-card fade-up">
+      <a href="./google-ads-audit-checklist/" class="post-card fade-up" data-categories="google ads">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">11</div>
@@ -295,7 +295,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./google-ads-high-ticket-b2b/" class="post-card fade-up">
+      <a href="./google-ads-high-ticket-b2b/" class="post-card fade-up" data-categories="google ads b2b">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">12</div>
@@ -310,7 +310,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
         </div>
       </a>
 
-      <a href="./multi-touch-attribution-model/" class="post-card fade-up">
+      <a href="./multi-touch-attribution-model/" class="post-card fade-up" data-categories="tracking attribution">
         <div class="pc-thumb">
           <img class="pc-photo" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">13</div>
@@ -375,10 +375,24 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px'});
-document.querySelectorAll('.topic-tag').forEach(btn=>{
+const filterButtons=[...document.querySelectorAll('.topic-tag')];
+const filterablePosts=[...document.querySelectorAll('.featured-post[data-categories],.post-card[data-categories]')];
+const postCount=document.querySelector('.posts-header h2');
+function applyFilter(filter){
+  let visible=0;
+  filterablePosts.forEach(post=>{
+    const cats=(post.dataset.categories||'').toLowerCase();
+    const show=filter==='all'||cats.includes(filter);
+    post.classList.toggle('post-hidden',!show);
+    if(show) visible++;
+  });
+  if(postCount) postCount.textContent=visible+' post'+(visible===1?'':'s');
+}
+filterButtons.forEach(btn=>{
   btn.addEventListener('click',function(){
-    document.querySelectorAll('.topic-tag').forEach(b=>b.classList.remove('active'));
+    filterButtons.forEach(b=>b.classList.remove('active'));
     this.classList.add('active');
+    applyFilter((this.dataset.filter||'all').toLowerCase());
   });
 });
 </script>
