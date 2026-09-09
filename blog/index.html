@@ -46,7 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97)
 .featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:18px;overflow:hidden;border:1px solid var(--g200);margin-bottom:40px;text-decoration:none;color:inherit;transition:all 0.25s}
 .featured-post:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(1,8,41,0.1)}
 .fp-visual{background:var(--navy);min-height:320px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
-.fp-visual-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%)}
+.fp-visual-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%)}.fp-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.65) contrast(1.05)}.fp-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,8,41,.08),rgba(1,8,41,.9))}.fp-icon,.fp-label,.fp-num{z-index:2}
 .fp-visual-glow{position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(244,159,28,0.15) 0%,transparent 70%)}
 .fp-num{font-family:'DM Serif Display',serif;font-size:7rem;color:rgba(255,255,255,0.04);position:absolute;bottom:-20px;right:16px;line-height:1}
 .fp-icon{font-size:2.8rem;position:relative;z-index:1;margin-bottom:12px}
@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97)
 .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .post-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;overflow:hidden;text-decoration:none;display:block;color:inherit;transition:all 0.25s}
 .post-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(1,8,41,0.09)}
-.pc-thumb{height:160px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-thumb{height:160px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.pc-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,159,28,.04),transparent 55%)}.post-card:nth-child(3n+2) .pc-thumb{background:linear-gradient(135deg,#030d40,#07154f)}.post-card:nth-child(3n) .pc-thumb{background:linear-gradient(135deg,#010829,#18224f)}.pc-thumb-icon,.pc-tag{z-index:2}
 .pc-thumb-num{font-family:'DM Serif Display',serif;font-size:6rem;color:rgba(255,255,255,0.04);position:absolute;line-height:1}
 .pc-thumb-icon{font-size:2.2rem;position:relative;z-index:1}
 .pc-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase}
@@ -158,6 +158,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     <a href="./hire-google-ads-specialist/" class="featured-post fade-up">
       <div class="fp-visual">
         <div class="fp-visual-bg"></div>
+        <img class="fp-photo" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82" alt="Business owners discussing marketing performance" loading="eager" fetchpriority="high">
         <div class="fp-visual-glow"></div>
         <div class="fp-num">01</div>
         <div class="fp-icon">🔎</div>
