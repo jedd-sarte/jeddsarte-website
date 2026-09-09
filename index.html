@@ -58,14 +58,15 @@ p{font-size:1rem;line-height:1.72;color:var(--gray-600)}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.12);padding:16px 32px;transition:padding 0.3s}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:-0.02em}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s;letter-spacing:0.01em}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
-.nav-cta:hover{background:var(--gold-light)!important}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:all 0.2s;letter-spacing:0.01em;padding:9px 11px;border-radius:8px}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:10px 18px!important;border-radius:9px!important;font-weight:700!important;box-shadow:0 8px 24px rgba(244,159,28,.2)}
+.nav-cta:hover{background:var(--gold-light)!important;transform:translateY(-1px)}
+.menu-toggle{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:9px;padding:9px 11px;font:700 .8rem 'Space Grotesk',sans-serif;cursor:pointer}.mobile-menu{display:none;position:absolute;top:68px;left:20px;right:20px;background:rgba(1,8,41,.99);border:1px solid rgba(244,159,28,.18);border-radius:14px;padding:12px;box-shadow:0 20px 40px rgba(0,0,0,.3)}.mobile-menu.open{display:grid}.mobile-menu a{color:rgba(255,255,255,.82);text-decoration:none;font:600 .9rem 'Space Grotesk',sans-serif;padding:12px;border-radius:8px}.mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
 
 /* ── HERO ── */
 #hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
@@ -84,8 +85,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(244,159,28,0.25)}
 .btn-outline{background:transparent;color:rgba(255,255,255,0.8);padding:14px 26px;border-radius:8px;border:1px solid rgba(255,255,255,0.18);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.92rem;text-decoration:none;transition:all 0.2s;display:inline-block}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px;position:relative;overflow:hidden}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:0;position:relative;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.22)}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);z-index:3}.hero-portrait{width:100%;height:320px;object-fit:cover;object-position:center 22%;display:block;filter:saturate(.82) contrast(1.03)}.hero-portrait-overlay{position:absolute;inset:0 0 auto 0;height:320px;background:linear-gradient(180deg,transparent 45%,rgba(1,8,41,.9) 100%);pointer-events:none}.hero-card-body{padding:22px 24px 24px}.hero-card-kicker{font:700 .68rem 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:15px}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hero-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px}.hero-stat b{display:block;color:#fff;font:400 1.65rem 'DM Serif Display',serif;line-height:1}.hero-stat span{display:block;color:rgba(255,255,255,.42);font-size:.68rem;margin-top:5px;line-height:1.25}
 .stat-row{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.07)}
 .stat-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
 .stat-big{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--white);line-height:1;display:flex;align-items:baseline;gap:4px}
@@ -241,12 +242,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 
 /* ── FOOTER ── */
 footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,255,255,0.05)}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white)}
+.footer-inner{display:grid;grid-template-columns:1.15fr repeat(3,1fr);gap:42px;align-items:start}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--white);font-size:1.25rem;margin-bottom:12px}
 .footer-logo span{color:var(--gold)}
-.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.6)}
-.footer-nav{display:flex;gap:20px}
-.footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
+.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.48);line-height:1.65}.footer-col h4{font:700 .72rem 'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:12px}
+.footer-nav{display:grid;gap:8px}
+.footer-nav a{color:rgba(255,255,255,0.56);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
 .footer-nav a:hover{color:var(--gold)}
 
 /* ── ANIMATIONS ── */
@@ -258,9 +259,9 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
   .hero-inner,.about-grid,.cases-grid,.testi-grid,.services-grid,.blog-grid,.audit-inner,.contact-grid{grid-template-columns:1fr}
   .cs.featured,.cs-gate{grid-column:span 1}
   .cs.featured{display:block}
-  .hero-card{display:none}
-  .footer-inner{flex-direction:column;text-align:center}
-  nav .nav-links{display:none}
+  .hero-card{display:block;max-width:520px}.hero-portrait{height:280px}.hero-portrait-overlay{height:280px}
+  .footer-inner{grid-template-columns:1fr 1fr;text-align:left}
+  nav .nav-links{display:none}.menu-toggle{display:inline-flex}.mobile-menu{z-index:250}
 }
 
 .client-logo-img{height:36px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(1) brightness(1.8) contrast(0.8);opacity:0.6;transition:all 0.2s}
@@ -275,6 +276,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 .cert-badge:hover img{opacity:1;filter:drop-shadow(0 0 6px rgba(244,159,28,0.3))}.cert-text{height:48px;display:flex;align-items:center;padding:0 12px;border:1px solid rgba(255,255,255,0.16);border-radius:7px;color:rgba(255,255,255,0.85);font:700 0.72rem 'Space Grotesk',sans-serif;line-height:1.2;text-align:center}
 
 
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat:last-child{grid-column:span 2}}
 @font-face{font-display:swap}
 </style>
 
@@ -438,13 +440,22 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">Jedd<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="services/">Services</a></li>
-      <li><a href="services/google-ads-management/">Google Ads</a></li>
-      <li><a href="case-studies/">Work</a></li>
+      <li><a href="industries/">Industries</a></li>
+      <li><a href="case-studies/">Case Studies</a></li>
       <li><a href="blog/">Insights</a></li>
-      <li><a href="#audit" class="nav-cta" aria-label="Get a free paid media audit">Free Audit</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener" class="nav-cta">Book a Call</a></li>
     </ul>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="services/">Services</a>
+      <a href="industries/">Industries</a>
+      <a href="case-studies/">Case Studies</a>
+      <a href="blog/">Insights</a>
+      <a href="#about">About</a>
+      <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener">Book a Strategy Call →</a>
+    </div>
   </div>
 </nav>
 
@@ -463,7 +474,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
           <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Free Strategy Call →</a>
           <a href="case-studies/" class="btn-outline">See My Work</a>
         </div>
-        <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, <a href="services/meta-ads-management/" style="color:#f49f1c;font-weight:600">Meta Ads management</a>, <a href="services/conversion-tracking/" style="color:#f49f1c;font-weight:600">conversion tracking</a>, or industry strategies for <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">law firms</a>, <a href="industries/google-ads-contractors/" style="color:#f49f1c;font-weight:600">contractors</a>, and <a href="industries/ecommerce-google-ads/" style="color:#f49f1c;font-weight:600">e-commerce</a>.</p>
+        <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, <a href="services/meta-ads-management/" style="color:#f49f1c;font-weight:600">Meta Ads management</a>, <a href="services/conversion-tracking/" style="color:#f49f1c;font-weight:600">conversion tracking</a>, or industry strategies for <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">law firms</a>, <a href="industries/google-ads-contractors/" style="color:#f49f1c;font-weight:600">contractors</a>, <a href="industries/google-ads-dentists/" style="color:#f49f1c;font-weight:600">dentists</a>, <a href="industries/google-ads-real-estate/" style="color:#f49f1c;font-weight:600">real estate</a>, and <a href="industries/ecommerce-google-ads/" style="color:#f49f1c;font-weight:600">e-commerce</a>.</p>
       <!-- Certifications -->
       <div class="cert-strip">
         <span class="cert-label">Certified</span>
@@ -475,17 +486,15 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       </div>
       </div>
       <div class="hero-card">
-        <div class="stat-row">
-          <div class="stat-big">7</div>
-          <div class="stat-lbl">Years in Digital Marketing</div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-big">2</div>
-          <div class="stat-lbl">Core Paid Media Platforms · Google + Meta</div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-big">50<sup>+</sup></div>
-          <div class="stat-lbl">Businesses Trusted</div>
+        <img class="hero-portrait" src="assets/images/Headshot.webp" alt="Jedd Sarte, Google Ads and paid media specialist" width="760" height="900" fetchpriority="high"/>
+        <div class="hero-portrait-overlay"></div>
+        <div class="hero-card-body">
+          <div class="hero-card-kicker">Direct specialist access · No agency handoff</div>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>7</b><span>Years in digital marketing</span></div>
+            <div class="hero-stat"><b>Google + Meta</b><span>Core paid media platforms</span></div>
+            <div class="hero-stat"><b>50+</b><span>Businesses supported</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -956,18 +965,39 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-logo">Jedd<span>.</span></div>
-      <div class="footer-copy">© 2026 Andreus Jedd J. Sarte · Senior Paid Media Specialist · Page last updated <time datetime="2026-09-04">September 4, 2026</time></div>
-      <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="services/">Services</a>
-        <a href="services/google-ads-management/">Google Ads</a>
-        <a href="services/conversion-tracking/">Tracking</a>
-        <a href="case-studies/">Work</a>
-        <a href="#audit">Free Audit</a>
-        <a href="#contact">Contact</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
-      </nav>
+      <div>
+        <div class="footer-logo">Jedd<span>.</span></div>
+        <div class="footer-copy">Google Ads, Meta Ads, SEO, analytics, and conversion tracking for U.S. businesses. Work directly with the specialist managing the strategy.</div>
+        <div class="footer-copy" style="margin-top:14px">© 2026 Andreus Jedd J. Sarte · Paid Social & Search Advertising Specialist</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <div class="footer-nav">
+          <a href="services/google-ads-management/">Google Ads Management</a>
+          <a href="services/google-ads-audit/">Google Ads Audit</a>
+          <a href="services/conversion-tracking/">Conversion Tracking</a>
+          <a href="services/meta-ads-management/">Meta Ads Management</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <div class="footer-nav">
+          <a href="industries/law-firm-google-ads/">Law Firms</a>
+          <a href="industries/google-ads-contractors/">Contractors</a>
+          <a href="industries/google-ads-dentists/">Dentists</a>
+          <a href="industries/google-ads-real-estate/">Real Estate</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <div class="footer-nav">
+          <a href="case-studies/">Case Studies</a>
+          <a href="blog/">Insights</a>
+          <a href="#about">About Jedd</a>
+          <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener">Book a Strategy Call</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -979,9 +1009,20 @@ const obs = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-// Nav shrink on scroll
+// Navigation
+const primaryNav=document.querySelector('body > nav');
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.querySelector('.mobile-menu');
+if(menuToggle&&mobileMenu){
+  menuToggle.addEventListener('click',()=>{
+    const open=mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',String(open));
+    menuToggle.textContent=open?'Close':'Menu';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.textContent='Menu'}));
+}
 window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px';
+  if(primaryNav) primaryNav.style.padding=window.scrollY>60?'10px 32px':'16px 32px';
 });
 </script>
 </body>
