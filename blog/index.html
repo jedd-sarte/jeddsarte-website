@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97)
 .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .post-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;overflow:hidden;text-decoration:none;display:block;color:inherit;transition:all 0.25s}
 .post-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(1,8,41,0.09)}
-.pc-thumb{height:160px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.pc-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,159,28,.04),transparent 55%)}.post-card:nth-child(3n+2) .pc-thumb{background:linear-gradient(135deg,#030d40,#07154f)}.post-card:nth-child(3n) .pc-thumb{background:linear-gradient(135deg,#010829,#18224f)}.pc-thumb-icon,.pc-tag{z-index:2}
+.pc-thumb{height:160px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.pc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;filter:saturate(.5) contrast(1.05);transition:transform .3s,opacity .3s}.post-card:hover .pc-photo{transform:scale(1.035);opacity:.27}.pc-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,8,41,.28),rgba(1,8,41,.88))}.post-card:nth-child(3n+2) .pc-thumb{background:linear-gradient(135deg,#030d40,#07154f)}.post-card:nth-child(3n) .pc-thumb{background:linear-gradient(135deg,#010829,#18224f)}.pc-thumb-icon,.pc-tag{z-index:2}
 .pc-thumb-num{font-family:'DM Serif Display',serif;font-size:6rem;color:rgba(255,255,255,0.04);position:absolute;line-height:1}
 .pc-thumb-icon{font-size:2.2rem;position:relative;z-index:1}
 .pc-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase}
@@ -176,22 +176,23 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     <div class="posts-grid">
 
       <a href="./google-ads-management-cost/" class="post-card fade-up">
-        <div class="pc-thumb"><div class="pc-thumb-num">02</div><div class="pc-thumb-icon">💵</div><span class="pc-tag">Pricing</span></div>
+        <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">02</div><div class="pc-thumb-icon">💵</div><span class="pc-tag">Pricing</span></div>
         <div class="pc-body"><div class="pc-meta">September 2026 · 9 min read</div><h3>Google Ads Management Cost: Pricing Guide</h3><p>Compare retainers, percentage-of-spend pricing, hourly work, audits, setup fees, and what a management fee should actually cover.</p><span class="pc-read">Read →</span></div>
       </a>
 
       <a href="./google-ads-freelancer-vs-agency/" class="post-card fade-up">
-        <div class="pc-thumb"><div class="pc-thumb-num">03</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Hiring</span></div>
+        <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">03</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Hiring</span></div>
         <div class="pc-body"><div class="pc-meta">September 2026 · 9 min read</div><h3>Google Ads Freelancer vs Agency</h3><p>Compare senior involvement, capacity, communication, adjacent services, cost structure, and which operating model fits the account.</p><span class="pc-read">Read →</span></div>
       </a>
 
       <a href="./law-firm-google-ads-mistakes/" class="post-card fade-up">
-        <div class="pc-thumb"><div class="pc-thumb-num">04</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Legal</span></div>
+        <div class="pc-thumb"><img class="pc-photo" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy"><div class="pc-thumb-num">04</div><div class="pc-thumb-icon">⚖️</div><span class="pc-tag">Legal</span></div>
         <div class="pc-body"><div class="pc-meta">June 2026 · 8 min read</div><h3>Why Law Firm Google Ads Fail Before They Launch</h3><p>Five structural mistakes that waste expensive legal search demand before optimization can fix the account.</p><span class="pc-read">Read →</span></div>
       </a>
 
       <a href="./server-side-gtm-vs-browser-tracking/" class="post-card fade-up">
         <div class="pc-thumb">
+          <img class="pc-photo" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">05</div>
           <div class="pc-thumb-icon">⚙️</div>
           <span class="pc-tag">Tracking</span>
@@ -206,6 +207,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 
       <a href="./value-based-bidding-law-firms/" class="post-card fade-up">
         <div class="pc-thumb">
+          <img class="pc-photo" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">06</div>
           <div class="pc-thumb-icon">📈</div>
           <span class="pc-tag">Bidding Strategy</span>
@@ -248,6 +250,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 
       <a href="./lsa-vs-search-ads-contractors/" class="post-card fade-up">
         <div class="pc-thumb">
+          <img class="pc-photo" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="pc-thumb-num">09</div>
           <div class="pc-thumb-icon">🏠</div>
           <span class="pc-tag">Home Services</span>
