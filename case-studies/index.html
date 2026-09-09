@@ -25,17 +25,17 @@ p{font-size:1rem;line-height:1.72;color:var(--g600)}
 .container{max-width:1100px;margin:0 auto;padding:0 32px}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
+.nav-links{display:flex;gap:10px;align-items:center;list-style:none}
+.nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.82rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:all .2s;padding:9px 11px;border-radius:8px}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:10px 18px!important;border-radius:9px!important;font-weight:800!important;box-shadow:0 8px 22px rgba(244,159,28,.2)}
 
-#hero{background:var(--navy);padding:130px 0 80px;position:relative;overflow:hidden}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,159,28,0.06) 1px,transparent 1px);background-size:30px 30px}
-.hero-glow{position:absolute;top:-150px;right:-100px;width:550px;height:550px;background:radial-gradient(circle,rgba(244,159,28,0.08) 0%,transparent 65%);pointer-events:none}
+#hero{background:var(--navy);padding:118px 0 74px;position:relative;overflow:hidden;isolation:isolate}
+.hero-dots{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(1,8,41,.94),rgba(1,8,41,.78)),url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center;opacity:.55;z-index:-2}
+.hero-glow{position:absolute;top:-150px;right:-100px;width:550px;height:550px;background:radial-gradient(circle,rgba(244,159,28,.12) 0%,transparent 65%);pointer-events:none;z-index:-1}
 .hero-content{position:relative;z-index:1;max-width:700px}
 .hero-title{color:var(--white);margin-bottom:16px}
 .hero-title em{color:var(--gold);font-style:italic}
@@ -54,8 +54,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(1,8,41,0.97)
 /* FREE card */
 .cs-card{background:var(--white);border:1px solid var(--g200);border-radius:16px;overflow:hidden;text-decoration:none;display:block;color:inherit;transition:all 0.25s;position:relative}
 .cs-card:hover{transform:translateY(-5px);box-shadow:0 20px 54px rgba(1,8,41,0.12);border-color:rgba(244,159,28,.28)}
-.cs-thumb{height:190px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px}.cs-card:nth-child(2n) .cs-thumb{background:linear-gradient(135deg,#030d40,#07154f)}.cs-card:nth-child(3n) .cs-thumb{background:linear-gradient(135deg,#010829,#18224f)}.cs-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(1,8,41,.45))}.cs-thumb>*{z-index:2}.cs-card:hover .cs-thumb{filter:saturate(1.1)}
-.cs-thumb-bg{position:absolute;inset:0}
+.cs-thumb{height:190px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px}.cs-card:nth-child(2n) .cs-thumb{background:linear-gradient(135deg,#030d40,#07154f)}.cs-card:nth-child(3n) .cs-thumb{background:linear-gradient(135deg,#010829,#18224f)}.cs-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,8,41,.12) 18%,rgba(1,8,41,.78) 100%)}.cs-thumb>*{z-index:2}.cs-card:hover .cs-thumb{filter:saturate(1.1)}
+.cs-thumb-bg{position:absolute;inset:0}.cs-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.46;filter:saturate(.58) contrast(1.05);transition:transform .3s,opacity .3s}.cs-card:hover .cs-photo{transform:scale(1.035);opacity:.56}
 .cs-thumb-glow{position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(244,159,28,0.15) 0%,transparent 70%)}
 .cs-vertical-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--navy);font-size:0.67rem;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase}
 .cs-metric{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--white);line-height:1;position:relative;z-index:1}
@@ -93,7 +93,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade-up.visible{opacity:1;transform:none}
-@media(max-width:900px){.cs-grid{grid-template-columns:1fr}nav .nav-links{display:none}.footer-inner{flex-direction:column;text-align:center}}
+@media(max-width:900px){.cs-grid{grid-template-columns:1fr}.nav-links{display:flex;overflow-x:auto;max-width:74vw;gap:4px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap;font-size:.74rem;padding:8px}.nav-cta{display:none}.footer-inner{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
@@ -143,6 +143,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <!-- FREE 1: PI Law -->
       <a href="./pi-law-firm/" class="cs-card fade-up">
         <div class="cs-thumb">
+          <img class="cs-photo" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="cs-thumb-bg" style="background:linear-gradient(135deg,#010829 0%,#030d40 100%)"></div>
           <div class="cs-thumb-glow"></div>
           <div class="cs-vertical-tag">Personal Injury Law</div>
@@ -166,6 +167,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <!-- FREE 2: B2B Corporate Law -->
       <a href="./b2b-corporate-law/" class="cs-card fade-up">
         <div class="cs-thumb">
+          <img class="cs-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="cs-thumb-bg" style="background:linear-gradient(135deg,#010829 0%,#030d40 100%)"></div>
           <div class="cs-thumb-glow"></div>
           <div class="cs-vertical-tag">Corporate Law</div>
@@ -189,6 +191,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <!-- FREE 3: Complex Litigation -->
       <a href="./complex-litigation/" class="cs-card fade-up">
         <div class="cs-thumb">
+          <img class="cs-photo" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="cs-thumb-bg" style="background:linear-gradient(135deg,#010829 0%,#030d40 100%)"></div>
           <div class="cs-thumb-glow"></div>
           <div class="cs-vertical-tag">Trial Litigation</div>
@@ -212,6 +215,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <!-- OPEN 4: Waxit Car Care -->
       <a href="./ecommerce/waxit-car-care-australia/" class="cs-card fade-up">
         <div class="cs-thumb">
+          <img class="cs-photo" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="cs-thumb-bg" style="background:linear-gradient(135deg,#11141B 0%,#27212A 100%)"></div>
           <div class="cs-thumb-glow"></div>
           <div class="cs-vertical-tag">E-commerce</div>
@@ -235,6 +239,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <!-- OPEN 5: Zahlco Real Estate -->
       <a href="./real-estate/zahlco-real-estate-maryland/" class="cs-card fade-up">
         <div class="cs-thumb">
+          <img class="cs-photo" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=78" alt="" loading="lazy">
           <div class="cs-thumb-bg" style="background:linear-gradient(135deg,#1B2D4A 0%,#10192B 100%)"></div>
           <div class="cs-thumb-glow"></div>
           <div class="cs-vertical-tag">Real Estate</div>
@@ -259,9 +264,9 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   <div class="container">
     <div class="portfolio-cta-inner fade-up">
       <span class="eyebrow">Want to discuss your account?</span>
-      <h2>See the work first. Book only when it makes sense.</h2>
-      <p>The portfolio is fully open. If the approach fits what you need, choose a time and we can talk through your Google Ads, Meta Ads, tracking, or funnel priorities.</p>
-      <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener" class="portfolio-btn">Book a Call →</a>
+      <h2>See how I think before we talk.</h2>
+      <p>Every case study is open to read. If the strategy and level of detail match what you need, book a call and we can talk through your account, tracking, or acquisition priorities.</p>
+      <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener" class="portfolio-btn">Book a Strategy Call →</a>
     </div>
   </div>
 </section>
