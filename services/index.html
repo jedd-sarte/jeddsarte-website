@@ -94,6 +94,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 @media(max-width:900px){.commercial-paths{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.commercial-paths{grid-template-columns:1fr}}
 
+/* Conversion paths */
+.need-wrap{margin:0 auto 72px;max-width:1000px}
+.need-head{text-align:center;margin-bottom:26px}
+.need-head h3{color:var(--navy);font-size:1.2rem;margin-bottom:8px}
+.need-head p{font-size:.9rem;color:var(--g600)}
+.need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.need-card{display:block;border:1px solid var(--g200);border-radius:14px;padding:22px;background:#fff;text-decoration:none;transition:.2s}
+.need-card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 30px rgba(1,8,41,.08)}
+.need-card span{display:block;color:var(--gold);font:800 .68rem 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.need-card strong{display:block;color:var(--navy);font:700 .98rem 'Space Grotesk',sans-serif;margin-bottom:7px}
+.need-card p{font-size:.8rem;line-height:1.55}
+@media(max-width:760px){.need-grid{grid-template-columns:1fr}}
 /* Individual service cards  -  full detail */
 .svc-block{margin-bottom:80px}
 .svc-block:last-child{margin-bottom:0}
@@ -236,7 +248,10 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
     <a href="../index.html" class="nav-logo">Jedd<span>.</span></a>
     <ul class="nav-links">
       <li><a href="./index.html" class="active">Services</a></li>
-      <li><a href="../industries/">Industries</a></li>
+      <li><a href="../industries/">Industries</a>
+        <a href="../industries/law-firm-google-ads/">Law Firms</a>
+        <a href="../industries/google-ads-contractors/">Contractors</a>
+        <a href="../industries/google-ads-medical-practices/">Medical</a></li>
       <li><a href="../case-studies/">Case Studies</a></li>
       <li><a href="../blog/">Insights</a></li>
       <li><a href="../index.html#about">About</a></li>
@@ -265,7 +280,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Analytics dashboard showing campaign performance data" loading="eager"/>
           <div class="hero-img-overlay"></div>
           <div class="hero-img-stat">
-            <div class="his"><div class="his-num">6<span>+</span></div><div class="his-lbl">Years in digital marketing</div></div>
+            <div class="his"><div class="his-num">7</div><div class="his-lbl">Years in digital marketing</div></div>
             <div class="his"><div class="his-num">2</div><div class="his-lbl">Core platforms · Google + Meta</div></div>
             <div class="his"><div class="his-num">50<span>+</span></div><div class="his-lbl">Clients served</div></div>
           </div>
@@ -310,8 +325,23 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
       <a class="commercial-path" href="../industries/law-firm-google-ads/"><strong>Google Ads & PPC for Law Firms</strong><span>High-CPC legal search strategy for lawyers and law firms built around qualified cases and conversion quality.</span></a>
       <a class="commercial-path" href="../industries/google-ads-contractors/"><strong>Google Ads & PPC for Contractors</strong><span>Local search campaigns for contractors and home services built around service areas, booked work, and high-intent demand.</span></a>
       <a class="commercial-path" href="../industries/ecommerce-google-ads/"><strong>Google Ads for E-commerce</strong><span>Search and Shopping strategy focused on purchases, revenue, ROAS, and product economics.</span></a>
+      <a class="commercial-path" href="../industries/google-ads-dentists/"><strong>Google Ads for Dentists</strong><span>Local patient-acquisition strategy focused on treatment demand, appointments, and conversion quality.</span></a>
+      <a class="commercial-path" href="../industries/google-ads-real-estate/"><strong>Google Ads for Real Estate</strong><span>Paid search for buyer, seller, renter, investor, and property-related demand.</span></a>
+      <a class="commercial-path" href="../industries/b2b-ppc-management/"><strong>B2B PPC Management</strong><span>Paid search for consultants and professional services focused on qualified pipeline.</span></a>
       <a class="commercial-path" href="../"><strong>Google Ads Specialist</strong><span>Work directly with Jedd Sarte for Google Ads, paid media strategy, tracking, and optimization.</span></a>
     </nav>
+
+    <div class="need-wrap fade-up">
+      <div class="need-head">
+        <h3>Not sure where to start?</h3>
+        <p>Choose the problem that sounds closest to what is happening in your account.</p>
+      </div>
+      <div class="need-grid">
+        <a class="need-card" href="google-ads-audit/"><span>Problem Finding</span><strong>“I think we are wasting spend.”</strong><p>Start with an account audit to identify structural, query, bidding, and tracking issues before making bigger changes.</p></a>
+        <a class="need-card" href="conversion-tracking/"><span>Measurement</span><strong>“Google is optimizing to the wrong leads.”</strong><p>Fix conversion tracking, GA4/GTM, offline signals, and lead-quality feedback before trusting automation.</p></a>
+        <a class="need-card" href="google-ads-management/"><span>Growth</span><strong>“We need someone to own the account.”</strong><p>Use ongoing management when you need direct specialist attention across strategy, search terms, bidding, testing, and reporting.</p></a>
+      </div>
+    </div>
 
     <!-- 01  -  Paid Media Management -->
     <div class="svc-block fade-up">
@@ -332,7 +362,7 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
             <li><span class="check">✓</span>Bi-weekly check-ins and async Slack/email communication</li>
           </ul>
           <div class="svc-meta">
-            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Law firms, contractors, e-commerce brands</div></div>
+            <div class="svc-meta-item"><div class="svc-meta-label">Best for</div><div class="svc-meta-val">Law firms, contractors, medical, real estate, B2B, e-commerce</div></div>
             <div class="svc-meta-item"><div class="svc-meta-label">Typical timeline</div><div class="svc-meta-val">Ongoing monthly retainer</div></div>
             <div class="svc-meta-item"><div class="svc-meta-label">Engagement type</div><div class="svc-meta-val">Monthly retainer</div></div>
             <div class="svc-meta-item"><div class="svc-meta-label">Minimum commitment</div><div class="svc-meta-val">3 months recommended</div></div>
@@ -645,10 +675,10 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   <div class="container">
     <div class="cta-inner fade-up">
       <span class="eyebrow" style="text-align:center;display:block">Ready to start?</span>
-      <h2>Let's scope your project.</h2>
-      <p>30-minute call. No deck. No pitch. Just a straight conversation about what you need and whether I'm the right fit to build it.</p>
+      <h2>Bring me the account problem. I’ll help map the next move.</h2>
+      <p>30-minute strategy call focused on the account, the business goal, and the biggest obstacle. We can determine whether the right next step is an audit, tracking fix, rebuild, or ongoing management.</p>
       <div class="cta-actions">
-        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Discovery Call →</a>
+        <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="btn-gold">Book a Strategy Call →</a>
         <a href="../index.html#audit" class="btn-outline-white">Get a Free Audit First</a>
       </div>
     </div>
