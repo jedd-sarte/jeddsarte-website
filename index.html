@@ -137,6 +137,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .svc-tag{font-size:0.68rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);background:rgba(244,159,28,0.1);padding:4px 9px;border-radius:4px;letter-spacing:0.05em;text-decoration:none}
 
 /* ── CASE STUDIES ── */
+.case-logo{position:absolute;right:18px;bottom:18px;z-index:2;width:74px;height:74px;object-fit:contain;background:rgba(255,255,255,.96);border-radius:14px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.cs-vis-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:saturate(.72) contrast(1.05)}
+.cs-vis::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,8,41,.18),rgba(1,8,41,.9));pointer-events:none}
+.cs-badge,.cs-num{position:relative;z-index:2}
+.testi{position:relative;overflow:hidden}
+.testi::before{content:'“';position:absolute;right:18px;top:-12px;font:400 5.2rem 'DM Serif Display',serif;color:rgba(244,159,28,.08)}
+.testi-author{position:relative;z-index:1}
+.testi-featured{background:linear-gradient(145deg,#fff,#f7f8ff);border-color:rgba(244,159,28,.35)!important}
+.testi-featured .tav{background:var(--gold)!important;color:var(--navy)!important}
+
 #cases{background:var(--offwhite)}
 .cases-intro{max-width:560px;margin-bottom:48px}
 .cases-intro p{margin-top:10px}
@@ -683,6 +693,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <!-- Featured: DAG -->
       <div class="cs featured fade-up">
         <div class="cs-vis">
+          <img class="cs-vis-photo" src="assets/images/Viking Law.webp" alt="" loading="lazy"/>
           <div class="cs-vis-bg"></div>
           <div class="cs-vis-glow"></div>
           <div class="cs-badge">Personal Injury Law</div>
@@ -702,6 +713,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <!-- Watson Kuhlman -->
       <div class="cs fade-up">
         <div class="cs-vis" style="min-height:160px">
+          <img class="cs-vis-photo" src="assets/images/Netafim North America.webp" alt="" loading="lazy"/>
           <div class="cs-vis-bg"></div>
           <div class="cs-badge">Corporate Law</div>
           <div class="cs-num" style="font-size:3rem">45%<br><span class="cs-num-sub">More qualified consultations</span></div>
@@ -719,7 +731,9 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
       <!-- Viking Law -->
       <div class="cs fade-up">
         <div class="cs-vis" style="min-height:160px">
+          <img class="cs-vis-photo" src="assets/images/Viking Law.webp" alt="" loading="lazy"/>
           <div class="cs-vis-bg"></div>
+          <img class="case-logo" src="assets/images/Viking Law.webp" alt="Viking Law logo" loading="lazy"/>
           <div class="cs-badge">Trial Litigation</div>
           <div class="cs-num" style="font-size:3rem">28%<br><span class="cs-num-sub">Attribution recovery</span></div>
         </div>
@@ -752,7 +766,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
     <span class="eyebrow">What clients say</span>
     <h2 style="color:var(--navy)">Results you can hear about.</h2>
     <div class="testi-grid">
-      <div class="testi fade-up">
+      <div class="testi testi-featured fade-up">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">"Jedd didn't just run our ads  -  he rebuilt our entire strategy from the ground up. He thinks like a business owner. The pipeline results speak for themselves."</p>
         <div class="testi-author"><div class="tav">DA</div><div><div class="tname">Daryl A. Gray</div><div class="trole">Personal Injury Attorney, New Orleans</div></div></div>
