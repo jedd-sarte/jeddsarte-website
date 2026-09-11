@@ -26,7 +26,7 @@
   --g600:#666680;
   --g800:#333350;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{font-family:'Inter',sans-serif;color:var(--g800);background:var(--white);line-height:1.6;overflow-x:hidden}
 h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.06;font-weight:400}
 h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;line-height:1.2}
@@ -37,15 +37,21 @@ p{font-size:1rem;line-height:1.72;color:var(--g600)}
 .container{max-width:1100px;margin:0 auto;padding:0 32px}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.1);padding:16px 32px;transition:padding 0.3s}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,159,28,0.12);padding:16px 32px;transition:padding 0.3s}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:-0.02em}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 20px;border-radius:6px!important;font-weight:700!important}
-.nav-cta:hover{background:var(--gold-light)!important}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-family:'Space Grotesk',sans-serif;font-weight:600;transition:all 0.2s;letter-spacing:0.01em;padding:9px 11px;border-radius:8px}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:10px 18px!important;border-radius:9px!important;font-weight:700!important;box-shadow:0 8px 24px rgba(244,159,28,.2)}
+.nav-cta:hover{background:var(--gold-light)!important;transform:translateY(-1px)}
+.menu-toggle{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:9px;padding:9px 11px;font:700 .8rem 'Space Grotesk',sans-serif;cursor:pointer}
+.mobile-menu{display:none;position:absolute;top:68px;left:20px;right:20px;background:rgba(1,8,41,.99);border:1px solid rgba(244,159,28,.18);border-radius:14px;padding:12px;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.mobile-menu.open{display:grid}
+.mobile-menu a{color:rgba(255,255,255,.82);text-decoration:none;font:600 .9rem 'Space Grotesk',sans-serif;padding:12px;border-radius:8px}
+.mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
 
 /* HERO */
 #hero{background:var(--navy);padding:140px 0 100px;position:relative;overflow:hidden;min-height:72vh;display:flex;align-items:center}
@@ -82,7 +88,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,14,79,0.97
 .ps-arrow{color:rgba(244,159,28,0.3);font-size:1.2rem;padding:0 4px}
 
 /* SERVICES SECTION */
-#services{padding:96px 0;background:var(--white)}
+#services{padding:96px 0;background:var(--white);scroll-margin-top:88px}
 .services-intro{text-align:center;max-width:600px;margin:0 auto 64px}
 .services-intro h2{color:var(--navy);margin-bottom:12px}
 .services-intro p{font-size:1.05rem}
@@ -194,6 +200,8 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   .ps{padding:8px 12px}
   .ps-arrow{display:none}
   nav .nav-links{display:none}
+  .menu-toggle{display:inline-flex}
+  .mobile-menu{z-index:250}
   .footer-inner{flex-direction:column;text-align:center}
 }
 
@@ -245,18 +253,24 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Jedd<span>.</span></a>
+    <a href="../" class="nav-logo">Jedd<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="./index.html" class="active">Services</a></li>
-      <li><a href="../industries/">Industries</a>
-        <a href="../industries/law-firm-google-ads/">Law Firms</a>
-        <a href="../industries/google-ads-contractors/">Contractors</a>
-        <a href="../industries/google-ads-medical-practices/">Medical</a></li>
+      <li><a href="./" class="active">Services</a></li>
+      <li><a href="../industries/">Industries</a></li>
       <li><a href="../case-studies/">Case Studies</a></li>
       <li><a href="../blog/">Insights</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" class="nav-cta">Book a Call</a></li>
+      <li><a href="../#about">About</a></li>
+      <li><a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener" class="nav-cta">Book a Call</a></li>
     </ul>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="./">Services</a>
+      <a href="../industries/">Industries</a>
+      <a href="../case-studies/">Case Studies</a>
+      <a href="../blog/">Insights</a>
+      <a href="../#about">About</a>
+      <a href="https://calendar.app.google/2RJj6td6D5g3GgfC7" target="_blank" rel="noopener">Book a Strategy Call →</a>
+    </div>
   </div>
 </nav>
 
@@ -706,8 +720,23 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+const primaryNav=document.getElementById('nav');
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.querySelector('.mobile-menu');
+if(menuToggle&&mobileMenu){
+  menuToggle.addEventListener('click',()=>{
+    const open=mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',String(open));
+    menuToggle.textContent=open?'Close':'Menu';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mobileMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.textContent='Menu';
+  }));
+}
 window.addEventListener('scroll',()=>{
-  document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px';
+  if(primaryNav) primaryNav.style.padding=window.scrollY>60?'10px 32px':'16px 32px';
 });
 </script>
 </body>
