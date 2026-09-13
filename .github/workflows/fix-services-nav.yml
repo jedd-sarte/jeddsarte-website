@@ -1,0 +1,34 @@
+name: Fix Services navigation layout
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/fix-services-nav.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix-services-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fix nested navigation element
+        run: |
+          python -c "from pathlib import Path; p=Path('services/index.html'); s=p.read_text(); s=s.replace('<nav class=\"commercial-paths\" aria-label=\"Paid media service pages\">','<div class=\"commercial-paths\" aria-label=\"Paid media service pages\">',1); anchor='      <a class=\"commercial-path\" href=\"../\"><strong>Google Ads Specialist</strong><span>Work directly with Jedd Sarte for Google Ads, paid media strategy, tracking, and optimization.</span></a>\\n    </nav>'; replacement='      <a class=\"commercial-path\" href=\"../\"><strong>Google Ads Specialist</strong><span>Work directly with Jedd Sarte for Google Ads, paid media strategy, tracking, and optimization.</span></a>\\n    </div>'; assert anchor in s, 'commercial-paths closing marker not found'; s=s.replace(anchor,replacement,1); p.write_text(s)"
+
+      - name: Remove temporary workflow and commit
+        run: |
+          rm .github/workflows/fix-services-nav.yml
+          git config user.name 'Jedd Site Bot'
+          git config user.email 'site-bot@users.noreply.github.com'
+          git add services/index.html .github/workflows/fix-services-nav.yml
+          git commit -m 'Fix Services page floating navigation cards'
+          git push origin main
