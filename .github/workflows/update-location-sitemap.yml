@@ -22,24 +22,34 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('sitemap.xml')
-          s=p.read_text()
-          block='''  <!-- Location pages -->
-  <url><loc>https://jeddsarte.com/locations/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jeddsarte.com/locations/louisiana/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jeddsarte.com/locations/louisiana/new-orleans/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jeddsarte.com/locations/texas/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jeddsarte.com/locations/texas/houston/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jeddsarte.com/locations/tennessee/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jeddsarte.com/locations/tennessee/memphis/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jeddsarte.com/locations/tennessee/nashville/</loc><lastmod>2026-09-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-'''
+          p = Path('sitemap.xml')
+          s = p.read_text()
+          urls = [
+              ('https://jeddsarte.com/locations/', '0.8'),
+              ('https://jeddsarte.com/locations/louisiana/', '0.7'),
+              ('https://jeddsarte.com/locations/louisiana/new-orleans/', '0.8'),
+              ('https://jeddsarte.com/locations/texas/', '0.7'),
+              ('https://jeddsarte.com/locations/texas/houston/', '0.8'),
+              ('https://jeddsarte.com/locations/tennessee/', '0.7'),
+              ('https://jeddsarte.com/locations/tennessee/memphis/', '0.8'),
+              ('https://jeddsarte.com/locations/tennessee/nashville/', '0.8'),
+          ]
           if 'https://jeddsarte.com/locations/' not in s:
-              marker='  <!-- Case study pages -->'
+              lines = ['  <!-- Location pages -->']
+              for url, priority in urls:
+                  lines.extend([
+                      '  <url>',
+                      f'    <loc>{url}</loc>',
+                      '    <lastmod>2026-09-14</lastmod>',
+                      '    <changefreq>monthly</changefreq>',
+                      f'    <priority>{priority}</priority>',
+                      '  </url>',
+                  ])
+              block = '\n'.join(lines) + '\n\n'
+              marker = '  <!-- Case study pages -->'
               if marker not in s:
                   raise SystemExit('sitemap insertion marker missing')
-              s=s.replace(marker,block+marker,1)
+              s = s.replace(marker, block + marker, 1)
           p.write_text(s)
           PY
       - name: Commit sitemap update and remove temporary workflow
