@@ -1,0 +1,58 @@
+name: Integrate USA Fitness case study
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/integrate-usa-fitness-case-study.yml']
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Patch case study hub and sitemap
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('case-studies/index.html'); s=p.read_text()
+          marker='      <!-- FREE 1: PI Law -->'
+          card='''      <!-- USA Fitness Equipment Depot -->
+          <a href="./ecommerce/usa-fitness-equipment-depot/" class="cs-card fade-up">
+            <div class="cs-thumb">
+              <img class="cs-photo" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=78" alt="Commercial fitness equipment" loading="lazy">
+              <div class="cs-thumb-bg" style="background:linear-gradient(135deg,rgba(1,8,41,.35),rgba(3,13,64,.7))"></div>
+              <div class="cs-thumb-glow"></div><div class="cs-vertical-tag">Shopify E-Commerce</div>
+              <div><div class="cs-metric">+60.4<span>%</span></div><div class="cs-metric-sub">14-day search impression growth</div></div>
+            </div>
+            <div class="cs-body">
+              <div class="cs-tags"><span class="cs-tag">Shopify</span><span class="cs-tag">SEO</span><span class="cs-tag">Analytics</span><span class="cs-tag">Paid Acquisition</span></div>
+              <h3>USA Fitness Equipment Depot - Scalable Shopify Growth System</h3>
+              <p>Aligned catalog merchandising, search intent, competitive intelligence, measurement, and paid acquisition for a high-ticket commercial fitness retailer.</p>
+              <div class="cs-results"><div class="cs-r"><div class="cs-r-num"><span class="up">27,621 → 44,298</span></div><div class="cs-r-lbl">Comparable 14-day impressions</div></div><div class="cs-r"><div class="cs-r-num">~2.1</div><div class="cs-r-lbl">Refurbished query position</div></div></div>
+              <span class="cs-read">Read full case study →</span>
+            </div>
+          </a>
+
+'''
+          if 'usa-fitness-equipment-depot' not in s:
+              if marker not in s: raise SystemExit('case hub marker missing')
+              s=s.replace(marker,card+marker,1)
+          s=s.replace('<div class="hs-num">5</div><div class="hs-lbl">Published case studies</div>','<div class="hs-num">6</div><div class="hs-lbl">Published case studies</div>')
+          p.write_text(s)
+          p=Path('sitemap.xml'); s=p.read_text()
+          entry='''  <url>\n    <loc>https://jeddsarte.com/case-studies/ecommerce/usa-fitness-equipment-depot/</loc>\n    <lastmod>2026-09-14</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n'''
+          if 'case-studies/ecommerce/usa-fitness-equipment-depot/' not in s:
+              marker='  <!-- Blog posts -->'
+              if marker not in s: raise SystemExit('sitemap marker missing')
+              s=s.replace(marker,entry+'\n'+marker,1)
+          s=s.replace('<loc>https://jeddsarte.com/case-studies/</loc>\n    <lastmod>2026-09-09</lastmod>','<loc>https://jeddsarte.com/case-studies/</loc>\n    <lastmod>2026-09-14</lastmod>')
+          p.write_text(s)
+          PY
+      - name: Commit integration and remove temporary workflow
+        run: |
+          rm .github/workflows/integrate-usa-fitness-case-study.yml
+          git config user.name 'Jedd Site Bot'
+          git config user.email 'site-bot@users.noreply.github.com'
+          git add case-studies/index.html sitemap.xml .github/workflows/integrate-usa-fitness-case-study.yml
+          git commit -m 'Integrate USA Fitness case study into hub and sitemap'
+          git push
