@@ -13,7 +13,7 @@ jobs:
         with:
           ref: case-study-usa-fitness
       - name: Add case study card and sitemap entry
-        shell: python
+        shell: python {0}
         run: |
           from pathlib import Path
           p=Path('case-studies/index.html')
@@ -46,8 +46,8 @@ jobs:
               s=s.replace(marker,card+marker,1)
           s=s.replace('<div class="hs-num">5</div><div class="hs-lbl">Published case studies</div>','<div class="hs-num">6</div><div class="hs-lbl">Published case studies</div>')
           p.write_text(s)
-
-          p=Path('sitemap.xml'); s=p.read_text()
+          p=Path('sitemap.xml')
+          s=p.read_text()
           entry='''  <url>\n    <loc>https://jeddsarte.com/case-studies/ecommerce/usa-fitness-equipment-depot/</loc>\n    <lastmod>2026-09-14</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n'''
           if 'case-studies/ecommerce/usa-fitness-equipment-depot/' not in s:
               marker='  <!-- Blog posts -->'
