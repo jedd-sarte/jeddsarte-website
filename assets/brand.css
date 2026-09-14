@@ -1,49 +1,51 @@
-/* Jedd Sarte earthy brand system */
+/* Jedd Sarte earthy green brand system */
 :root{
-  --brand-olive:#706953;
-  --brand-olive-deep:#4f4a3b;
-  --brand-khaki:#9f906f;
-  --brand-sand:#d8bca1;
-  --brand-clay:#b99478;
-  --brand-ivory:#fbf4ee;
-  --brand-ink:#2f2c28;
-  --brand-muted:#6f685f;
-  --brand-line:#ded2c6;
+  --brand-primary:#3b6255;
+  --brand-primary-dark:#2f5046;
+  --brand-sage:#8ba49a;
+  --brand-mint:#cbded3;
+  --brand-sand:#d2c49e;
+  --brand-neutral:#e2dfda;
+  --brand-ivory:#f7f4ef;
+  --brand-white:#fffdf9;
+  --brand-ink:#2f2f2f;
+  --brand-muted:#62645f;
+  --brand-line:#d7d2ca;
 
   /* Override legacy blue/orange tokens sitewide */
-  --navy:var(--brand-olive-deep);
-  --navy-mid:#5b5544;
-  --navy-light:var(--brand-olive);
-  --gold:var(--brand-clay);
-  --gold-light:var(--brand-sand);
-  --gold-dim:rgba(185,148,120,.16);
-  --gold-border:rgba(185,148,120,.34);
-  --white:#fffdf9;
+  --navy:var(--brand-primary);
+  --navy-mid:var(--brand-primary-dark);
+  --navy-light:#52796d;
+  --gold:var(--brand-sand);
+  --gold-light:#e0d6ba;
+  --gold-dim:rgba(210,196,158,.18);
+  --gold-border:rgba(210,196,158,.42);
+  --white:var(--brand-white);
   --offwhite:var(--brand-ivory);
-  --cream:#f2e7dc;
-  --gray-100:#f3ece5;
+  --cream:#eef2ee;
+  --gray-100:#f1efeb;
   --gray-200:var(--brand-line);
-  --gray-400:#a3978c;
+  --gray-400:#9a9a93;
   --gray-600:var(--brand-muted);
   --gray-800:var(--brand-ink);
-  --g100:#f3ece5;
+  --g100:#f1efeb;
   --g200:var(--brand-line);
-  --g400:#a3978c;
+  --g400:#9a9a93;
   --g600:var(--brand-muted);
   --g800:var(--brand-ink);
 }
 
 html,body{background:var(--brand-ivory);color:var(--brand-ink)}
-body{accent-color:var(--brand-clay)}
+body{accent-color:var(--brand-primary)}
 
-a{color:var(--brand-olive)}
-a:hover{color:var(--brand-clay)}
+a{color:var(--brand-primary)}
+a:hover{color:var(--brand-primary-dark)}
 
-/* Legacy hard-coded dark sections */
+/* Main dark brand surfaces */
 #hero,.hero,#newsletter,#contact,.cta,.callout,.sidebar-card,
 .fp-visual,.fp-body,.nl-form,
 section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
-  background-color:var(--brand-olive-deep)!important;
+  background-color:var(--brand-primary)!important;
   background-image:none!important;
 }
 
@@ -58,12 +60,12 @@ section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
 
 .eyebrow,.tag,.pc-tag,.fp-label,.hero-tag,.post-tag,.tip-label,
 .site-shell-logo span,.site-shell-footer-logo span{
-  color:var(--brand-clay)!important;
+  color:var(--brand-sand)!important;
 }
 
 .pc-tag,.fp-label{
-  background:var(--brand-sand)!important;
-  color:var(--brand-ink)!important;
+  background:var(--brand-mint)!important;
+  color:var(--brand-primary-dark)!important;
 }
 
 button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,
@@ -71,16 +73,30 @@ a[class*="btn"]{
   border-color:transparent;
 }
 
-.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.site-shell-cta{
-  background:var(--brand-clay)!important;
-  color:var(--brand-ink)!important;
+/* Primary actions should feel green, not tech-orange */
+.btn,.booking-btn,.csub,.cta-inline a{
+  background:var(--brand-primary)!important;
+  color:var(--brand-white)!important;
 }
 
-.btn:hover,.nav-cta:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover,.site-shell-cta:hover{
+.btn:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover{
+  background:var(--brand-primary-dark)!important;
+  color:var(--brand-white)!important;
+}
+
+/* Sand buttons work best on dark-green sections */
+#hero .btn,#hero a[class*="btn"],.hero .btn,.hero a[class*="btn"],.cta .btn,.cta a[class*="btn"],
+.nav-cta,.site-shell-cta{
   background:var(--brand-sand)!important;
-  color:var(--brand-ink)!important;
+  color:var(--brand-primary-dark)!important;
 }
 
-input:focus,textarea:focus,select:focus{border-color:var(--brand-clay)!important;outline-color:var(--brand-clay)!important}
+#hero .btn:hover,#hero a[class*="btn"]:hover,.hero .btn:hover,.hero a[class*="btn"]:hover,.cta .btn:hover,.cta a[class*="btn"]:hover,
+.nav-cta:hover,.site-shell-cta:hover{
+  background:#e0d6ba!important;
+  color:var(--brand-primary-dark)!important;
+}
 
-::selection{background:var(--brand-sand);color:var(--brand-ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!important;outline-color:var(--brand-primary)!important}
+
+::selection{background:var(--brand-mint);color:var(--brand-primary-dark)}
