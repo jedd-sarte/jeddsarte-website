@@ -1,0 +1,86 @@
+/* Jedd Sarte earthy brand system */
+:root{
+  --brand-olive:#706953;
+  --brand-olive-deep:#4f4a3b;
+  --brand-khaki:#9f906f;
+  --brand-sand:#d8bca1;
+  --brand-clay:#b99478;
+  --brand-ivory:#fbf4ee;
+  --brand-ink:#2f2c28;
+  --brand-muted:#6f685f;
+  --brand-line:#ded2c6;
+
+  /* Override legacy blue/orange tokens sitewide */
+  --navy:var(--brand-olive-deep);
+  --navy-mid:#5b5544;
+  --navy-light:var(--brand-olive);
+  --gold:var(--brand-clay);
+  --gold-light:var(--brand-sand);
+  --gold-dim:rgba(185,148,120,.16);
+  --gold-border:rgba(185,148,120,.34);
+  --white:#fffdf9;
+  --offwhite:var(--brand-ivory);
+  --cream:#f2e7dc;
+  --gray-100:#f3ece5;
+  --gray-200:var(--brand-line);
+  --gray-400:#a3978c;
+  --gray-600:var(--brand-muted);
+  --gray-800:var(--brand-ink);
+  --g100:#f3ece5;
+  --g200:var(--brand-line);
+  --g400:#a3978c;
+  --g600:var(--brand-muted);
+  --g800:var(--brand-ink);
+}
+
+html,body{background:var(--brand-ivory);color:var(--brand-ink)}
+body{accent-color:var(--brand-clay)}
+
+a{color:var(--brand-olive)}
+a:hover{color:var(--brand-clay)}
+
+/* Legacy hard-coded dark sections */
+#hero,.hero,#newsletter,#contact,.cta,.callout,.sidebar-card,
+.fp-visual,.fp-body,.nl-form,
+section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
+  background-color:var(--brand-olive-deep)!important;
+  background-image:none!important;
+}
+
+/* Soft/light sections */
+.section.alt,#posts,#more-posts,.sidebar-cta,.toc,.tip-box{
+  background-color:var(--brand-ivory)!important;
+}
+
+.card,.post-card,.cs,.service-card,.industry-card,.location-card{
+  border-color:var(--brand-line)!important;
+}
+
+.eyebrow,.tag,.pc-tag,.fp-label,.hero-tag,.post-tag,.tip-label,
+.site-shell-logo span,.site-shell-footer-logo span{
+  color:var(--brand-clay)!important;
+}
+
+.pc-tag,.fp-label{
+  background:var(--brand-sand)!important;
+  color:var(--brand-ink)!important;
+}
+
+button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,
+a[class*="btn"]{
+  border-color:transparent;
+}
+
+.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.site-shell-cta{
+  background:var(--brand-clay)!important;
+  color:var(--brand-ink)!important;
+}
+
+.btn:hover,.nav-cta:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover,.site-shell-cta:hover{
+  background:var(--brand-sand)!important;
+  color:var(--brand-ink)!important;
+}
+
+input:focus,textarea:focus,select:focus{border-color:var(--brand-clay)!important;outline-color:var(--brand-clay)!important}
+
+::selection{background:var(--brand-sand);color:var(--brand-ink)}
