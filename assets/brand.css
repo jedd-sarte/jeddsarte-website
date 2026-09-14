@@ -11,8 +11,6 @@
   --brand-ink:#2F2F2F;
   --brand-muted:#62645F;
   --brand-line:#D7D2CA;
-
-  /* Override legacy blue/orange tokens sitewide */
   --navy:var(--brand-primary);
   --navy-mid:var(--brand-primary-dark);
   --navy-light:#52796D;
@@ -37,32 +35,55 @@
 
 html,body{background:var(--brand-ivory);color:var(--brand-ink)}
 body{accent-color:var(--brand-primary)}
-
 a{color:var(--brand-primary)}
 a:hover{color:var(--brand-primary-dark)}
 
-/* Editorial typography */
 h1,h2,.hero-title,.audit-title,.cs-num,.bt-num{
   font-family:'DM Serif Display',Georgia,'Times New Roman',serif!important;
   letter-spacing:-.02em;
 }
 h3,h4,h5,h6{color:var(--brand-primary-dark)}
 
-/* Homepage hero: warm, editorial, green-led instead of a dark tech block */
+/* Homepage hero: solid green, editorial, premium */
 #hero{
-  background:linear-gradient(90deg,#F7F4EF 0%,#F7F4EF 57%,#EEF2EE 100%)!important;
-  color:var(--brand-primary-dark)!important;
+  background:var(--brand-primary)!important;
+  color:var(--brand-white)!important;
   min-height:auto!important;
+  position:relative!important;
 }
-#hero .hero-dot-bg{opacity:.16!important;background-image:radial-gradient(rgba(59,98,85,.18) 1px,transparent 1px)!important}
-#hero .hero-glow,#hero .hero-glow2{opacity:.22!important}
-#hero .hero-title,#hero h1,#hero h2,#hero h3{color:var(--brand-primary)!important}
-#hero p,#hero .hero-sub,#hero .status-text,#hero .hero-stat-label{color:var(--brand-muted)!important}
-#hero .hero-available{background:rgba(203,222,211,.55)!important;border-color:rgba(59,98,85,.24)!important;color:var(--brand-primary-dark)!important}
-#hero .hero-stat-num{color:var(--brand-primary)!important}
-#hero .hero-card{border-color:rgba(59,98,85,.18)!important;box-shadow:0 24px 70px rgba(47,80,70,.14)!important}
+#hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 84% 18%,rgba(203,222,211,.08),transparent 34%),
+    linear-gradient(180deg,rgba(47,80,70,.06),rgba(47,80,70,.18));
+}
+#hero .hero-inner{position:relative;z-index:2!important}
+#hero .hero-dot-bg{opacity:.08!important;background-image:radial-gradient(rgba(255,253,249,.16) 1px,transparent 1px)!important}
+#hero .hero-glow{opacity:.18!important;background:radial-gradient(circle,rgba(210,196,158,.16) 0%,transparent 66%)!important}
+#hero .hero-glow2{opacity:.12!important;background:radial-gradient(circle,rgba(139,164,154,.26) 0%,transparent 70%)!important}
+#hero .hero-title,#hero h1,#hero h2,#hero h3{color:var(--brand-white)!important}
+#hero .hero-title em,#hero h1 em{color:var(--brand-sand)!important}
+#hero p,#hero .hero-sub,#hero .status-text,#hero .hero-stat-label{color:rgba(255,253,249,.80)!important}
+#hero .hero-sub strong{color:var(--brand-white)!important}
+#hero .hero-available{background:rgba(203,222,211,.10)!important;border-color:rgba(203,222,211,.24)!important;color:var(--brand-white)!important}
+#hero .pulse{background:var(--brand-sand)!important}
+#hero .hero-card{background:rgba(47,80,70,.30)!important;border-color:rgba(203,222,211,.28)!important;box-shadow:0 28px 70px rgba(25,46,39,.28)!important;backdrop-filter:blur(2px)}
+#hero .hero-card::before{background:linear-gradient(90deg,var(--brand-sand),transparent)!important}
+#hero .hero-card-body{background:rgba(47,80,70,.52)!important}
+#hero .hero-card-kicker{color:var(--brand-sand)!important}
+#hero .hero-stat{background:rgba(255,253,249,.04)!important;border-color:rgba(203,222,211,.15)!important}
+#hero .hero-stat b{color:var(--brand-white)!important}
+#hero .hero-stat span{color:rgba(255,253,249,.58)!important}
+#hero .hero-portrait-overlay{background:linear-gradient(180deg,transparent 44%,rgba(47,80,70,.88) 100%)!important}
+#hero .btn-gold,#hero .btn,#hero a[class*="btn"]{background:var(--brand-sand)!important;color:var(--brand-primary-dark)!important;border-color:var(--brand-sand)!important}
+#hero .btn-gold:hover,#hero .btn:hover,#hero a[class*="btn"]:hover{background:#E0D6BA!important;color:var(--brand-primary-dark)!important}
+#hero .btn-outline{background:transparent!important;color:var(--brand-white)!important;border-color:rgba(255,253,249,.48)!important}
+#hero .btn-outline:hover{border-color:var(--brand-sand)!important;color:var(--brand-sand)!important;background:transparent!important}
+#hero a:not([class*="btn"]){color:var(--brand-sand)!important}
 
-/* Main dark brand surfaces for internal heroes and CTA sections */
 .hero:not(#hero),#newsletter,#audit,.cta,.callout,.sidebar-card,
 .fp-visual,.fp-body,.nl-form,
 section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
@@ -70,19 +91,15 @@ section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
   background-image:none!important;
 }
 
-/* Make the homepage service area feel premium green, not neon/digital */
 #services{background:var(--brand-primary)!important}
 #services .svc{background:rgba(255,253,249,.045)!important;border-color:rgba(203,222,211,.16)!important}
 #services .svc:hover{background:rgba(203,222,211,.08)!important;border-color:rgba(210,196,158,.42)!important}
 #services .svc-tag{background:rgba(210,196,158,.14)!important;color:var(--brand-sand)!important}
 
-/* Softer light sections */
 .section.alt,#posts,#more-posts,.sidebar-cta,.toc,.tip-box,#cases,#blog{
   background-color:var(--brand-ivory)!important;
 }
 #testimonials{background:var(--brand-white)!important}
-
-/* A mint/sage strip effect on supporting sections */
 #process,.process-strip,.industry-strip{
   background:linear-gradient(90deg,var(--brand-mint),#DEE8E1)!important;
   color:var(--brand-primary-dark)!important;
@@ -97,54 +114,23 @@ section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
 }
 
 .eyebrow,.tag,.pc-tag,.fp-label,.hero-tag,.post-tag,.tip-label,
-.site-shell-logo span,.site-shell-footer-logo span{
-  color:var(--brand-sand)!important;
-}
+.site-shell-logo span,.site-shell-footer-logo span{color:var(--brand-sand)!important}
+.pc-tag,.fp-label{background:var(--brand-mint)!important;color:var(--brand-primary-dark)!important}
+button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,a[class*="btn"]{border-color:transparent}
 
-.pc-tag,.fp-label{
-  background:var(--brand-mint)!important;
-  color:var(--brand-primary-dark)!important;
-}
+.btn,.booking-btn,.csub,.cta-inline a,.form-btn{background:var(--brand-primary)!important;color:var(--brand-white)!important}
+.btn:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover,.form-btn:hover{background:var(--brand-primary-dark)!important;color:var(--brand-white)!important}
 
-button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,
-a[class*="btn"]{border-color:transparent}
-
-/* Primary actions */
-.btn,.booking-btn,.csub,.cta-inline a,.form-btn{
-  background:var(--brand-primary)!important;
-  color:var(--brand-white)!important;
-}
-.btn:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover,.form-btn:hover{
-  background:var(--brand-primary-dark)!important;
-  color:var(--brand-white)!important;
-}
-
-/* Sand CTA buttons on dark-green surfaces */
 .hero:not(#hero) .btn,.hero:not(#hero) a[class*="btn"],.cta .btn,.cta a[class*="btn"],
-.nav-cta,.site-shell-cta,#audit .btn,#audit a[class*="btn"]{
-  background:var(--brand-sand)!important;
-  color:var(--brand-primary-dark)!important;
-}
+.nav-cta,.site-shell-cta,#audit .btn,#audit a[class*="btn"]{background:var(--brand-sand)!important;color:var(--brand-primary-dark)!important}
 .hero:not(#hero) .btn:hover,.hero:not(#hero) a[class*="btn"]:hover,.cta .btn:hover,.cta a[class*="btn"]:hover,
-.nav-cta:hover,.site-shell-cta:hover,#audit .btn:hover,#audit a[class*="btn"]:hover{
-  background:#E0D6BA!important;
-  color:var(--brand-primary-dark)!important;
-}
+.nav-cta:hover,.site-shell-cta:hover,#audit .btn:hover,#audit a[class*="btn"]:hover{background:#E0D6BA!important;color:var(--brand-primary-dark)!important}
 
-/* Homepage hero primary button stays green on the light background */
-#hero .btn,#hero a[class*="btn"]{
-  background:var(--brand-primary)!important;
-  color:var(--brand-white)!important;
-}
-#hero .btn:hover,#hero a[class*="btn"]:hover{background:var(--brand-primary-dark)!important;color:var(--brand-white)!important}
-
-/* Case-study visual treatments */
 .cs-vis,.cs-gate{background:var(--brand-primary)!important}
 .cs-vis-bg,.cs-gate::before{background:linear-gradient(135deg,var(--brand-primary) 0%,var(--brand-primary-dark) 100%)!important}
 .cs-vis::after{background:linear-gradient(180deg,rgba(59,98,85,.12),rgba(47,80,70,.88))!important}
 .cs-vis-glow{background:radial-gradient(circle,rgba(210,196,158,.18) 0%,transparent 70%)!important}
 .cs-badge,.bt-tag{background:var(--brand-sand)!important;color:var(--brand-primary-dark)!important}
 
-/* Forms and micro-interactions */
 input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!important;outline-color:var(--brand-primary)!important}
 ::selection{background:var(--brand-mint);color:var(--brand-primary-dark)}
