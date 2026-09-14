@@ -1,0 +1,43 @@
+name: Add SEO Case Studies to Sitemap
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Add SEO case study URLs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('sitemap.xml')
+          s=p.read_text()
+          urls=[
+            'https://jeddsarte.com/case-studies/seo/netafim-north-america/',
+            'https://jeddsarte.com/case-studies/seo/peters-law-firm/',
+            'https://jeddsarte.com/case-studies/seo/bellport-country-club/'
+          ]
+          blocks=[]
+          for u in urls:
+            if u not in s:
+              blocks.append(f'''  <url>\n    <loc>{u}</loc>\n    <lastmod>2026-09-15</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n''')
+          if blocks:
+            s=s.replace('</urlset>', '\n'+''.join(blocks)+'</urlset>')
+            p.write_text(s)
+          PY
+      - name: Remove one-time workflow
+        run: rm .github/workflows/add-seo-case-study-sitemap.yml
+      - name: Commit sitemap update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml .github/workflows/add-seo-case-study-sitemap.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "Add SEO case studies to sitemap"
+            git push origin main
+          fi

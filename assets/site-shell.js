@@ -80,4 +80,11 @@
     const isOpen = links.classList.toggle('open');
     menu.setAttribute('aria-expanded', String(isOpen));
   });
+
+  if (path === '/case-studies/' || path === '/case-studies/index.html') {
+    const seoCards = document.createElement('script');
+    seoCards.src = '/assets/seo-case-study-cards.js';
+    seoCards.defer = true;
+    document.body.appendChild(seoCards);
+  }
 })();
