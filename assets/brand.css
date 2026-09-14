@@ -1,36 +1,36 @@
-/* Jedd Sarte earthy green brand system */
+/* Jedd Sarte earthy green editorial brand system */
 :root{
-  --brand-primary:#3b6255;
-  --brand-primary-dark:#2f5046;
-  --brand-sage:#8ba49a;
-  --brand-mint:#cbded3;
-  --brand-sand:#d2c49e;
-  --brand-neutral:#e2dfda;
-  --brand-ivory:#f7f4ef;
-  --brand-white:#fffdf9;
-  --brand-ink:#2f2f2f;
-  --brand-muted:#62645f;
-  --brand-line:#d7d2ca;
+  --brand-primary:#3B6255;
+  --brand-primary-dark:#2F5046;
+  --brand-sage:#8BA49A;
+  --brand-mint:#CBDED3;
+  --brand-sand:#D2C49E;
+  --brand-neutral:#E2DFDA;
+  --brand-ivory:#F7F4EF;
+  --brand-white:#FFFDF9;
+  --brand-ink:#2F2F2F;
+  --brand-muted:#62645F;
+  --brand-line:#D7D2CA;
 
   /* Override legacy blue/orange tokens sitewide */
   --navy:var(--brand-primary);
   --navy-mid:var(--brand-primary-dark);
-  --navy-light:#52796d;
+  --navy-light:#52796D;
   --gold:var(--brand-sand);
-  --gold-light:#e0d6ba;
+  --gold-light:#E0D6BA;
   --gold-dim:rgba(210,196,158,.18);
   --gold-border:rgba(210,196,158,.42);
   --white:var(--brand-white);
   --offwhite:var(--brand-ivory);
-  --cream:#eef2ee;
-  --gray-100:#f1efeb;
+  --cream:#EEF2EE;
+  --gray-100:#F1EFEB;
   --gray-200:var(--brand-line);
-  --gray-400:#9a9a93;
+  --gray-400:#9A9A93;
   --gray-600:var(--brand-muted);
   --gray-800:var(--brand-ink);
-  --g100:#f1efeb;
+  --g100:#F1EFEB;
   --g200:var(--brand-line);
-  --g400:#9a9a93;
+  --g400:#9A9A93;
   --g600:var(--brand-muted);
   --g800:var(--brand-ink);
 }
@@ -41,21 +41,59 @@ body{accent-color:var(--brand-primary)}
 a{color:var(--brand-primary)}
 a:hover{color:var(--brand-primary-dark)}
 
-/* Main dark brand surfaces */
-#hero,.hero,#newsletter,#contact,.cta,.callout,.sidebar-card,
+/* Editorial typography */
+h1,h2,.hero-title,.audit-title,.cs-num,.bt-num{
+  font-family:'DM Serif Display',Georgia,'Times New Roman',serif!important;
+  letter-spacing:-.02em;
+}
+h3,h4,h5,h6{color:var(--brand-primary-dark)}
+
+/* Homepage hero: warm, editorial, green-led instead of a dark tech block */
+#hero{
+  background:linear-gradient(90deg,#F7F4EF 0%,#F7F4EF 57%,#EEF2EE 100%)!important;
+  color:var(--brand-primary-dark)!important;
+  min-height:auto!important;
+}
+#hero .hero-dot-bg{opacity:.16!important;background-image:radial-gradient(rgba(59,98,85,.18) 1px,transparent 1px)!important}
+#hero .hero-glow,#hero .hero-glow2{opacity:.22!important}
+#hero .hero-title,#hero h1,#hero h2,#hero h3{color:var(--brand-primary)!important}
+#hero p,#hero .hero-sub,#hero .status-text,#hero .hero-stat-label{color:var(--brand-muted)!important}
+#hero .hero-available{background:rgba(203,222,211,.55)!important;border-color:rgba(59,98,85,.24)!important;color:var(--brand-primary-dark)!important}
+#hero .hero-stat-num{color:var(--brand-primary)!important}
+#hero .hero-card{border-color:rgba(59,98,85,.18)!important;box-shadow:0 24px 70px rgba(47,80,70,.14)!important}
+
+/* Main dark brand surfaces for internal heroes and CTA sections */
+.hero:not(#hero),#newsletter,#audit,.cta,.callout,.sidebar-card,
 .fp-visual,.fp-body,.nl-form,
 section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
   background-color:var(--brand-primary)!important;
   background-image:none!important;
 }
 
-/* Soft/light sections */
-.section.alt,#posts,#more-posts,.sidebar-cta,.toc,.tip-box{
+/* Make the homepage service area feel premium green, not neon/digital */
+#services{background:var(--brand-primary)!important}
+#services .svc{background:rgba(255,253,249,.045)!important;border-color:rgba(203,222,211,.16)!important}
+#services .svc:hover{background:rgba(203,222,211,.08)!important;border-color:rgba(210,196,158,.42)!important}
+#services .svc-tag{background:rgba(210,196,158,.14)!important;color:var(--brand-sand)!important}
+
+/* Softer light sections */
+.section.alt,#posts,#more-posts,.sidebar-cta,.toc,.tip-box,#cases,#blog{
   background-color:var(--brand-ivory)!important;
 }
+#testimonials{background:var(--brand-white)!important}
 
-.card,.post-card,.cs,.service-card,.industry-card,.location-card{
+/* A mint/sage strip effect on supporting sections */
+#process,.process-strip,.industry-strip{
+  background:linear-gradient(90deg,var(--brand-mint),#DEE8E1)!important;
+  color:var(--brand-primary-dark)!important;
+}
+
+.card,.post-card,.cs,.service-card,.industry-card,.location-card,.blog-card,.testi{
   border-color:var(--brand-line)!important;
+  box-shadow:none;
+}
+.card:hover,.post-card:hover,.cs:hover,.blog-card:hover{
+  box-shadow:0 16px 42px rgba(47,80,70,.10)!important;
 }
 
 .eyebrow,.tag,.pc-tag,.fp-label,.hero-tag,.post-tag,.tip-label,
@@ -69,34 +107,44 @@ section[style*="#010829"],section[style*="#030d40"],section[style*="#07154f"]{
 }
 
 button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,
-a[class*="btn"]{
-  border-color:transparent;
-}
+a[class*="btn"]{border-color:transparent}
 
-/* Primary actions should feel green, not tech-orange */
-.btn,.booking-btn,.csub,.cta-inline a{
+/* Primary actions */
+.btn,.booking-btn,.csub,.cta-inline a,.form-btn{
   background:var(--brand-primary)!important;
   color:var(--brand-white)!important;
 }
-
-.btn:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover{
+.btn:hover,.booking-btn:hover,.csub:hover,.cta-inline a:hover,.form-btn:hover{
   background:var(--brand-primary-dark)!important;
   color:var(--brand-white)!important;
 }
 
-/* Sand buttons work best on dark-green sections */
-#hero .btn,#hero a[class*="btn"],.hero .btn,.hero a[class*="btn"],.cta .btn,.cta a[class*="btn"],
-.nav-cta,.site-shell-cta{
+/* Sand CTA buttons on dark-green surfaces */
+.hero:not(#hero) .btn,.hero:not(#hero) a[class*="btn"],.cta .btn,.cta a[class*="btn"],
+.nav-cta,.site-shell-cta,#audit .btn,#audit a[class*="btn"]{
   background:var(--brand-sand)!important;
   color:var(--brand-primary-dark)!important;
 }
-
-#hero .btn:hover,#hero a[class*="btn"]:hover,.hero .btn:hover,.hero a[class*="btn"]:hover,.cta .btn:hover,.cta a[class*="btn"]:hover,
-.nav-cta:hover,.site-shell-cta:hover{
-  background:#e0d6ba!important;
+.hero:not(#hero) .btn:hover,.hero:not(#hero) a[class*="btn"]:hover,.cta .btn:hover,.cta a[class*="btn"]:hover,
+.nav-cta:hover,.site-shell-cta:hover,#audit .btn:hover,#audit a[class*="btn"]:hover{
+  background:#E0D6BA!important;
   color:var(--brand-primary-dark)!important;
 }
 
-input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!important;outline-color:var(--brand-primary)!important}
+/* Homepage hero primary button stays green on the light background */
+#hero .btn,#hero a[class*="btn"]{
+  background:var(--brand-primary)!important;
+  color:var(--brand-white)!important;
+}
+#hero .btn:hover,#hero a[class*="btn"]:hover{background:var(--brand-primary-dark)!important;color:var(--brand-white)!important}
 
+/* Case-study visual treatments */
+.cs-vis,.cs-gate{background:var(--brand-primary)!important}
+.cs-vis-bg,.cs-gate::before{background:linear-gradient(135deg,var(--brand-primary) 0%,var(--brand-primary-dark) 100%)!important}
+.cs-vis::after{background:linear-gradient(180deg,rgba(59,98,85,.12),rgba(47,80,70,.88))!important}
+.cs-vis-glow{background:radial-gradient(circle,rgba(210,196,158,.18) 0%,transparent 70%)!important}
+.cs-badge,.bt-tag{background:var(--brand-sand)!important;color:var(--brand-primary-dark)!important}
+
+/* Forms and micro-interactions */
+input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!important;outline-color:var(--brand-primary)!important}
 ::selection{background:var(--brand-mint);color:var(--brand-primary-dark)}
