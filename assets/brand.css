@@ -51,6 +51,19 @@ h3,h4,h5,h6{color:var(--brand-primary-dark)}
   min-height:auto!important;
   position:relative!important;
 }
+#hero::before{
+  content:'';
+  position:absolute;
+  right:-1%;
+  top:7%;
+  width:min(520px,42vw);
+  height:88%;
+  pointer-events:none;
+  background:url('/assets/hero-botanical.svg') right center/contain no-repeat;
+  opacity:.28;
+  z-index:1;
+  filter:saturate(.85);
+}
 #hero::after{
   content:'';
   position:absolute;
@@ -59,6 +72,7 @@ h3,h4,h5,h6{color:var(--brand-primary-dark)}
   background:
     radial-gradient(circle at 84% 18%,rgba(203,222,211,.08),transparent 34%),
     linear-gradient(180deg,rgba(47,80,70,.06),rgba(47,80,70,.18));
+  z-index:1;
 }
 #hero .hero-inner{position:relative;z-index:2!important}
 #hero .hero-dot-bg{opacity:.08!important;background-image:radial-gradient(rgba(255,253,249,.16) 1px,transparent 1px)!important}
@@ -134,3 +148,7 @@ button,.btn,.nav-cta,.booking-btn,.csub,.cta-inline a,.nl-btn,a[class*="btn"]{bo
 
 input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!important;outline-color:var(--brand-primary)!important}
 ::selection{background:var(--brand-mint);color:var(--brand-primary-dark)}
+
+@media(max-width:900px){
+  #hero::before{width:58vw;height:72%;right:-18%;top:14%;opacity:.16}
+}
