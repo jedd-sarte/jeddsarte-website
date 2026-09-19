@@ -18,7 +18,7 @@
           <a href="/services/"${active('/services/') ? ' class="active"' : ''}>Services</a>
           <a href="/industries/"${active('/industries/') ? ' class="active"' : ''}>Industries</a>
           <a href="/case-studies/"${active('/case-studies/') ? ' class="active"' : ''}>Case Studies</a>
-          <a href="/blog/"${active('/blog/') || active('/resources/') ? ' class="active"' : ''}>Insights</a>
+          <a href="/resources/"${active('/resources/') ? ' class="active"' : ''}>Resources</a>
           <a href="/locations/"${active('/locations/') ? ' class="active"' : ''}>Locations</a>
           <a href="/#about">About</a>
           <a href="${bookingUrl}" target="_blank" rel="noopener" class="site-shell-cta">Book a Call</a>
@@ -34,7 +34,7 @@
           <a href="/services/">Services</a>
           <a href="/industries/">Industries</a>
           <a href="/case-studies/">Case Studies</a>
-          <a href="/blog/">Insights</a>
+          <a href="/resources/">Resources</a>
           <a href="/locations/">Locations</a>
           <a href="/privacy-policy/">Privacy</a>
           <a href="/terms-of-service/">Terms</a>
