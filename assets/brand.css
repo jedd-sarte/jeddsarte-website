@@ -324,3 +324,36 @@ body:not(.homepage-refresh) #hero .hs{border-left-color:#E8A44A!important}
 .cards .card-body h3{color:#173F35!important}
 .cards .card-body p{color:#45574F!important}
 .cards .card-body strong{color:#8A551D!important}
+
+
+/* Homepage Case Studies CTA readability */
+#cases .cs-gate .cs-gate-inner h3{
+  font-family:'Space Grotesk',Inter,Arial,sans-serif!important;
+  font-size:clamp(1.75rem,2.8vw,2.35rem)!important;
+  font-weight:700!important;
+  line-height:1.18!important;
+  letter-spacing:-.02em!important;
+  color:#FFFDF9!important;
+}
+#cases .cs-gate .cs-gate-inner p{
+  font-family:Inter,Arial,sans-serif!important;
+  font-size:1.05rem!important;
+  font-weight:500!important;
+  line-height:1.75!important;
+  color:rgba(255,253,249,.88)!important;
+  max-width:760px!important;
+  margin:0 auto 28px!important;
+}
+#cases .cs-gate .cs-gate-inner .btn-gold{
+  font-family:'Space Grotesk',Inter,Arial,sans-serif!important;
+  font-size:.95rem!important;
+  font-weight:700!important;
+  letter-spacing:.01em!important;
+  background:#D2C49E!important;
+  color:#173F35!important;
+  border-color:#D2C49E!important;
+}
+#cases .cs-gate .cs-gate-inner .btn-gold:hover{
+  background:#E0D6BA!important;
+  color:#173F35!important;
+}
