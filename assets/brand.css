@@ -168,3 +168,104 @@ input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!import
 #services .svc:hover{background:#FFFDF9!important;border-color:#E8A44A!important;transform:translateY(-3px)}
 .site-shell-cta,.nav-cta{background:#E8A44A!important;color:#173F35!important}
 .site-shell-cta:hover,.nav-cta:hover{background:#F4C879!important;color:#173F35!important}
+
+
+/* Homepage editorial light/dark rhythm + accessibility contrast */
+body.homepage-refresh, body:has(#hero){background:#FFFDF8!important;color:#173F35!important}
+#hero{
+  background:linear-gradient(90deg,#F7F1E7 0%,#FFFDF8 63%,#F3EDE2 100%)!important;
+  color:#173F35!important;
+  padding-top:132px!important;
+  padding-bottom:72px!important;
+}
+#hero::before{left:-4%;right:auto;top:15%;width:min(330px,24vw);height:72%;opacity:.12;filter:none}
+#hero::after{background:radial-gradient(circle at 76% 28%,rgba(203,222,211,.25),transparent 31%)!important}
+#hero .hero-dot-bg{opacity:.14!important;background-image:radial-gradient(rgba(59,98,85,.16) 1px,transparent 1px)!important}
+#hero .hero-glow,#hero .hero-glow2{display:none!important}
+#hero .hero-inner{grid-template-columns:minmax(0,1.12fr) minmax(350px,.88fr)!important;gap:70px!important}
+#hero .hero-title,#hero h1{color:#173F35!important;font-size:clamp(3rem,5.2vw,5rem)!important;line-height:1.01!important}
+#hero .hero-title em,#hero h1 em{color:#C9822F!important}
+#hero p,#hero .hero-sub{color:#314B43!important}
+#hero .hero-sub{max-width:610px!important;font-size:1rem!important;line-height:1.62!important;margin-bottom:26px!important}
+#hero .hero-sub strong{color:#173F35!important}
+#hero .hero-available{background:#E4EFE8!important;border-color:#C5DBD0!important;color:#173F35!important}
+#hero .pulse{background:#17934E!important}
+#hero .btn-gold,#hero .btn,#hero a[class*="btn"]{background:#E8A44A!important;color:#173F35!important;border-color:#E8A44A!important;box-shadow:0 8px 22px rgba(201,130,47,.16)}
+#hero .btn-gold:hover,#hero .btn:hover,#hero a[class*="btn"]:hover{background:#F4C879!important;color:#173F35!important}
+#hero .btn-outline{background:#FFFDF8!important;color:#173F35!important;border-color:#3B6255!important}
+#hero .btn-outline:hover{background:#E4EFE8!important;color:#173F35!important;border-color:#173F35!important}
+#hero a:not([class*="btn"]){color:#8A551D!important;text-decoration-color:rgba(138,85,29,.45)}
+#hero .cert-label{color:#50675F!important}
+#hero .cert-text{color:#173F35!important;border-color:#B9C9C2!important;background:#FFFDF8!important}
+#hero .cert-badge img{mix-blend-mode:multiply!important;opacity:.9!important;filter:none!important}
+#hero .hero-card{background:#28594B!important;border:1px solid rgba(23,63,53,.16)!important;box-shadow:0 24px 55px rgba(23,63,53,.18)!important;border-radius:20px!important}
+#hero .hero-card::before{background:linear-gradient(90deg,#E8A44A,transparent)!important}
+#hero .hero-card-body{background:#28594B!important}
+#hero .hero-card-kicker{color:#F4C879!important}
+#hero .hero-stat{background:rgba(255,253,248,.07)!important;border-color:rgba(255,253,248,.18)!important}
+#hero .hero-stat b{color:#FFFDF8!important}
+#hero .hero-stat span{color:rgba(255,253,248,.78)!important}
+#hero .hero-portrait{filter:saturate(.92) contrast(1.02)!important}
+#hero .hero-portrait-overlay{background:linear-gradient(180deg,transparent 48%,rgba(23,63,53,.82) 100%)!important}
+
+/* Crawl/service-area strip: quiet and readable */
+.crawl-links{background:#E4EFE8!important;border-color:#C8D9D1!important}
+.crawl-links-label{color:#415A51!important}
+.crawl-link{color:#173F35!important;background:#FFFDF8!important;border-color:#B9CBC3!important}
+.crawl-link:hover{border-color:#C9822F!important;color:#7B4B18!important}
+
+/* Client marquee: retain dark brand anchor with accessible text */
+#trust{background:#173F35!important;border-color:rgba(244,200,121,.22)!important}
+#trust .logo-name{color:rgba(255,253,248,.82)!important}
+#trust .client-logo-pill{background:rgba(255,253,248,.07)!important;border-color:rgba(255,253,248,.16)!important}
+
+/* About and light content */
+#about,#testimonials{background:#FFFDF8!important}
+#about h2,#about h3,#testimonials h2,#testimonials h3{color:#173F35!important}
+#about p,#testimonials p{color:#45574F!important}
+.badge-dark{background:#173F35!important;color:#FFFDF8!important}
+.badge-light{background:#E4EFE8!important;color:#173F35!important;border-color:#C8D9D1!important}
+
+/* Services: premium green band, white cards, strong readable copy */
+#services{background:#28594B!important}
+#services .eyebrow{color:#F4C879!important}
+#services h2{color:#FFFDF8!important}
+#services>.container>p{color:rgba(255,253,248,.86)!important}
+#services .svc{background:#FFFDF8!important;border-color:rgba(255,253,248,.55)!important}
+#services .svc h3,#services .svc h3 a{color:#173F35!important}
+#services .svc p{color:#45574F!important}
+#services .svc-tag{background:#DDEBE4!important;color:#173F35!important}
+#services .svc:hover{border-color:#E8A44A!important;box-shadow:0 18px 42px rgba(23,63,53,.22)!important}
+
+/* Fix pale process/industry bands globally */
+#process,.process-strip,.industry-strip{
+  background:linear-gradient(90deg,#DCEBE4,#EEF4F0)!important;
+  color:#173F35!important;
+}
+#process *, .process-strip *, .industry-strip *{color:#173F35!important}
+#process p,.process-strip p,.industry-strip p{color:#3E554C!important}
+#process .eyebrow,.process-strip .eyebrow,.industry-strip .eyebrow{color:#7B4B18!important}
+
+/* General contrast safeguards for light sections */
+#cases p,#blog p,.section.alt p,#posts p,#more-posts p{color:#4B5B54!important}
+#cases h2,#cases h3,#blog h2,#blog h3,.section.alt h2,.section.alt h3{color:#173F35!important}
+#cases .eyebrow,#blog .eyebrow,#testimonials .eyebrow,#contact .eyebrow{color:#8A551D!important}
+.testi-text{color:#45574F!important}
+.trole,.cs-m-lbl{color:#65736D!important}
+
+/* Contact / audit dark sections */
+#audit,#contact .contact-form{background:#173F35!important}
+#audit p,#contact .contact-form p{color:rgba(255,253,248,.82)!important}
+#audit h2,#audit h3,#contact .contact-form h2,#contact .contact-form h3{color:#FFFDF8!important}
+
+/* Homepage MCP block overrides legacy inline blue-gray values */
+#jeddsarte-paid-media-mcp{background:#F7F1E7!important;border-color:#D7D2CA!important}
+#jeddsarte-paid-media-mcp>div>div{background:#FFFDF8!important;border-color:#D7D2CA!important}
+#jeddsarte-paid-media-mcp h3,#jeddsarte-paid-media-mcp strong{color:#173F35!important}
+#jeddsarte-paid-media-mcp p{color:#4B5B54!important}
+
+@media(max-width:900px){
+  #hero{padding-top:112px!important}
+  #hero .hero-inner{grid-template-columns:1fr!important;gap:42px!important}
+  #hero::before{width:62vw;opacity:.08}
+}
