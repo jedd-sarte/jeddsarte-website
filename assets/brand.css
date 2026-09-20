@@ -269,3 +269,58 @@ body.homepage-refresh, body:has(#hero){background:#FFFDF8!important;color:#173F3
   #hero .hero-inner{grid-template-columns:1fr!important;gap:42px!important}
   #hero::before{width:62vw;opacity:.08}
 }
+
+
+/* 2026-09-20 cross-page contrast pass */
+body:not(.homepage-refresh) #hero{
+  background:#173F35!important;
+  color:#FFFDF8!important;
+}
+body:not(.homepage-refresh) #hero .hero-title,
+body:not(.homepage-refresh) #hero h1,
+body:not(.homepage-refresh) #hero h2,
+body:not(.homepage-refresh) #hero h3{color:#FFFDF8!important}
+body:not(.homepage-refresh) #hero .hero-title em,
+body:not(.homepage-refresh) #hero h1 em{color:#E8A44A!important}
+body:not(.homepage-refresh) #hero p,
+body:not(.homepage-refresh) #hero .hero-sub{color:rgba(255,253,248,.90)!important}
+body:not(.homepage-refresh) #hero .eyebrow{color:#F4C879!important}
+
+/* Case studies hero: approved white headline treatment over dark analytics image */
+body:not(.homepage-refresh) #hero .hero-dots{
+  opacity:.58!important;
+  background-image:linear-gradient(90deg,rgba(23,63,53,.90),rgba(23,63,53,.66)),url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80')!important;
+}
+body:not(.homepage-refresh) #hero .hero-sub{color:rgba(255,253,248,.88)!important}
+body:not(.homepage-refresh) #hero .hs-num{color:#FFFDF8!important}
+body:not(.homepage-refresh) #hero .hs-lbl{color:rgba(255,253,248,.76)!important}
+body:not(.homepage-refresh) #hero .hs{border-left-color:#E8A44A!important}
+
+/* Services page contrast */
+#services .services-intro h2{color:#FFFDF8!important}
+#services .services-intro p{color:rgba(255,253,248,.88)!important}
+#services .commercial-path{background:#FFFDF8!important;border-color:#D7D2CA!important}
+#services .commercial-path strong{color:#173F35!important}
+#services .commercial-path span{color:#45574F!important}
+#services .need-head h3{color:#FFFDF8!important}
+#services .need-head p{color:rgba(255,253,248,.88)!important}
+#services .need-card{background:#FFFDF8!important;border-color:#D7D2CA!important}
+#services .need-card span{color:#8A551D!important}
+#services .need-card strong{color:#173F35!important}
+#services .need-card p{color:#45574F!important}
+#services .svc-grid{border-color:#D7D2CA!important}
+#services .svc-content{background:#FFFDF8!important}
+#services .svc-content h3{color:#173F35!important}
+#services .svc-content>p,#services .svc-content .svc-desc{color:#3F5149!important}
+#services .includes-label{color:#7B6650!important}
+#services .includes-list li{color:#3F5149!important}
+#services .svc-meta-label{color:#6B756F!important}
+#services .svc-meta-val{color:#173F35!important}
+#services .check{color:#C9822F!important}
+
+/* Industries cards: ensure all card text stays readable */
+.cards .card{background:#FFFDF8!important;border-color:#D7D2CA!important}
+.cards .card-body span{color:#8A551D!important}
+.cards .card-body h3{color:#173F35!important}
+.cards .card-body p{color:#45574F!important}
+.cards .card-body strong{color:#8A551D!important}
