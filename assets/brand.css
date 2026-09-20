@@ -5,6 +5,9 @@
   --brand-sage:#8BA49A;
   --brand-mint:#CBDED3;
   --brand-sand:#D2C49E;
+  --brand-amber:#E8A44A;
+  --brand-amber-dark:#C9822F;
+  --brand-forest:#173F35;
   --brand-neutral:#E2DFDA;
   --brand-ivory:#F7F4EF;
   --brand-white:#FFFDF9;
@@ -152,3 +155,16 @@ input:focus,textarea:focus,select:focus{border-color:var(--brand-primary)!import
 @media(max-width:900px){
   #hero::before{width:58vw;height:72%;right:-18%;top:14%;opacity:.16}
 }
+
+
+/* 2026-09 energetic CRO refinement */
+#services .section-label,#services .eyebrow,#services [class*="eyebrow"]{color:#F4C879!important}
+#services p,#services .section-sub,#services .section-desc,#services .section-intro{color:rgba(255,253,249,.88)!important}
+#services h2,#services>div>h2{color:#FFFDF9!important}
+#services .svc{background:#FFFDF9!important;border-color:rgba(255,255,255,.38)!important;box-shadow:0 8px 24px rgba(23,63,53,.13)!important}
+#services .svc h3,#services .svc h4,#services .svc strong{color:#173F35!important}
+#services .svc p,#services .svc span:not(.svc-tag){color:#38453F!important}
+#services .svc-tag{background:#CBDED3!important;color:#173F35!important}
+#services .svc:hover{background:#FFFDF9!important;border-color:#E8A44A!important;transform:translateY(-3px)}
+.site-shell-cta,.nav-cta{background:#E8A44A!important;color:#173F35!important}
+.site-shell-cta:hover,.nav-cta:hover{background:#F4C879!important;color:#173F35!important}
