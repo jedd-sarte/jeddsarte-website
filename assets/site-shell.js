@@ -1,4 +1,14 @@
 (() => {
+  // Sitewide favicon fallback for pages that do not declare one statically.
+  const faviconHref = '/favicon.svg';
+  if (!document.querySelector('link[rel~="icon"]')) {
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.type = 'image/svg+xml';
+    favicon.href = faviconHref;
+    document.head.appendChild(favicon);
+  }
+
   // GA4 base tag. Loaded once from the shared shell so every page is measured.
   const ga4MeasurementId = 'G-ZKNWZ52PSH';
   if (!document.querySelector('script[data-jedd-ga4]')) {
