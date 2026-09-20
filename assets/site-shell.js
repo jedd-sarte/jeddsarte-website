@@ -1,4 +1,18 @@
 (() => {
+  // GA4 base tag. Loaded once from the shared shell so every page is measured.
+  const ga4MeasurementId = 'G-ZKNWZ52PSH';
+  if (!document.querySelector('script[data-jedd-ga4]')) {
+    const ga4Script = document.createElement('script');
+    ga4Script.async = true;
+    ga4Script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4MeasurementId;
+    ga4Script.dataset.jeddGa4 = 'true';
+    document.head.appendChild(ga4Script);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', ga4MeasurementId);
+  }
+
   const brandCss = document.createElement('link');
   brandCss.rel = 'stylesheet';
   brandCss.href = '/assets/brand.css';
@@ -99,6 +113,18 @@
     ? '<a class="quick-call-card" href="' + quickCallUrl + '" target="_blank" rel="noopener" aria-label="Start a quick Zoom call"><span class="quick-call-icon" aria-hidden="true">↗</span><span class="quick-call-copy"><span class="quick-call-title"><span class="quick-call-dot"></span>Open for quick calls</span><span class="quick-call-sub">8 AM–7 PM ET · Start a Zoom call</span></span></a>'
     : '<a class="quick-call-card" href="' + bookingUrl + '" target="_blank" rel="noopener" aria-label="Book a strategy call"><span class="quick-call-icon" aria-hidden="true">◷</span><span class="quick-call-copy"><span class="quick-call-title"><span class="quick-call-dot"></span>Currently offline</span><span class="quick-call-sub">Available 8 AM–7 PM ET · Book a call</span></span></a>';
   document.body.appendChild(quickCall);
+
+  // Lead-intent measurement for the two primary conversion paths.
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link || typeof window.gtag !== 'function') return;
+    const href = link.href || '';
+    if (href.includes('calendar.app.google/2RJj6td6D5g3GgfC7')) {
+      window.gtag('event', 'book_call_click', { link_url: href, page_path: location.pathname });
+    } else if (href.includes('us05web.zoom.us/j/3434853022')) {
+      window.gtag('event', 'quick_call_click', { link_url: href, page_path: location.pathname });
+    }
+  });
 
   const menu = document.querySelector('.site-shell-menu');
   const links = document.getElementById('site-shell-links');
