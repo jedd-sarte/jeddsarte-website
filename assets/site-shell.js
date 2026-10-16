@@ -30,7 +30,6 @@
   if (!document.getElementById('site-brand-styles')) document.head.appendChild(brandCss);
 
   const bookingUrl = 'https://calendar.app.google/2RJj6td6D5g3GgfC7';
-  const quickCallUrl = 'https://us05web.zoom.us/j/3434853022?pwd=GSaX7AQaYsuYqoWADf0UmJJpaa8Yti.1';
   const path = window.location.pathname;
   const active = (prefix) => path === prefix || path.startsWith(prefix);
 
@@ -120,19 +119,18 @@
   quickCall.id = 'site-quick-call';
   if (!quickCallOpen) quickCall.classList.add('offline');
   quickCall.innerHTML = quickCallOpen
-    ? '<a class="quick-call-card" href="' + quickCallUrl + '" target="_blank" rel="noopener" aria-label="Start a quick Zoom call"><span class="quick-call-icon" aria-hidden="true">↗</span><span class="quick-call-copy"><span class="quick-call-title"><span class="quick-call-dot"></span>Open for quick calls</span><span class="quick-call-sub">8 AM–7 PM ET · Start a Zoom call</span></span></a>'
+    ? '<a class="quick-call-card" href="' + bookingUrl + '" target="_blank" rel="noopener" aria-label="Book a strategy call"><span class="quick-call-icon" aria-hidden="true">↗</span><span class="quick-call-copy"><span class="quick-call-title"><span class="quick-call-dot"></span>Available for strategy calls</span><span class="quick-call-sub">8 AM–7 PM ET · Book a call</span></span></a>'
     : '<a class="quick-call-card" href="' + bookingUrl + '" target="_blank" rel="noopener" aria-label="Book a strategy call"><span class="quick-call-icon" aria-hidden="true">◷</span><span class="quick-call-copy"><span class="quick-call-title"><span class="quick-call-dot"></span>Currently offline</span><span class="quick-call-sub">Available 8 AM–7 PM ET · Book a call</span></span></a>';
   document.body.appendChild(quickCall);
 
-  // Lead-intent measurement for the two primary conversion paths.
+  // Measure clicks on the remaining calendar booking path.
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]');
     if (!link || typeof window.gtag !== 'function') return;
     const href = link.href || '';
     if (href.includes('calendar.app.google/2RJj6td6D5g3GgfC7')) {
       window.gtag('event', 'book_call_click', { link_url: href, page_path: location.pathname });
-    } else if (href.includes('us05web.zoom.us/j/3434853022')) {
-      window.gtag('event', 'quick_call_click', { link_url: href, page_path: location.pathname });
+
     }
   });
 
