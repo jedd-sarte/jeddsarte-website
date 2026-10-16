@@ -130,7 +130,6 @@
     const href = link.href || '';
     if (href.includes('calendar.app.google/2RJj6td6D5g3GgfC7')) {
       window.gtag('event', 'book_call_click', { link_url: href, page_path: location.pathname });
-
     }
   });
 
