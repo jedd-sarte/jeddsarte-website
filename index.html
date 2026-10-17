@@ -287,9 +287,9 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
 
 .cert-strip{display:flex;align-items:center;gap:16px;margin-top:28px;flex-wrap:wrap}
 .cert-label{font-size:0.7rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap}
-.cert-badges{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.cert-badge{background:transparent;border:none;border-radius:8px;padding:4px;display:flex;align-items:center;justify-content:center;height:56px;width:auto}
-.cert-badge img{height:48px;width:auto;max-width:120px;object-fit:contain;mix-blend-mode:lighten;opacity:0.9;filter:drop-shadow(0 0 4px rgba(255,255,255,0.1))}
+.cert-badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px;row-gap:12px;align-items:center;justify-items:center;width:min(100%,430px)}
+.cert-badge{background:transparent;border:none;border-radius:8px;padding:4px;display:flex;align-items:center;justify-content:center;height:56px;width:100%;min-width:0}
+.cert-badge img{height:48px;width:auto;max-width:100%;object-fit:contain;mix-blend-mode:lighten;opacity:0.9;filter:drop-shadow(0 0 4px rgba(255,255,255,0.1))}.zapier-badge img{height:auto;max-height:48px;max-width:120px;mix-blend-mode:normal;opacity:1;filter:none}
 .cert-badge:hover img{opacity:1;filter:drop-shadow(0 0 6px rgba(244,159,28,0.3))}.academy-badge img{mix-blend-mode:normal;opacity:1}.cert-badge a{display:flex;align-items:center;justify-content:center}.cert-badge a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}.cert-text{height:48px;display:flex;align-items:center;padding:0 12px;border:1px solid rgba(255,255,255,0.16);border-radius:7px;color:rgba(255,255,255,0.85);font:700 0.72rem 'Space Grotesk',sans-serif;line-height:1.2;text-align:center}
 
 
@@ -496,7 +496,7 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
         <p style="margin-top:18px;font-size:0.82rem;color:rgba(255,255,255,0.45)">Explore <a href="services/google-ads-management/" style="color:#f49f1c;font-weight:600">Google Ads management</a>, <a href="services/google-ads-audit/" style="color:#f49f1c;font-weight:600">Google Ads audits</a>, <a href="services/meta-ads-management/" style="color:#f49f1c;font-weight:600">Meta Ads management</a>, <a href="services/conversion-tracking/" style="color:#f49f1c;font-weight:600">conversion tracking</a>, or industry strategies for <a href="industries/law-firm-google-ads/" style="color:#f49f1c;font-weight:600">law firms</a>, <a href="industries/google-ads-contractors/" style="color:#f49f1c;font-weight:600">contractors</a>, <a href="industries/google-ads-dentists/" style="color:#f49f1c;font-weight:600">dentists</a>, <a href="industries/google-ads-real-estate/" style="color:#f49f1c;font-weight:600">real estate</a>, and <a href="industries/ecommerce-google-ads/" style="color:#f49f1c;font-weight:600">e-commerce</a>.</p>
       <!-- Certifications -->
       <div class="cert-strip">
-        <span class="cert-label">Certified</span>
+        <span class="cert-label">Certifications &amp; Tools</span>
         <div class="cert-badges">
           <div class="cert-badge">
             <a href="https://skillshop.credential.net/embed/f8f43c02-5094-4100-85d8-9445c4fe0b02" target="_blank" rel="noopener noreferrer" title="View Google Ads Search certification credential" aria-label="View Jedd Sarte’s Google Ads Search certification credential">
@@ -516,6 +516,10 @@ footer{background:var(--navy-mid);padding:36px 0;border-top:1px solid rgba(255,2
             <a href="https://app-na2.hubspot.com/academy/achievements/w3s517cg/en/1/andreus-jedd-sarte/hubspot-reporting-certified" target="_blank" rel="noopener noreferrer" title="Verify HubSpot Academy Reporting Certification" aria-label="Verify Jedd Sarte’s HubSpot Reporting Certification">
               <img src="https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/014315492c8b47b88f21b0eda4cc51cf.png" alt="HubSpot Academy — HubSpot Reporting Certified badge" width="120" height="48" loading="lazy" referrerpolicy="no-referrer"/>
             </a>
+          </div>
+          <!-- Zapier platform logo — not a certification or verification link -->
+          <div class="cert-badge zapier-badge">
+            <img src="assets/images/zapier-logo.png" alt="Zapier automation platform" width="120" height="34" loading="lazy"/>
           </div>
         </div>
       </div>
