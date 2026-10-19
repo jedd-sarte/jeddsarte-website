@@ -92,6 +92,22 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
 .footer-nav a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:color 0.2s}
 .footer-nav a:hover{color:var(--gold)}
 
+/* Contextual service pathways connect the case study evidence to relevant work. */
+#service-paths{padding:68px 0 76px;background:var(--offwhite);border-top:1px solid var(--g200)}
+.service-path-head{max-width:660px;margin-bottom:28px}
+.service-path-head h2{color:var(--navy);margin-bottom:10px}
+.service-path-head p{font-size:.92rem}
+.service-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.service-path-card{display:flex;flex-direction:column;align-items:flex-start;padding:25px;border-radius:14px;border:1px solid var(--g200);background:var(--white);text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .2s}
+.service-path-card:hover,.service-path-card:focus-visible{border-color:var(--gold);box-shadow:0 12px 28px rgba(1,8,41,.08);transform:translateY(-2px)}
+.service-path-card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.service-path-type{font:700 .68rem 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#865000;margin-bottom:11px}
+.service-path-card strong{font:700 1.04rem/1.3 'Space Grotesk',sans-serif;color:var(--navy);margin-bottom:9px}
+.service-path-card p{font-size:.83rem;line-height:1.6;flex:1}
+.service-path-action{font:700 .79rem 'Space Grotesk',sans-serif;color:#865000;margin-top:20px}
+@media(max-width:900px){.service-path-grid{grid-template-columns:1fr}.service-path-card{padding:22px}}
+@media(max-width:600px){#service-paths{padding:50px 0 54px}}
+
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade-up.visible{opacity:1;transform:none}
 @media(max-width:900px){.cs-grid{grid-template-columns:1fr}.nav-links{display:flex;overflow-x:auto;max-width:74vw;gap:4px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap;font-size:.74rem;padding:8px}.nav-cta{display:none}.footer-inner{flex-direction:column;text-align:center}}
@@ -297,6 +313,36 @@ footer{background:var(--navy-mid);padding:32px 0;border-top:1px solid rgba(255,2
   </div>
 </section>
 
+<section id="service-paths" aria-labelledby="service-paths-title">
+  <div class="container">
+    <div class="service-path-head">
+      <span class="eyebrow">From results to strategy</span>
+      <h2 id="service-paths-title">Explore the services behind these outcomes.</h2>
+      <p>These case studies show different acquisition challenges. Explore the relevant service approach for your business, including how search intent, measurement, and lead quality inform decisions.</p>
+    </div>
+    <div class="service-path-grid">
+      <a class="service-path-card" href="../industries/law-firm-google-ads/">
+        <span class="service-path-type">Legal acquisition</span>
+        <strong>Google Ads management for law firms</strong>
+        <p>See how campaign structure, expensive search terms, conversion tracking, and intake feedback support qualified legal inquiries.</p>
+        <span class="service-path-action">Explore legal PPC →</span>
+      </a>
+      <a class="service-path-card" href="../industries/b2b-ppc-management/">
+        <span class="service-path-type">Professional services</span>
+        <strong>B2B PPC management</strong>
+        <p>Build paid search around high-intent buyers and qualified pipeline, informed by longer buying cycles and conversion quality.</p>
+        <span class="service-path-action">Explore B2B PPC →</span>
+      </a>
+      <a class="service-path-card" href="../industries/google-ads-real-estate/">
+        <span class="service-path-type">Real estate acquisition</span>
+        <strong>Google Ads for real estate</strong>
+        <p>Align search campaigns with location, property demand, inquiry quality, and the next step from lead to appointment or lease.</p>
+        <span class="service-path-action">Explore real estate PPC →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="portfolio-cta">
   <div class="container">
     <div class="portfolio-cta-inner fade-up">
@@ -330,5 +376,5 @@ const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.targ
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'10px 32px':'16px 32px'});
 </script>
-<section style="padding:20px 28px;text-align:center"><a href="../industries/google-ads-real-estate/" style="font-weight:700">Real estate PPC management →</a></section><section style="padding:20px 32px;text-align:center"><a href="../industries/law-firm-google-ads/" style="font-weight:700">Google Ads management for law firms →</a></section></body>
+</body>
 </html>
